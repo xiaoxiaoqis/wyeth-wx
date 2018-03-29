@@ -1,0 +1,13 @@
+<view class="page">
+  <include src="../../components/searchBar/fakeSearchbar.wxml" />
+  <scroll-view scroll-y="true" class="scroll-box" bindscrolltolower="updateData">
+    <import src="../../components/canIEatItem/index.wxml" />
+    <block wx:for="{{feeds}}" wx:key="id">
+      <template is="canIEatItem" data="{{food:item}}" />
+    </block>
+    <view class="loadingmore border-1px-t" hidden="{{allLoaded}}">
+      <view>正在加载...</view>
+    </view>
+    <view class="loadingmore border-1px-t" hidden="{{!allLoaded}}">已加载全部</view>
+  </scroll-view>
+</view>

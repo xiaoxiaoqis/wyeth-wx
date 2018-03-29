@@ -1,0 +1,48 @@
+@import "../../components/nameRater/index.wxss";
+@import "../../components/nameBottom/index.wxss";
+page{
+  background: #322f37;
+  color: #fff;
+  padding-bottom: 20px;
+}
+.title {
+  text-align: center;
+  padding: 40rpx 40rpx 0;
+  font-size: 16px;
+}
+.list{
+  margin: 20rpx 40rpx;
+}
+.boy-title{
+ color:  #7cc0e7;
+}
+.boy-title image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.girl-title{
+  color: #ff7071;
+}
+.girl-title image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 0;
+  vertical-align: middle;
+  margin-left: 6rpx; 
+}
+.girl-title,.boy-title{
+ margin: 40rpx 4rpx 0;
+ font-size: 20px;
+}
+.list-item .name{
+  font-size: 18px;
+}
+.empty-tip{
+  color: #e5e5e5;
+  font-size: 18px;
+  text-align: center;
+  padding: 50% 24rpx;
+}
+

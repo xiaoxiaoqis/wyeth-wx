@@ -1,0 +1,60 @@
+<view class="page">
+  <view class="my-hd">
+    <view class="my-hd-bg" style="background:url('{{userInfo ?userInfo.avatarUrl:'http://www.ladybirdedu.com/pregnotice/images/wx-static/mom-change.png'}}') center;background-size:cover"></view>
+    <view class="my-hd-bd">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" wx:if="{{userInfo}}"></image>
+        <view class="login-button" wx:else bindtap="login">登录</view>
+      <view class="nickname" wx:if="{{userInfo}}">{{userInfo.nickName}}</view>
+      <view class="info">{{pregtoday}}</view>
+    </view>
+  </view>
+  <view class="my-bd">
+    <view class="panel">
+      <view class="panel-bd">
+        <navigator url="/pregnotice/pages/set-pregdate/index">
+          <view class="cell">
+            <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/calendar.png"></image>
+            <view class="cell-hd">我的预产期</view>
+            <view class="cell-bd text-right">{{pregdate}}</view>
+            <view class="cell-more"></view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="panel">
+      <view class="panel-bd">
+        <navigator url="/pregnotice/pages/sale/orderList">
+          <view class="cell">
+            <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/indent.png"></image>
+            <view class="cell-hd">我的订单</view>
+            <view class="cell-bd text-right"></view>
+            <view class="cell-more"></view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="panel">
+      <view class="panel-bd">
+        <!-- <navigator url="/pregnotice/pages/my/feedback"> -->
+          <view class="cell">
+            <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/form.png"></image>
+            <view class="cell-hd">意见反馈</view>
+            <view class="cell-bd text-right"><contact-button session-from="weapp" size="14"></contact-button></view>
+            <view class="cell-more"></view>
+          </view>
+          <view class="contact-box" wx:if="{{!userInfo}}" bindtap="askForLogin"></view>
+          <button class="contact-box" wx:if="{{userInfo}}" open-type="contact" session-from="weapp"></button>
+        <!-- </navigator> -->
+      </view>
+    </view>
+    <view class="panel" wx:if="{{userInfo}}">
+      <view class="panel-bd">
+          <view class="cell" bindtap="logout">
+            <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/logout.png"></image>
+            <view class="cell-hd">退出登录</view>
+            <view class="cell-bd text-right"></view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

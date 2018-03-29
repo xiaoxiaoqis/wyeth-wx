@@ -1,0 +1,89 @@
+.check-up-list{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.check-up-list::after{
+  content: '';
+  width: 4rpx;
+  background: #ddd;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48rpx;
+  z-index: -1;
+}
+.check-up-item{
+  display: flex;
+  margin:24rpx 24rpx 0 24rpx;
+  background: #fff;
+  padding: 24rpx 24rpx 24rpx 64rpx;
+  z-index: 10
+}
+.check-up-item-bd{
+  flex: 1;
+  padding-right: 24rpx;
+  line-height: 1.5;
+}
+.check-up-item .date{
+  position: relative;
+}
+.check-up-item .date .year{
+  color: #888;
+  font-size: 12px;
+}
+.check-up-item .date .next-label{
+  color:#CD9E29;
+  margin-bottom: 12rpx;
+}
+.check-up-item .date::after{
+  content: ' ';
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  border:4rpx solid #ddd;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -54rpx;
+  z-index: 10;
+}
+.check-up-item.active{
+  box-shadow: 0 0 2px #CD9E29;
+  z-index: 99;
+}
+.check-up-item.active .date.active::after{
+  border-color: #CD9E29;
+}
+
+.check-up-item .date.active::after{
+  border-color: #353535;
+}
+.check-up-item .point{
+  color: #666;
+  margin-top:12rpx;
+  font-size: 16px;
+}
+.check-up-item .point.active{
+  color: #CD9E29;
+}
+.check-up-item-ft{
+  display: flex;
+  flex-direction: column;
+}
+.check-up-item-ft view{
+  flex: 1;
+  text-align: right;
+}
+.check-up-item .done{
+  color: #CD9E29;
+  font-size: 12px;
+}
+
+.check-up-item .week{
+  display: table-cell;
+  font-size: 12px;
+  color: #888;
+  vertical-align: bottom;
+}

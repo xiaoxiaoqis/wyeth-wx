@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="page-tab">
+    <view class="{{isTest? 'page-tab-item':'active page-tab-item'}}" bindtap="changeTab" data-cal="false">
+      <text>宝宝起名</text>
+    </view>
+    <view class="{{isTest? 'active page-tab-item':'page-tab-item'}}" bindtap="changeTab" data-cal="true">
+      <text>宝宝测名</text>
+    </view>
+  </view>
+  <navigator url="/pregnotice/pages/name/alternative" class="alternative-btn">备选库</navigator>
+  <view wx:if="{{!isTest}}" class="tab-bd">
+    <view class="input-box">
+      <view class="title">宝宝姓氏：</view>
+      <view class="required-box">
+        <input class="input-hd" value="{{surname}}" placeholder="请输入宝宝的姓氏" bindinput="bindSunameChange"/>
+        <icon wx:if="{{loyalSur}}" type="success" size="20" color="#CD9E29"/>
+      </view>
+    </view>
+    <view class="input-box">    
+      <view class="title">宝宝性别：</view>    
+      <radio-group class="radio-group" bindchange="bindSexChange">
+        <label class="radio" wx:for="{{sexList}}" wx:key="{{item.value}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color="#CD9E29"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="input-box">    
+    <view class="title">宝宝生日（预产期）：</view>    
+    <view class="required-box">    
+      <picker mode="date" class="input-hd picker-date" value="{{pregdate}}" start="{{pregdateRangeStart}}" end="{{pregdateRangeEnd}}" bindchange="bindpregdateChange">
+        <view class="picker-content">
+         {{pregdate}}
+        </view>
+      </picker>
+      <icon wx:if="{{loyalPregdate}}" type="success" size="20" color="#CD9E29"/>    
+    </view>
+    </view>
+    <view class="input-box">
+      <view class="title">喜欢的字：</view>   
+      <view class="required-box">           
+        <input class="input-hd" value="{{word}}" placeholder="请输入希望含有的字（选填）" bindinput="bindWordChange"/>
+      </view>
+    </view>
+  </view>
+  <view wx:else  class="tab-bd">
+    <view class="input-box">  
+      <view class="title">宝宝姓氏：</view>    
+      <view class="required-box">
+        <input class="input-hd" value="{{surname}}" placeholder="请输入宝宝的姓氏" bindinput="bindSunameChange"/>
+        <icon  wx:if="{{loyalSur}}" type="success" size="20" color="#CD9E29"/>
+      </view>
+    </view>
+    <view class="input-box">
+      <view class="title">宝宝名字：</view>    
+      <view class="required-box name">
+        <input class="input-hd" value="{{name}}" placeholder="请输入宝宝的名字" bindinput="bindNameChange"/>
+        <icon  wx:if="{{loyalName}}" type="success" size="20" color="#CD9E29"/>
+      </view>
+    </view>
+    <view class="input-box">    
+      <view class="title">宝宝性别：</view>    
+      <radio-group class="radio-group" bindchange="bindSexChange">
+        <label class="radio" wx:for="{{sexList}}" wx:key="{{item.value}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color="#CD9E29"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="input-box">    
+      <view class="title">宝宝生日（预产期）：</view>    
+      <view class="required-box">    
+        <picker mode="date"class="input-hd picker-date"  value="{{pregdate}}" start="{{pregdateRangeStart}}" end="{{pregdateRangeEnd}}" bindchange="bindpregdateChange">
+          <view class="picker-content">
+          {{pregdate}}
+          </view>
+        </picker>
+        <icon  wx:if="{{loyalPregdate}}" type="success" size="20" color="#CD9E29"/>    
+      </view>
+    </view>
+  </view>
+  <view  class="btn" bindtap="apply">{{isTest? '测 名':'起 名'}}</view>
+</view>

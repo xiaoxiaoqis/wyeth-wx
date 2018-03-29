@@ -1,0 +1,48 @@
+.cover{
+width: 100%;
+height: 400rpx;
+background:url('http://www.ladybirdedu.com//pregnotice/images/wx-static/load.gif');
+background-repeat:no-repeat;
+background-position:center;
+background-size: 60rpx;
+}
+.cover image{
+  width:100%;
+  height:100%;
+}
+.sale-item{
+  position: relative;
+  display: block;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.sale-item .info{
+    padding: 20rpx;
+}
+.sale-item .sale-tag{
+    color: #999;
+    margin-right: 20rpx;
+}
+.sale-item .promotion-items{
+  display: flex;
+}
+.sale-item .title{
+  font-size: 18px;
+  line-height: 56rpx;
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.sale-item .desc{
+  flex: 1;
+  margin-bottom: 10rpx;
+  color: #FF0036;
+}
+.sale-item .price-tag{
+  position: absolute;
+  top: 300rpx;
+  left: 0;
+  padding: 10rpx 20rpx;
+  background: rgba(255, 0, 54, 0.8);
+  color: #fff;
+  font-size: 18px;
+}

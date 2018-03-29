@@ -1,0 +1,158 @@
+@import "../../style/widgets/weui-flex/weui-flex.wxss";
+@import "../../components/hospitalItem/report.wxss";
+@import "../../components/likeAndShare/index.wxss";
+
+.info{
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+.info .label{
+    display: inline-block;
+    font-size: 12px;
+    margin: 16rpx 10rpx;
+    padding: 4rpx 30rpx;
+    border: 1px solid #fff;
+    border-radius: 20rpx;
+}
+.light-box{
+  margin-top: 47px;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+.name{
+  margin-top: 16rpx;
+  font-size: 17px;
+}
+.cover{
+  width: 100%;
+  height: 400rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.cover::before{
+    content: '';
+    position: absolute;
+    background: rgba(0,0,0,0.55);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.capability{
+  padding: 30rpx 0 0 40rpx;
+  border-bottom: 1rpx dashed #eee;
+  color: #CD9E29;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.capability .cap-item{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 30rpx;
+  width: 33%;
+  min-width: 110px;
+}
+.capability .disable{
+  color:#999;
+}
+.cap-item image{
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+.expense{
+  padding: 30rpx 20rpx;
+}
+.filing-status .content{
+    padding: 20rpx 24rpx;  
+}
+.filing-status .req,.state,.hint{
+  margin-bottom: 16rpx;
+}
+.filing-status .state {
+  color: #CD9E29;
+}
+.filing-status .hint{
+  font-size: 12px;
+  color: #999;
+  position: relative;
+}
+.filing-status .hint image{
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+.filing-process .content{
+  margin: 40rpx 24rpx 0;
+  line-height: 40rpx;
+  flex-wrap: wrap;
+}
+.filing-process .content-item{
+  margin-bottom: 40rpx;
+  align-items: center;
+}
+.filing-process .content-item .num{
+    display: inline-block;
+    flex-shrink: 0;
+    width: 70rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius: 5px;
+    border: 2rpx solid #CD9E29;
+    color: #CD9E29;
+    margin-right:10px; 
+}
+.weui-panel__hd {
+  background:#fff;
+  margin-top: 20rpx;
+}
+.delivery{
+  background:#fff;
+}
+.scroll-box{
+    position: absolute;
+    top: 0rpx;
+    bottom: 0px;
+}
+.empoty{
+  padding: 60rpx 0;
+  background: #fff;
+  text-align: center;
+  color: #999;
+}
+.scroll-btn{
+  width:70rpx;
+  height:70rpx;
+  opacity:0.6;
+  border-radius:50%;
+  position:fixed;
+  right:20rpx;
+}
+.scroll-btn image{
+  width: 100%;
+  height:100%;
+}
+.scroll-inactive{
+  animation: unshowscroll 0.5s; 
+}
+.scroll-active{
+  animation: showscroll 0.5s; 
+  bottom: 20rpx;
+}
+@keyframes unshowscroll {
+    from {bottom: 20rpx;}
+    to {bottom: -70rpx;}
+}
+@keyframes showscroll{
+  from {bottom: -20rpx;}
+  to {bottom: 20rpx;}
+}

@@ -1,0 +1,23 @@
+.rmd-box{
+  padding: 0 30rpx;
+}
+.rmd-hd{
+  line-height: 80rpx;
+}
+.rmd-bd{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.rmd-item{
+  width: 240rpx;
+  background: #fff;
+  box-shadow: 0 0 6rpx rgba(0, 0, 0, 0.3);
+}
+.image{
+  width: 500rpx;
+  height: 360rpx;
+  background-position: center;
+  background-size: cover;
+}

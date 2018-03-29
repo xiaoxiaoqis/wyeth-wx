@@ -1,0 +1,22 @@
+<view class="page" wx:if="{{symptoms.length>0}}">
+  <scroll-view class="side-nav" scroll-y="true">
+    <navigator class="{{index==activeIndex?'side-nav-item active':'side-nav-item'}}" wx:for="{{symptoms}}" wx:key="id" bindtap="changeNav" data-id="{{index}}">
+      <image class="item-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/period-{{index+1}}.png"></image>
+      <view class="item-name">{{item.name}}</view>
+    </navigator>
+  </scroll-view>
+  <scroll-view class="side-main" scroll-y="true">
+    <view class="content-hd">重点关注</view>
+    <view class="content-bd">
+      <navigator class="symptom" wx:for="{{symptoms[activeIndex].cases.hot}}" wx:key="id" url="/pregnotice/pages/symptom/detail?id={{item.id}}">{{item.name}}</navigator>
+    </view>
+    <view class="content-hd">常见症状</view>
+    <view class="content-bd">
+      <navigator class="symptom" wx:for="{{symptoms[activeIndex].cases.symptom}}" wx:key="id" url="/pregnotice/pages/symptom/detail?id={{item.id}}">{{item.name}}</navigator>
+    </view>
+    <view class="content-hd">常见疾病</view>
+    <view class="content-bd">
+      <navigator class="symptom" wx:for="{{symptoms[activeIndex].cases.disease}}" wx:key="id" url="/pregnotice/pages/symptom/detail?id={{item.id}}">{{item.name}}</navigator>
+    </view>
+  </scroll-view>
+</view>

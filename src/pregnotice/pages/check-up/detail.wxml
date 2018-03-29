@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="section section-gap check-up-hd">
+    <view>孕{{checkUp.week}}周（第{{checkUp.id}}次）产检</view>
+    <view class="check-up-point">{{checkUp.name}}</view>
+  </view>
+  <view class="section section-gap">
+    <block wx:if="{{processing==checkUp.id}}">
+      <picker mode="date" start="{{dateStart}}" end="{{dateEnd}}" vaule="{{checkUp.time}}" bindchange="changeCheckUpDate" disabled="{{!userInfo||checkUp.is_finish==1}}">
+        <view class="cell">
+          <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/calendar.png"></image>
+          <view class="cell-hd">产检时间</view>
+          <view class="cell-bd text-right">
+            <text>{{checkUp.time}} <block wx:if="{{checkUp.daysLeft==1}}">明天</block>
+              <block wx:elif="{{checkUp.daysLeft==0}}">今天</block>
+              <block wx:else>({{checkUp.daysLeft}}天后)</block>
+            </text>
+          </view>
+          <view class="cell-more"></view>
+        </view>
+      </picker>
+    </block>
+    <block wx:else>
+       <view class="cell">
+        <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/calendar.png"></image>
+        <view class="cell-hd">产检时间</view>
+        <view class="cell-bd text-right"><text>{{checkUp.time}} <block wx:if="{{checkUp.id<processing}}">(已完成)</block></text></view>
+      </view>
+    </block>
+    <navigator url="/pregnotice/pages/check-up-report/list?week={{checkUp.week}}">
+      <view class="cell cell-border">
+        <image class="cell-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/form.png"></image>
+        <view class="cell-hd">B超报告解读</view>
+        <view class="cell-bd text-right"></view>
+        <view class="cell-more"></view>
+      </view>
+    </navigator>
+  </view>
+  <view class="section section-gap check-up-bd">
+    <block wx:for="{{checkUp.content}}" wx:key="content">
+      <view class="content-hd">{{item.title}}</view>
+      <view class="content-bd">
+        <block wx:if="{{item.is_sub==0}}">
+          <text>{{item.content[0]}}</text>
+        </block>
+        <block wx:else>
+          <block wx:for="{{item.content}}" wx:key="content">
+            <view class="content-bold">{{item.subtitle}}</view>
+            <view class="content-bd">
+              <text>{{item.content}}</text>
+            </view>
+          </block>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="page-ft border-1px-t">
+    <view class="page-ft-hd">
+      <navigator url="/pregnotice/pages/check-up/list" class="minor-btn">
+        <image class="icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/list.png"></image>全部产检</navigator>
+    </view>
+    <view class="page-ft-bd" wx:if="{{checkUp.id<processing+1 && userInfo}}">
+      <button class="{{checkUp.id<processing?'primary-btn disabled':'primary-btn'}}" disabled="{{checkUp.id<processing||checkUp.is_finish==1}}" bindtap="completeHandler">我已完成</button>
+    </view>
+  </view>
+</view>

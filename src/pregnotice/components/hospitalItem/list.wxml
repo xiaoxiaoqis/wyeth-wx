@@ -1,0 +1,8 @@
+<template name="hospitalItem">
+<navigator url="/pregnotice/pages/hospital/detail?id={{hosp.id}}" class="list-item flex-item-bb" hover-class="weui-cell_active">
+        <view class="name">{{hosp.name}}</view>
+        <view class="intro" wx:if="hosp.intro">{{hosp.intro}}</view>
+        <text wx:if="hosp.status" class="status">{{hosp.status}}</text>
+        <text class="dist">{{hosp.dist}}</text>
+</navigator>
+</template>

@@ -1,0 +1,189 @@
+<!-- <scroll-view class="index page theme-purple" scroll-y="true" bindscroll="scrollHandler"> -->
+<view class="{{maskHidden?'':'page'}}">
+  <!--宝宝信息-->
+  <view class="section section-gap">
+    <view class="baby-info">
+      <view class="bchao-img" bindtap="handlePopup" data-template="bchao">
+        <image src="{{feeds.baby.pic}}"></image>
+      </view>
+      <view class="baby-info-content">
+        <view class="pregweek">{{pregtoday}}<text class="countdown">倒计时 {{lastDays}}天</text></view>
+        <view class="baby-size"  bindtap="handlePopup" data-template="babySize">
+          <text class="baby-weight">宝宝体重 {{feeds.baby.weight}}</text>
+          <text class="baby-height">身长 {{feeds.baby.height}}</text>
+        </view>
+        <view class="baby-fruit with-arrow"  bindtap="handlePopup" data-template="babySize"><image src="{{feeds.baby.fruit}}"></image>像{{feeds.fruit.fruit+feeds.fruit.describe}}</view>
+      </view>
+      <view class="bchao-tip">{{feeds.baby.description}}</view>
+      <view class="weekly-tips">
+        <view class="threed-baby" bindtap="handlePopup" data-template="3dVideo"><image src="{{icons.fetal}}"></image>3D胎宝宝发育</view>
+        <navigator class="mom-weekly border-1px-l" url="/pregnotice/pages/mom-weekly/index"><image src="{{icons.momWeekly}}"></image>本周妈妈变化</navigator>
+      </view>
+    </view>
+    <view class="toolbox border-1px-t">
+      <view class="toolbox-bd">
+        <navigator class="toolbox-bd-item" wx:for="{{toolbox}}" wx:key="name" url="{{item.page}}" hover-class="tool-box-hover">
+          <view>
+            <text class="new-icon" wx:if="{{item.label}}">New</text>
+            <image class="tool-icon" src="{{item.icon}}"></image>
+          </view>
+          <view><text class="tool-name">{{item.name}}</text></view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 今日小提醒 -->
+  <view class="today-tips weui-panel">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">今日提醒</view>
+    </view>
+    <view class="weui-panel__bd">
+      <view class="tip-box">
+        <block wx:for="{{feeds.notice.list}}" wx:key="id">
+          <view class="tip-item" hidden="{{curTipIndex!=index}}">
+            <view class="tip-title">{{item.title}}</view>
+            <view class="tip-content">{{item.content}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="tip-changer">
+        <view class="tip-change-prev arrow-left" bindtap="changeTip" data-type="prev"></view>
+        <view class="tip-indicator">{{curTipIndex+1}}/{{feeds.notice.list.length}}</view>
+        <view class="tip-change-next with-arrow" bindtap="changeTip" data-type="next"></view>
+      </view>
+    </view>
+  </view>
+  <!--健康助手-->
+  <view class="weui-panel check-up">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">健康助手</view>
+    </view>
+    <view class="weui-panel__bd">
+      <view class="health-box">
+        <view class="health-item health-item-pink border-1px-r">
+          <navigator hover-class="none" url="/pregnotice/pages/check-up/detail?id={{feeds.helper.check.id}}&processing={{feeds.helper.check.id}}">
+            <view class="health-item-label">下次产检</view>
+            <view class="health-item-content">
+              <text class="health-item-data">
+                <block wx:if="{{feeds.helper.check.day==0}}">今天</block>
+                <block wx:elif="{{feeds.helper.check.day==1}}">明天</block>
+                <block wx:else>{{feeds.helper.check.day}}</block>
+              </text>
+              <text class="health-item-unit" wx:if="{{feeds.helper.check.day>1}}">天后</text>
+            </view>
+            <view class="health-item-desc">{{feeds.helper.check.point}}</view>
+          </navigator>
+          <navigator wx:if="{{pregweek>11}}" class="health-item-btn btn-outline-pink" url="/pregnotice/pages/check-up-report/list">B超单解读</navigator>
+          <navigator wx:else class="health-item-btn btn-outline-pink" url="/pregnotice/pages/check-up/detail?id={{feeds.helper.check.id}}&processing={{feeds.helper.check.id}}">产检详情</navigator>
+        </view>
+        <view class="health-item health-item-purple border-1px-r">
+          <navigator url="/pregnotice/pages/weight/list?add={{feeds.helper.weight.weight==''}}"hover-class="none">
+            <view class="health-item-label">体重管理</view>
+            <view class="health-item-content">
+              <text class="health-item-data">{{feeds.helper.weight.weight||'- -'}}</text>
+              <text class="health-item-unit" hidden="{{!feeds.helper.weight.weight}}">KG</text>
+            </view>
+            <view class="health-item-desc">{{feeds.helper.weight['state_str']||'去记录'}}</view>
+          </navigator>
+          <navigator url="/pregnotice/pages/weight/list?add=true" class="health-item-btn btn-outline-purple">记录体重</navigator>
+        </view>
+        <view class="health-item health-item-blue" bindtap="handlePopup" data-template="drinkTips">
+          <view class="health-item-label">喝水提醒</view>
+          <view class="health-item-content">
+            <text class="health-item-data">{{feeds.helper.water.value}}</text>
+            <text class="health-item-unit">ML</text>
+          </view>
+          <view class="health-item-desc">{{feeds.helper.water.hour}} 第{{feeds.helper.water.id}}杯</view>
+          <view class="health-item-btn btn-outline-blue">喝水建议</view>
+        </view>
+      </view>
+      <view class="focus-tags border-1px-t">
+        <view class="focus-tags-hd">
+          <view class="title">你可能需要关注：</view>
+          <!-- <view class="cell-more">
+            <navigator url="/pregnotice/pages/mom-weekly/index">本周妈妈变化</navigator>
+          </view> -->
+        </view>
+        <view class="focus-tags-bd">
+          <navigator class="btn-outline" wx:for="{{feeds.case}}" wx:key="id" url="/pregnotice/pages/symptom/detail?id={{item.id}}">{{item.name}}</navigator>
+        </view>
+      </view>
+    </view>
+    <!--<navigator class="weui-panel__ft" url="/pregnotice/pages/mom-weekly/index">
+      <view class="weui-panel__ft__bd">本周妈妈变化</view>
+      <view class="cell-more"></view>
+    </navigator>-->
+  </view>
+  <!--每日知识-->
+  <!-- <view class="daily-knowledge weui-panel">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">今日知识</view>
+    </view>
+    <view class="weui-panel__bd">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{feeds.dailyKnowledge.slides}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="article-list">
+        <navigator wx:for="{{feeds.knowledge}}" wx:key="id" url="{{item.url}}">
+          <view class="article-item border-1px-b">
+            <view class="article-content">
+              <text class="article-title">{{item.title}}</text>
+              <view class="article-info">
+                <text class="article-info-tag">{{item.category_name}}</text>
+              </view>
+            </view>
+            <view class="article-img">
+              <image src="{{item.pic[0].url}}"></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="article-more" wx:if="{{feeds.dailyKnowledge.unread>0}}"><text></text>{{feeds.dailyKnowledge.unread}}条新知识<text class="badge">NEW</text></view>
+      <view class="article-more" wx:else>更多知识</view>
+    </view>
+  </view> -->
+  <!-- 营养配餐 -->
+  <view class="daily-diet weui-panel">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">营养配餐</view>
+    </view>
+    <view class="weui-panel__bd">
+      <swiper class="diet-list-box" current="{{curDietIndex}}" bindchange="dietChange" indicatorDots circular>
+        <block wx:for="{{feeds.food.list}}" wx:if="{{index<3}}" wx:key="name">
+          <swiper-item>
+            <navigator class="diet-item-box" style="background-image:url({{item.img}})" url="/pregnotice/pages/recipe/home?combine={{item.combine}}&toView={{toView[index]}}">
+              <view class="diet-item-box-bd">
+                <view class="diet-item-info">
+                  <view class="diet-time-name">{{item.name}}</view>
+                  <view class="diet-time">{{item.time_str}}</view>
+                </view>
+                <view class="diet-recipes border-1px-l">
+                  <view class="diet-recipe" wx:for="{{item.data}}" wx:if="{{index<3}}" wx:key="id">{{item.name}}</view>
+                </view>
+              </view>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="weui-panel__ft">
+      <scroll-view scroll-x="true" class="diet-point">配餐营养要点：{{feeds.food.nutrition_point}}</scroll-view>
+    </view>
+  </view>
+  <!-- <view class="bottom-slogan"><text>Present with ♥ by ©育儿网</text></view> -->
+  <import src="template.wxml" />
+  <view wx:if="{{!maskHidden}}" class="popup">
+    <scroll-view class="popup-bd" scroll-y="true">
+      <template is="{{curTemplate}}" data="{{data:curTempData}}"></template>
+    </scroll-view>
+    <icon bindtap="handlePopup" data-template="mask" class="popup-cancel" type="cancel" size="36" color="white" />
+  </view>
+  <mask hidden="{{maskHidden}}" bindtap="handlePopup" data-template="mask" style="background-color: rgba(0,0,0,0.6);" hover-style="none" />
+</view>
+<!-- </scroll-view> -->

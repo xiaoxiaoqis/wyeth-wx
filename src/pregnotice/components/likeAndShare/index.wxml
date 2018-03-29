@@ -1,0 +1,15 @@
+<template name="likeAndShare">
+  <view class="like-share-box">
+    <view class="like-tip">{{isLove===undefined? '觉得有用就点击分享': '觉得有用就分享或点个赞'}}，可以帮助到更多孕妈哦~</view>
+    <view class="flex-box">
+      <button wx:if="{{isLove!==undefined}}" class="{{ isLove? 'flex-item like':'flex-item'}}"  bindtap="doLike">
+        <image class="{{isLove? 'love-animated':''}}" src="{{isLove? 'http://www.ladybirdedu.com//pregnotice/images/wx-static/Like.png':'http://www.ladybirdedu.com//pregnotice/images/wx-static/zan-grey.png'}}" />
+         <view>{{count}}</view>
+      </button>
+      <button class="flex-item share-btn" open-type="share" hover-class="none">
+        <image src="http://www.ladybirdedu.com//pregnotice/images/wx-static/share.png" />      
+        <view>分享</view>
+      </button>
+    </view>
+  </view>
+</template>

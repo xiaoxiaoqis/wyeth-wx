@@ -1,0 +1,40 @@
+.no-data-tip .btn {
+  position: relative;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 20rpx;
+  color: #FF0036;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0 0 0 10rpx;
+}
+.no-data-tip .btn::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2rpx solid #FF0036;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 120rpx;
+}
+.no-data-tip {
+  height: 80%;
+  width:100%;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no-data-tip .desc{
+  margin: 20rpx 0 40rpx;
+  color: #666;
+}
+.no-data-tip image{
+  width: 120rpx;
+  height: 120rpx;
+}

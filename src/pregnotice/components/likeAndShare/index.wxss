@@ -1,0 +1,186 @@
+.like-share-box{
+   margin: 20rpx auto 0;
+   padding: 20rpx 20rpx 10rpx;
+   text-align: center;
+   background: #fff;
+   color: #666;
+}
+.like-share-box .like{
+  color: #9177FD;
+}
+.like-share-box button{
+  width: 200rpx;
+  height: 70rpx;
+  margin: 60rpx auto;
+  background: #fff;
+  font-size: 14px;
+  color: #666;  
+}
+.like-share-box image{
+  width: 20px;
+  height: 20px;
+}
+.flex-box .flex-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-box .flex-item::after{
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2rpx solid rgba(0, 0, 0, .2);
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 70rpx!important;
+}
+.flex-box .like::after{
+  border-color:  rgba(145, 119, 253, .5);
+}
+.flex-box .flex-item image{
+  margin-right: 16rpx;
+}
+.love-animated{
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+/*.like-share-box view{
+  word-break:normal;
+  overflow:visible;
+}
+.like-share-box {
+  padding: 30rpx 0 30rpx;
+  background: #fff;
+  margin: 20rpx 0;
+}
+.like {
+  font-size: 20px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+.zanfilled{
+  color: #CD9E29;
+}
+.like-tip{
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30rpx;
+}
+.like-count {
+  line-height: 1;
+}
+.zan-box{
+  position: relative;
+  display: inline-block;
+  width: 212rpx;
+  height: 212rpx;
+  border:2rpx solid #CD9E29; 
+  border-radius: 212rpx;
+}
+.zan-box .icon{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin: 30rpx auto 0rpx;
+}
+.zan-box .zanfilled-animated{
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.zan-box .text{
+  font-size:12px;
+}
+.zan-box .count{
+  position: absolute;
+  bottom:-6rpx; 
+  left: 0;
+  right: 0;
+  height: 52rpx;
+  line-height: 52rpx;
+  background: #fff;
+}
+.share-btn {
+  display: block;
+  text-align: center;
+  width: 25%;
+}
+.share-btn-name {
+  font-size: 12px;
+}
+.share-btn .circle-box{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 60rpx;
+  height: 60rpx;
+  line-height:50rpx;
+  padding: 24rpx;
+  margin-bottom: 10rpx;
+}
+.share-btn .circle-box .icon{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+.share-btn .circle-box::after{
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2rpx solid rgba(0, 0, 0, .3);
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 100%;
+}
+button{
+  background-color:#fff;
+  border-radius:50%;
+}
+button::after{
+  border:0;
+}*/

@@ -1,0 +1,50 @@
+@import "../../components/recipeItem/cell.wxss"
+.mom-changes {
+  padding: 40rpx 24rpx 40rpx 64rpx;
+}
+.mom-changes>view {
+  padding: 0 0 20rpx 32rpx;
+}
+.mom-changes .desc {
+  font-size: 16px;
+  line-height: 42rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.mom-changes .desc:before {
+  content: '';
+  position: absolute;
+  left: -32rpx;
+  top: 12rpx;
+  font-size: 0;
+  width: 16rpx;
+  height: 16rpx;
+  background: #FCBBCF;
+  border-radius: 16rpx;
+  vertical-align: middle;
+}
+.mom-changes .rcmd {
+  color: #888;
+  margin-bottom: 20rpx;
+}
+.mom-changes .rcmd navigator {
+  color: #FB7089;
+}
+.mom-changes .btn-outline {
+  margin: 0 20rpx 20rpx 0;
+}
+.diet-tips {
+  padding-bottom: 40rpx;
+}
+.diet-tips .title {
+  border-left: 4px solid #FB7089;
+  padding-left: 20rpx;
+  margin: 40rpx 0;
+  font-size: 17px;
+}
+.diet-tips .content {
+  padding: 0 24rpx;
+  font-size: 15px;
+  color: #666;
+  line-height: 50rpx;
+}

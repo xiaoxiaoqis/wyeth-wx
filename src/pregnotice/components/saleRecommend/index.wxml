@@ -1,0 +1,15 @@
+<template name="saleRecommend">
+    <view class="rmd-box">
+      <view class="rmd-hd">更多推荐</view>
+      <view class="rmd-bd">
+        <navigator class="rmb-item" url="/page/sale/item?id=item.id"  wx:for="{{list}}" wx:key="item.id">
+          <view class="image" style="background-image: url({{item.image}});"></view>
+          <view>{{item.title}}</view>
+          <view class="extra">
+            <view class="price">{{item.price}}</view>
+            <view class="num">{{item.num}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+</template>

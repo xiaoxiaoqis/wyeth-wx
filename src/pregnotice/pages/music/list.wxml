@@ -1,0 +1,33 @@
+<scroll-view class="music-list" scroll-y="true" bindscrolltolower="fetchData">
+  <view class="{{index==curPlay&&playState=='playing'?'music-list-item active':'music-list-item'}}" wx:for="{{music}}" wx:key="id" bindtap="togglePlay" data-index="{{index}}">
+    <image class="music-thumb" src="{{item.thumb}}"></image>
+    <view class="music-desc">
+      <view class="music-name">{{item.name}}<view class="music-time">{{item.time}}</view></view>
+      <view class="music-info">{{item.author}}</view>
+    </view>
+    <view class="muisc-status">
+      <view wx:if="{{index==curPlay&&playState=='playing'}}" class="{{loading ? 'loading': 'music'}}-waves">
+        <view class="wave-bar"></view>
+        <view class="wave-bar"></view>
+        <view class="wave-bar"></view>
+      </view>
+    </view>
+  </view>
+  <view class="loadingmore" hidden="{{allLoaded}}">正在加载...</view>
+  <view class="loadingmore" hidden="{{!allLoaded}}">已全部加载</view>
+</scroll-view>
+<view class="music-bar">
+  <image class="{{playState=='playing'&&!loading?'music-thumb animation-rolling' : 'music-thumb'}}" src="{{music[curPlay].thumb}}"></image>
+  <view class="music-desc">
+    <view class="music-name">{{music[curPlay].name}}<view class="music-time">{{music[curPlay].time}}</view></view>
+    <view class="music-info">{{music[curPlay].author}}</view>
+  </view>
+  <view class="muisc-ctrl">
+    <view class="repeat-mode" bindtap="toggleRepeatMode">
+      <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/music-repeat-{{repeatMode}}-hl.png"></image>
+    </view>
+    <view class="play-action" bindtap="togglePlay" data-index="{{curPlay}}">
+      <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/{{playState === 'playing' ? 'playing' : 'pause'}}.png"></image>
+    </view>
+  </view>
+</view>

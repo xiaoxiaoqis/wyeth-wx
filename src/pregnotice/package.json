@@ -1,0 +1,15 @@
+{
+  "name": "pregnotice-wx",
+  "version": "0.1.0",
+  "description": "微信小程序版「孕期提醒」",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.oneitfarm.com/pregnotice/pregnotice-wx.git"
+  },
+  "author": "zouwangqiang",
+  "license": "ISC"
+}

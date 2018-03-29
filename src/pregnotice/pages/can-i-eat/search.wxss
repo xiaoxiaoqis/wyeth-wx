@@ -1,0 +1,58 @@
+@import "../../components/canIEatItem/index.wxss";
+
+/*search bar*/
+
+.search-bar {
+  display: flex;
+  /*background: #fff;*/
+  height: 118rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.input-box {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  height: 70rpx;
+  margin-right: 12rpx;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.input-box input {
+  flex: 1;
+}
+.input-box .icon-search{
+  margin: 0 24rpx;
+}
+
+.btn-clearInput {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  height: 70rpx;
+  padding: 0 24rpx;
+  line-height: normal;
+}
+
+.btn-clearInput::after {
+  border: none;
+}
+.btn-doSearch{
+  width: 120rpx;
+  font-size: 14px;
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 24rpx;
+  background: #fff;
+}
+.scroll-box {
+  position: absolute;
+  top: 118rpx;
+  bottom: 0;
+  background: #fff;
+}

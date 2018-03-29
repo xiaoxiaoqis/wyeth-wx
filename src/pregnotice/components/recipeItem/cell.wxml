@@ -1,0 +1,14 @@
+<template name="recipeItemCell">
+  <navigator url="../recipe/detail?id={{recipe.id}}" class='weui-media-box recipe-item-cell' hover-class='weui-cell_active'>
+    <view class='weui-media-box__hd'>
+      <image class='weui-media-box__thumb' src='{{recipe.thumb}}'></image>
+    </view>
+    <view class='weui-media-box__bd'>
+      <view class='weui-media-box__title'>{{recipe.name}}</view>
+      <view class='weui-media-box__desc'>
+        <view class="weui-media-box__desc__text">{{recipe.preparation}}</view>
+      </view>
+      <view class='weui-media-box__info'><navigator class="tag" wx:for="{{recipe.tag}}" wx:key="*this" wx:if="{{index<2}}">{{item}}</navigator></view>
+    </view>
+  </navigator>
+</template>

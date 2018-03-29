@@ -1,0 +1,45 @@
+<!--<view  class="{{maskHidden?'':'page'}}">-->
+<view class="page" wx:if="{{info.banner}}">
+<swiper autoplay="true" circular="true" duration="500" interval="4000" vertical="true">
+  <block wx:for="{{winnerList}}" wx:key="{{index}}">
+    <swiper-item>
+     <text>{{item}}团队 每人获得创意贴纸一份</text>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="banner">
+  <image class="bg" src="{{info.banner}}"></image>
+</view>
+<view class="section section-gap top">
+  <view class="info">
+    <image class="label" src="{{info.state=='0'?info.ready_image:info.finish_image}}"></image>
+    <text class="hint" wx:if="{{info.title}}">{{info.title}}</text>
+    <view class="intro">
+      <image wx:if="{{showIcon}}" class="warn" src="{{baseUrl}}warn.png"></image>
+      <import src="../../components/wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:title.nodes}}"></template>
+    </view>
+    <view wx:if="{{showClock}}">剩余<text class="timer" wx:for="{{clock}}">{{item}}</text>结束</view>
+  </view>
+  <view class="list">
+    <view wx:for="{{imageList}}" wx:for-item="i" wx:key="i" class="item-box {{list[i].is_leader ? 'leader':''}} {{list[i].avatar? 'active': ''}}" >
+      <image wx:if="{{list[i]}}" src="{{list[i].avatar}}"></image>
+      <image class="icon" wx:else src="{{baseUrl}}unknown.png"></image>
+    </view>
+  </view>
+  <view class="tip-box">
+    <view class="tip">
+    <image class="warn-icon" src="{{baseUrl}}warn.png"></image>小提醒：新用户下载孕期提醒后，点击首页活动图就能继续完成拼团~</view>
+    <view class="tip" wx:if="{{finish.length}}">真棒！您已经组团成功{{finish.length}}次了哦</view>
+    <view class="pic-list" wx:for="{{finish}}" wx:for-index="idx" wx:for-item="list" wx:key="idx">
+      第{{idx+1}}次 <image wx:for="{{list}}" wx:for-item="img"  wx:key="img" src="{{img.avatar}}"></image>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <import src="../../components/wxParse/wxParse.wxml"/>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+</view>
+<button wx:if="{{!showShare}}" class="button" bindtap="apply">{{butText}}</button>
+<button wx:else open-type="share" class="button" >{{butText}}</button>
+</view>

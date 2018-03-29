@@ -1,0 +1,2 @@
+/* pages/recipe/list.wxss */
+@import "../../components/recipeItem/cell.wxss";

@@ -1,0 +1,14 @@
+.check-up-hd{
+  padding: 24rpx;
+  border-top: 1px solid #efefef;
+  text-align: center;
+  font-size: 12px;
+}
+.check-up-point{
+  font-size: 16px;
+  color: #CD9E29;
+  margin-top: 20rpx;
+}
+.check-up-bd{
+  padding: 30rpx 24rpx 120rpx;
+}

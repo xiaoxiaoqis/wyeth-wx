@@ -1,0 +1,32 @@
+.food-catagory {
+  background: #fff;
+}
+
+.food-catagory-big-img navigator{
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.food-catagory-big-img navigator::after {
+  content: '';
+  display: inline-block;
+  padding-top: 100%
+}
+
+
+.food-catagory-big-img navigator .food-catagory-name {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-shadow: 2px 2px 20px rgba(255, 255, 255, 1);
+}

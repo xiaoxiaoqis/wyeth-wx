@@ -1,0 +1,19 @@
+/* pages/my/feedback.wxss */
+
+.feedback {
+  padding: 50rpx 24rpx;
+  text-align: center;
+}
+
+.tip {
+  margin: 30rpx 0;
+}
+
+.tip text {
+  color: #CD9E29;
+}
+
+.qrcode {
+  width: 400rpx;
+  height: 400rpx;
+}

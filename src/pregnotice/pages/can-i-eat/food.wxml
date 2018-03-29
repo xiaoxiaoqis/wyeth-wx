@@ -1,0 +1,27 @@
+<view class="page">
+  <image wx:if="{{loading}}" class="page-spinner" mode="aspectFit" src="../../image/palette-rotating-ring-loader.gif"></image>
+  <view wx:else class="food-hd">
+    <image src="{{food.img}}" mode="aspectFill"></image>
+  </view>
+  <view class="food-desc section-gap">{{food.description}}</view>
+  <view class="section section-gap">
+    <view class="food-eatable" wx:for="{{food.know}}" wx:key="id">
+      <view class="title">{{item.period}}</view>
+      <view class="result" style="color:{{eatStatusColor[item.type]}}">
+        <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/eatable{{item.type}}.png"></image>{{item.type_name}}</view>
+      <view class="desc">{{item.description}}</view>
+    </view>
+  </view>
+  <view wx:if="{{!loading}}" class="section section-gap">
+    <view class="section-hd">
+      <view class="section-hd-title">营养元素</view>
+    </view>
+    <view class="nutrients flex-box">
+      <view class="{{index%2?'flex-item-col2 nutrients-item':'flex-item-col2 nutrients-item flex-item-br'}}" wx:for="{{food.nutrition}}" wx:key="id">{{item.name}}: {{item.quantity}}</view>
+    </view>
+  </view>
+  <block wx:if="{{!loading}}">
+    <import src="../../components/likeAndShare/index.wxml"/>
+    <template is="likeAndShare" data="{{...likeShare}}"/>
+  </block>
+</view>

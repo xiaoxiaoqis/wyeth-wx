@@ -1,0 +1,12 @@
+<template name="nameRater">
+  <import src="../rater/rater.wxml" />
+  <view class="list-item flex-box">
+    <view class="num" wx:if="{{idx!==undefined}}">{{idx+1}}</view>
+    <view class="middle border-1px-b">
+      <view class="name">{{info.name}}</view>
+      <view class="score">
+        <template is="rater" data="{{stars,key,idx,gender}}"/>
+      </view>
+    </view>
+  </view>
+</template>

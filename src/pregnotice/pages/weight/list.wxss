@@ -1,0 +1,436 @@
+/* pages/weight/add.wxss */
+
+.weight-review {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.weight-review .pregweek {
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.weight-viewbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #CD9E29;
+  align-items: flex-start;
+  margin: 30rpx 0;
+}
+
+.weight-viewbox-hover .weight-num-tip {
+  color: #eee;
+}
+
+.weight-num-box {
+  margin: 24rpx auto;
+}
+
+.weight-num {
+  font-size: 50px;
+  line-height: 1;
+}
+
+.weight-num-tip {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.weight-num-btn {
+  font-size: 12px;
+}
+
+.weight-review .weight-viewbox {
+  margin: 0 auto;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 300rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #CD9E29;
+  box-shadow: 0 0 5px rgba(145, 135, 253, 0.5);
+  animation-name: breath;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  line-height: normal;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.weight-review .weight-viewbox-hover {
+  background: #CD9E29;
+  box-shadow: 0 0 -5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.weight-review-tip {
+  margin-top: 40rpx;
+  line-height: 1.6;
+}
+
+.weight-review-tip image {
+  width: 14px;
+  height: 14px;
+  margin-right: 12rpx;
+}
+
+.weight-history .modify-yunqian {
+  font-size: 12px;
+  color: #888;
+}
+
+.weight-list-item {
+  display: flex;
+  padding: 24rpx 0 24rpx 30rpx;
+  align-items: center;
+  background: #fff;
+}
+
+.weight-list-item:first-child {
+  background: #fefefe;
+  color: #888;
+}
+
+.weight-list-item view {
+  flex: 1;
+  text-align: center;
+}
+
+.weight-list-item view:first-child {
+  text-align: left;
+}
+
+.weight-list-item .action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.weight-list-head .action {
+  height: auto;
+}
+
+.weight-list-item .action text {
+  display: inline-block;
+  transform: rotateZ(90deg);
+}
+
+.weight-list-item .tip {
+  display: inline-block;
+  line-height: 1.6;
+  color: #888;
+  font-size: 12px;
+  padding-top: 12rpx;
+}
+
+.weight-action-box {
+  position: fixed;
+  top: 20%;
+  left: 30px;
+  right: 30px;
+  min-width: 300px;
+  /*margin-left: -150px;*/
+  background: #fff;
+  overflow: hidden;
+  padding-top: 30rpx;
+  z-index: 10000;
+}
+
+.date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-box .today {
+  color: #888;
+  margin-right: 10rpx;
+}
+
+.date-box .nature-date {
+  padding: 24rpx;
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.05));*/
+}
+
+.date-box .pregweek {
+  margin-top: 40rpx;
+  color: #666;
+  font-size: 12px;
+}
+
+.weight-recorder {
+  position: relative;
+  width: 100%;
+  background: #f3f3f3;
+  margin-bottom: 60rpx;
+}
+
+.weight-ruler-box {
+  width: 300px;
+  margin: 0 auto;
+  height: 150rpx;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.weight-ruler {
+  width: 18300px;
+  padding: 0 135px 0 150px;
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.weight-ruler-step {
+  position: relative;
+  width: 15px;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.weight-ruler-step::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #ddd;
+  transform: rotateX(0.5);
+  transform-origin: 0 0;
+}
+
+.weight-ruler-step.big {
+  height: 40px;
+}
+
+.weight-ruler-step.big::after {
+  border-color: #ccc;
+}
+
+.weight-ruler-step-label {
+  position: absolute;
+  width: 40px;
+  text-align: center;
+  bottom: -20px;
+  right: 0;
+  margin-right: -8px;
+  font-size: 12px;
+}
+
+.weight-ruler-indicator {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: #CD9E29;
+  left: 50%;
+  top: 0;
+  z-index: 9;
+  margin-left: -3rpx;
+  border-radius: 12px;
+}
+
+.action-bar {
+  /*box-shadow: 0 0 3px rgba(145, 135, 253, 0.5);*/
+  background: #CD9E29;
+  display: flex;
+  align-items: center;
+}
+
+.action-bar .btn {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.action-bar .btn icon {
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.action-bar .btn[disabled] {
+  background-color: transparent;
+  color: #ddd;
+}
+.yunqian-editor .action-bar .btn[disabled] {
+  background-color: #ddd;
+  color: #999;
+}
+
+.action-bar .btn::after {
+  border: none;
+}
+
+.action-bar .spilt {
+  padding: 30rpx 0;
+}
+
+
+/*
+.btn:active {
+  color: #423b88;
+}*/
+
+.add-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  text-align: center;
+  background: #CD9E29;
+  line-height: 60px;
+  font-size: 30px;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(145, 135, 253, 0.5);
+}
+
+
+/*孕前设置弹窗*/
+
+.yunqian-tip {
+  line-height: 1.6;
+  padding: 0 24rpx;
+}
+
+.yunqian-input-box {
+  position: relative;
+  display: flex;
+  margin: 24rpx;
+  height: 80rpx;
+  border: 1px solid #e5e5e5;
+}
+
+.yunqian-input-box .label,
+.yunqian-input-box .unit {
+  color: #666;
+  font-size: 12px;
+  padding: 0 24rpx;
+  line-height: 80rpx;
+}
+
+
+/*.yunqian-input-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e5e5e5;
+  border-radius: 80rpx;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+}*/
+
+.yunqian-input-box input {
+  position: relative;
+  height: 80rpx;
+  flex: 1;
+  z-index: 9999;
+}
+
+.yunqian-input-box .unit {
+  width: 50rpx;
+}
+
+.illegal {
+  color: #fe5d5d;
+}
+
+
+/*添加按钮 已弃用*/
+
+.add-btn::after,
+.add-btn::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20%;
+  content: '';
+  width: 40%;
+  height: 2px;
+  background: #fff;
+}
+
+.add-btn::before {
+  transform: rotateZ(90deg);
+}
+
+.add-btn:active {
+  animation-name: btnRotate;
+  animation-duration: 0.05s;
+  animation-timing-function: ease-in-out;
+}
+
+.animate-slideFromBottom {
+  animation-timing-function: ease-in-out;
+  animation-name: slideFromBottom;
+  animation-duration: 0.5s;
+  /*animation-fill-mode: forwards;*/
+}
+
+.animate-slideBackToBottom {
+  animation-name: slideBackToBottom;
+  animation-duration: 0.5s;
+  /*animation-fill-mode: forwards;*/
+}
+
+@keyframes breath {
+  0% {
+    box-shadow: 0 0 2px rgba(145, 135, 253, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(145, 135, 253, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 2px rgba(145, 135, 253, 0.2);
+  }
+}
+
+@keyframes btnRotate {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(45deg);
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideBackToBottom {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

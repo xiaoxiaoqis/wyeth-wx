@@ -1,0 +1,19 @@
+ <view class="page">
+    <view wx:if="{{res.title}}" class="wrap-content">
+      <view class="article-hd" >
+        <view class="title">{{res.title}}</view>
+        <view class="article-info"><text wx:if="{{res.author}}">来源：{{res.author}}</text><text wx:if="{{res.pv}}">浏览：{{res.pv}}</text></view>
+      </view>
+      <view class="article">
+        <import src="../../components/wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+      </view>
+      <view class="article-ft section-gap">
+        <view wx:if="{{res.tags.length}}" class="article-tags">
+          <text wx:for="{{res.tags}}" class="tag tag-grey-fill" wx:key="item">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <import src="../../components/likeAndShare/index.wxml"/>
+    <template wx:if="{{article}}" is="likeAndShare" data="{{...likeShare}}"/>
+</view>

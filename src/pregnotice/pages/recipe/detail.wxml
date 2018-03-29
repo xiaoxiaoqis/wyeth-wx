@@ -1,0 +1,56 @@
+<!--pages/recipe/detail.wxml-->
+<view class="section section-gap">
+  <view class="hd-cover" style="background-image:url({{res.img}})"></view>
+  <view class="section-bd">
+    <view class="recipe-name">{{res.name}}</view>
+    <view class="tags">
+      <view class="btn-outline" wx:for="{{res.tag}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="info" wx:if="{{res.time}}">
+      <view class="time">时间：{{res.time}}</view>
+      <view class="level">难度：{{res.hard}}</view>
+    </view>
+    <view class="nutrition" wx:if="res.nutrition">
+      <view class="nutrition-hd">营养元素/100g</view>
+      <view class="nutrition-bd">
+        <view class="element-list" style="width:{{res.nutrition.length * 75}}px">
+          <view class="element-box" wx:for="{{res.nutrition}}" wx:key="desc">
+            <view class="element-quantity">
+              <view>{{item.value100}}</view>
+              <view class="unit">{{item.unit}}</view>
+            </view>
+            <view class="element-name">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="section section-gap">
+  <view class="section-hd">用料</view>
+  <view class="section-bd">
+    <view class="materail-viewst">
+      <view wx:for="{{res.material}}" wx:key="name" class="materail-list-item">
+        <view class="materail-name">{{item.name}}</view>
+        <view class="materail-quantity">{{item.amount}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="section">
+  <view class="section-hd">做法</view>
+  <view class="section-bd">
+    <view class="recipe-steps">
+      <view wx:for="{{res.step}}" wx:key="description" class="recipe-step">
+        <view class="step-index">{{index+1}}</view>
+        <view class="step-content">
+          <view class="step-img" wx:if="{{item.img}}" style="background-image:url({{item.img}})">
+          </view>
+          <view class="step-text" v-if="{{item.description}}">{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="../../components/likeAndShare/index.wxml"/>
+<template is="likeAndShare" data="{{...likeShare}}"/>

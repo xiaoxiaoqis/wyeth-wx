@@ -1,0 +1,7 @@
+<template name="rater">
+  <block wx:for="{{stars}}" wx:key="{{index}}">
+    <image class="star-image" style="left: {{item*40}}rpx" src="{{key > item ?'http://www.ladybirdedu.com/pregnotice/images/wx-static/star.png' : 'http://www.ladybirdedu.com/pregnotice/images/wx-static/star-empty.png'}}"
+      data-key="{{item+1}}" data-index="{{idx}}" data-gender="{{gender}}" bindtap="select">
+    </image>
+  </block>
+</template>

@@ -1,0 +1,38 @@
+<view class="weui-panel">
+  <view class="weui-panel__hd">
+    <image class="weui-panel__hd__icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/mom-change.png"></image>妈妈变化</view>
+  <view class="weui-panel__bd">
+    <view class="mom-changes">
+      <view wx:for="{{res.changes}}" wx:key="content">
+        <view class="desc">{{item.content}}</view>
+        <view class="rcmd" wx:if="{{item.tool.length>0}}">工具：<a>{{item.tool}}</a></view>
+
+        <view class="rcmd" hidden="{{item.articles.length>0}}" wx:for="{{item.articles}}" wx:key="title">推荐阅读：<a>{{item.title}}</a></view>
+        <view class="rcmd tags" wx:if="{{item.tags.length>0}}">
+          <navigator wx:for="{{item.tags}}" wx:key="name" class="btn-outline-pink">{{item.name}}</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-panel">
+  <view class="weui-panel__hd">
+    <image class="weui-panel__hd__icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/yingyang.png"></image>营养要点</view>
+  <view class="weui-panel__bd">
+    <view class="diet-tips">
+      <view wx:for="{{res.dieTips}}" wx:key="name">
+        <view class="title">{{item.name}}</view>
+        <view class="content">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-panel">
+  <view class="weui-panel__hd">推荐食谱</view>
+    <view class="weui-panel__bd">
+      <import src="../../components/recipeItem/cell.wxml" />
+      <block wx:for="{{res.recipes}}" wx:key="id">
+        <template is="recipeItemCell" data="{{recipe:item}}"></template>
+      </block>
+    </view>
+</view>

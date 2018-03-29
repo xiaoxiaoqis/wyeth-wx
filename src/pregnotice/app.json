@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/check-up/list",
+    "pages/check-up/detail",
+    "pages/weight/list",
+    "pages/symptom/index",
+    "pages/symptom/detail",
+    "pages/music/list",
+    "pages/check-up-report/list",
+    "pages/mom-weekly/index",
+    "pages/can-i-eat/list",
+    "pages/can-i-eat/food",
+    "pages/can-i-eat/search",
+    "pages/recipe/home",
+    "pages/recipe/categroy",
+    "pages/recipe/list",
+    "pages/recipe/detail",
+    "pages/can-i-eat/index",
+    "pages/my/my",
+    "pages/my/feedback",
+    "pages/set-pregdate/index",
+    "pages/pintuan/detail",
+    "pages/discovery/main",
+    "pages/hospital/list",
+    "pages/hospital/detail",
+    "pages/sale/list",
+    "pages/sale/item",
+    "pages/sale/confirm",
+    "pages/sale/result",
+    "pages/sale/appointment",
+    "pages/sale/orderList",
+    "pages/sale/orderDetail",
+    "pages/filing/guide",
+    "pages/article/article",
+    "pages/name/index",
+    "pages/name/detail",
+    "pages/name/alternative",
+    "pages/name/rater",
+    "pages/name/single-rate"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "孕期提醒",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f3f3f3",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#CD9E29",
+    "borderStyle": "white",
+    "backgroundColor": "#fbf9fe",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home_fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/discovery/main",
+        "iconPath": "image/discover.png",
+        "selectedIconPath": "image/discover_fill.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my_fill.png",
+        "text": "我"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 6000,
+    "connectSocket": 9000,
+    "uploadFile": 9000,
+    "downloadFile": 9000
+  },
+  "debug": true
+}

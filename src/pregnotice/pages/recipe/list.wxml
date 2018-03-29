@@ -1,0 +1,5 @@
+<!--pages/recipe/list.wxml-->
+<import src="../../components/recipeItem/card.wxml" />
+<block wx:for="{{res}}" wx:key="id">
+  <template is="recipeItemCard" data="{{recipe:item}}" />
+</block>

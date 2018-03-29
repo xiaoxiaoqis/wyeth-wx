@@ -1,0 +1,19 @@
+<view class="page">  
+  <view class="title">备选了一些名字，你觉得哪个好听呢？</view>
+  <import src="../../components/nameRater/index.wxml" />
+  <view class="boy-list list" wx:if="{{man.length}}">
+    <view class="boy-title">男宝宝名儿<image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/boy.png" /></view>
+    <block wx:for="{{man}}" wx:key="index">
+      <template is="nameRater" data="{{info: item,idx: index,...star,key:item.key,gender:1}}"/>
+    </block>
+  </view>
+  <view class="girl-list list" wx:if="{{woman.length}}">
+    <view class="girl-title">女宝宝名儿<image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/girl.png" /> </view>
+    <block wx:for="{{woman}}" wx:key="index">
+      <template is="nameRater" data="{{info: item,idx: index,...star,key:item.key,gender:2}}"/>
+    </block>
+  </view>
+  <view class="empty-tip" wx:if="{{man.length<1&&woman.length<1}}">还没有备选名字哦~</view>
+  <import src="../../components/nameBottom/index.wxml" />
+  <template is="nameBottom"/>
+</view>

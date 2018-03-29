@@ -1,0 +1,60 @@
+<view class="page">
+  <view wx:if="{{!outdated}}">
+    <view class="order-info">
+      <view class="product">
+        <view class="goods-img" style="background-image:url({{orderInfo.image}})"></view>
+        <view class="sale-info">
+          <view class="title">{{orderInfo.title}}</view>
+          <view class="extra">
+            <view class="price">￥{{orderInfo.price}}</view>
+            <view class="num">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="gift">
+        <view class="gift-item" wx:for="{{orderInfo.promGift}}" wx:key="item.title">
+          <view class="title">[赠] 价值{{item.price}}元，{{item.title}}</view>
+          <view class="extra">x1</view>
+        </view>
+      </view>
+    </view>
+    <view class="pay-method">
+      <view class="method-name">
+        <image class="icon" src="{{baseUrl}}wepay.png" style="margin-right:10rpx"></image>      
+        微信支付
+      </view>
+      <view class="checker">
+        <image class="icon" src="{{baseUrl}}correct.png"></image>
+      </view>
+    </view>
+    <view class="client-info">
+      <view class="input-hd border-1px-b">
+        <text style="font-size:14px">孕妈信息</text>
+        <text>请务必保证信息真实有效</text>
+      </view>
+      <view class="input-hd border-1px-b">
+        <text>姓名</text><input value="{{name}}" bindinput="bindName" placeholder="真实姓名"></input>
+      </view>
+      <view class="input-hd border-1px-b">
+        <text>手机</text><input value="{{phone}}" bindinput="bindPhone" type="number" placeholder="手机号码"></input>
+      </view>
+      <view class="input-hd border-1px-b">
+        <text>地址</text><input value="{{address}}" bindinput="bindAddress" placeholder="您的地址"></input>
+      </view>
+    </view>
+    <view class="order-tip">
+      本商品由<image class="icon" src="{{baseUrl}}chinaLife.png"></image>中国人寿承保
+      <view wx:if="{{orderInfo.type==2}}">支付完成后，可随时预约采血。</view>
+    </view>
+  </view>
+  <block wx:else>
+    <import src="../../components/noData/index.wxml" />
+    <template is="noData" data="{{...noData}}"/>
+  </block>
+  <view slot="tabbar" class="action-bar" wx:if="{{!outdated}}">
+    <view class="total-price">总计：
+      <text>￥{{orderInfo.price}}</text>
+    </view>
+    <view class="sub-btn" bindtap="payNow">立即支付</view>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+<view class="page {{fixed}}">
+  <swiper indicator-dots="true" indicator-active-color="rgba(4,190,2,0.6)" indicator-color="rgba(255,255,255,0.6)" style="height:700rpx" >
+    <block wx:for="{{product.banner}}" wx:key="{{item}}">
+      <swiper-item>
+        <image mode='aspectFit' wx:if="{{product.loaded}}" src="{{item}}" style="width:100%;height:100%;"/>
+        <image class="loading" wx:if="{{!product.loaded}}"  src="http://www.ladybirdedu.com//pregnotice/images/wx-static/load.gif"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <import src="../../components/img-loader/img-loader.wxml"/>
+  <template is="img-loader" data="{{ imgLoadList }}"></template>
+  <view class="sales-info section">
+    <view class="info-title">{{product.title}}</view>
+    <view class="price-bar">
+      <view class="price">￥{{product.price}}</view>
+      <view class="origin-price">￥{{product.originalPrice}}</view>
+      <view class="sold-num">{{product.num}}人已购买</view>
+    </view>
+    <view class="on-sale" wx:if="{{product.promGift&&product.promGift.length>0}}" bindtap="gotoCa">
+      <view class="sale-title">促销</view>
+      <view class="items">
+        <view class="item" wx:for="{{product.promGift}}" wx:key="{{item.id}}">
+          <text class="sale-tag">{{item.tag}}</text><text class="desc">{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section sales-intro" wx:if="{{product.intro}}">
+    <view class="section-name">服务流程</view>
+    <view class="service-setps">
+      <import src="../../components/wxParse/wxParse.wxml"/>
+      <scroll-view class="scroll-view_H" scroll-x style="width: 100%;height:96rpx;">
+        <view class="scroll-view-item_H" wx:for="{{stepArray}}" wx:key="{{index}}">
+          <text class="step-order">{{index + 1}}</text>
+          <view class="step-intro">
+            <template is="wxParse" data="{{wxParseData:item}}"/>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="section-name">服务优势</view>
+    <view class="advantages">
+      <view class="notice" wx:for="{{product.intro.advantages}}" wx:key="item">
+        <image src="{{baseUrl}}safety.png"></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class="section-name">服务说明</view>
+    <view class="advantages">
+      <view class="notice" wx:for="{{product.intro.notice}}" wx:key="item">
+        <image src="{{baseUrl}}prePregnant.png"></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <import src="../../components/saleRecommend/index.wxml" />
+  <template wx:if="{{recommend&&recommend.length>1}}" is="saleRecommend" data="{{recommend}}"/>
+  <view class="section">
+    <view class="section-hd">商品详情</view>
+    <view class="service-detail">
+      <import src="../../components/wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+  </view>
+  <view class="action-bar">
+    <button open-type="contact" session-from="weapp" class="contact-us-btn" >
+      <image src="{{baseUrl}}contact.png"></image>
+      <view class="desc-text">客服</view>
+    </button>
+    <view class="order-btn" bindtap="toPay">
+      <view class="main-text">立即购买</view>
+    </view>
+  </view>
+<!--  <view wx:if="{{showContact}}" bindtap="handelMask" class="mask">
+    <view class="contact-us {{animation}}">
+      <view >添加微信客服：<text style="color:#FF0036;">yunqitixing1</text></view>
+      <image mode='aspectFit' src="https://static.ladybirdedu.com/upload_new/images/common/20170627/1j4Q7SmGJDfsuL0ono35honPYSWok2bDubqlWmHo.jpeg"></image>
+      <view style="font-size:12px;color:#999;">↑截屏保存二维码图片微信扫一扫添加客服↑</view>      
+    </view>
+  </view>-->
+</view>

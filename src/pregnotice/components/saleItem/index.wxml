@@ -1,0 +1,17 @@
+<template name="saleItem">
+<navigator class="sale-item" url="/pregnotice/pages/sale/item?id={{item.id}}">
+  <view class="cover">
+    <image hidden="{{!item.loaded}}" src="{{item.image}}"/>
+  </view>
+  <view class="price-tag">￥{{item.price}}</view>
+  <view class="info">
+    <view class="title">{{item.title}}</view>
+    <view class="promotion" wx:if="item.promGift&&item.promGift.length>0">
+      <view class="promotion-items" wx:for="{{item.promGift}}" wx:for-item="promt" wx:key="promt.title">
+        <view class="sale-tag">{{promt.tag}}</view>
+        <view class="desc">{{promt.title}}</view>
+      </view>
+    </view>
+  </view>
+  </navigator>
+</template>

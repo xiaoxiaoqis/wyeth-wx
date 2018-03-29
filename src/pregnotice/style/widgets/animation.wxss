@@ -1,0 +1,118 @@
+.music-waves,.loading-waves{
+  height: 40rpx;
+  display: flex;
+  align-items: flex-end;
+}
+.loading-waves{
+  align-items: center;
+}
+.wave-bar{
+  flex: 1;
+  width: 8rpx;
+  margin-right: 4rpx;
+  background: #CD9E29;
+  animation-duration:1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0;
+}
+.music-waves .wave-bar{
+  height: 100%;
+  animation-name: music-waves;
+}
+.loading-waves .wave-bar{
+  background: #eee;
+  animation-name: loading-waves;
+}
+.loading-waves .wave-bar:first-child{
+  height: 50%;
+  animation-delay: 0.5s;
+}
+.loading-waves .wave-bar:last-child{
+  height: 50%;
+  animation-delay: 1s;
+}
+.music-waves .wave-bar:first-child{
+  height: 80%;
+  animation-delay: 0.5s;
+}
+.music-waves .wave-bar:last-child{
+  height: 40%;
+  animation-delay: 1s;
+}
+.animation-rolling {
+  animation-name: rolling;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+.animated {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+@keyframes rolling {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes music-waves {
+  10% {
+    height: 20%;
+  }
+  20% {
+    height: 60%;
+  }
+  40% {
+    height: 40%;
+  }
+  60% {
+    height: 100%;
+  }
+  100% {
+    height: 50%;
+  }
+}
+
+@keyframes loading-waves {
+  0%{
+    height: 0;
+    opacity: 0;
+  }
+  50%{
+    height: 100%;
+    opacity: 1;
+  }
+  100%{
+    height: 0;
+    opacity: 0;
+  }
+}

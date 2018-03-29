@@ -1,0 +1,157 @@
+/* pages/recipe/home.wxss */
+scroll-view{
+  height: calc(100vh - 112rpx);
+}
+.recipe-entries{
+  display: flex;
+  height: 72rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.recipe-entries navigator{
+  flex: 1;
+  line-height: 72rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.recipe-entries image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.diet-tip-box {
+  display: flex;
+  color: #666;
+  background: #e2edfc;
+  padding: 24rpx;
+  line-height: 1.6;
+}
+
+.diet-tip-box-hd {
+  padding: 20rpx 24rpx 0 0;
+}
+
+.diet-tip-box-ft {
+  padding: 20rpx 0 0 24rpx;
+}
+
+.diet-tip-box-bd {
+  flex: 1;
+  transition: all ease 0.5s;
+}
+
+
+.tip-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.timeline-box {
+  position: relative;
+  padding: 0 24rpx 0 70rpx;
+  background: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.timeline-box::after {
+  content: '';
+  position: absolute;
+  left: 40rpx;
+  top: 0;
+  bottom: 0;
+  width: 2rpx;
+  background: #f3f3f3;
+  z-index: 1;
+}
+
+.timeline-box-bd {
+  position: relative;
+  z-index: 9;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24rpx;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -40rpx;
+  top: 8rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  border: 1px solid #888;
+  background: #fff;
+  z-index: 4;
+}
+
+.timeline-item.purple::after {
+  border-color: #CD9E29;
+}
+
+.timeline-item-hd {
+  font-size: 15px;
+  margin-bottom: 10rpx;
+}
+
+.timeline-item-hd image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+
+.timeline-item-bd {
+  color: #666;
+}
+
+.time-label,
+.time-label-purple,
+.time-label-pink,
+.time-label-blue {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #f3f3f3;
+  border-radius: 40rpx;
+  font-size: 12px;
+  color: #666;
+  padding: 0 20rpx;
+  margin: 24rpx 0 28rpx -62rpx;
+}
+
+.time-label-purple {
+  color: #fff;
+  background: #CD9E29;
+}
+
+.time-label-pink {
+  color: #fff;
+  background: #FB7289;
+}
+
+.time-label-blue {
+  color: #fff;
+  background: #39A1FF;
+}
+
+.time-icon {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 4rpx;
+}
+
+.recipe-desc {
+  margin-bottom: 24rpx;
+  font-size: 12px;
+}
+
+.recipe-img {
+  width: 100%;
+}

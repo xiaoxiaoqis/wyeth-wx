@@ -1,0 +1,169 @@
+@import "../../components/nameItem/index.wxss";
+page{
+  background: #322f37;
+  color: #fff;
+  padding-bottom: 20px;
+}
+.page{
+  margin-bottom: 120rpx;
+}
+.list{
+  font-size: 16px;
+  padding: 20rpx 40rpx;
+}
+.boy-title{
+ color:  #7cc0e7;
+}
+.boy-title image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.girl-title{
+  color: #ff7071;
+}
+.girl-title image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 0;
+  vertical-align: middle;
+  margin-left: 6rpx; 
+}
+.title{
+ margin: 40rpx 4rpx 0;
+ font-size: 18px;
+}
+.empty-tip{
+  color: #e5e5e5;
+  font-size: 18px;
+  text-align: center;
+  padding: 50% 24rpx;
+}
+.fixed-bar{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 16px;
+  background: #7cc0e7;
+  opacity: 0.95;
+}
+.fixed-bar .add-icon{
+  display: inline-block;
+  text-align: center;  
+  line-height: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid rgba(255, 255, 255, .8);
+  border-radius: 40rpx;
+  margin-right: 4rpx;
+}
+.popup{
+  bottom: auto;
+}
+.add-name-editor{
+  top: 30%;
+  color: #fff;
+  background: #322f37;
+  padding-top: 30rpx;
+}
+.add-name-editor .tip{
+  line-height: 1.6;
+  padding: 0 24rpx;
+}
+.add-name-editor .add-input-box{
+  position: relative;
+  display: flex;
+  margin: 24rpx;
+  height: 80rpx;
+  border: 1px solid #e5e5e5;
+}
+.add-name-editor .label{
+  color: #e5e5e5;
+  font-size: 12px;
+  padding: 0 24rpx;
+  line-height: 80rpx;
+}
+.add-name-editor input{
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  flex: 1;
+  z-index: 10000;
+}
+.add-name-editor .action-bar{
+  height: 100rpx;
+  background: #7cc0e7;
+  color: #fff;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.add-name-editor .radio-group{
+  margin:30rpx 24rpx;
+}
+.add-name-editor .radio-group radio{
+  transform:scale(0.8);
+}
+.share-popup{
+  top:5%;
+  background: #322f37;
+  color:#fff;
+}
+.share-popup .popup-img{
+  color: #fff;
+  background: #322f37;
+}
+.share-popup .popup-img image{
+  width: 100%;
+}
+.share-popup .popup-name{
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 5%;
+}
+.share-popup .flex-box{
+  align-items: center;
+}
+.share-popup .popup-btn{
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  width: 30px;
+  height: 54px;
+  position: relative;
+  margin: 30rpx auto;
+  padding: 0;
+}
+.share-popup .popup-btn::before{
+  color: #fff;
+  width: 100%;
+  font-size: 15px;
+  position: absolute;
+  bottom: -20rpx;
+  z-index: 11111;
+  left: 0;
+}
+.share-popup
+button[plain] {
+  border: 0
+}
+.share-popup .share{
+  background-image: url('http://www.ladybirdedu.com/pregnotice/images/wx-static/round-share.png');
+  position: relative;
+}
+.share-popup .share::before{
+  content: '分享';
+}
+.share-popup .cancel{
+  height: 56px;
+  background-image: url('http://www.ladybirdedu.com/pregnotice/images/wx-static/cancel.png');
+}
+.share-popup .cancel::before{
+  content: '取消'
+}

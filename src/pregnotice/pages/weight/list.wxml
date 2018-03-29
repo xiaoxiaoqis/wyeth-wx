@@ -1,0 +1,99 @@
+<!--pages/weight/add.wxml-->
+<view class="page" wx:if="{{userInfo}}">
+  <view class="weight-review">
+    <view class="pregweek">当前 {{pregweekNow}}</view>
+    <button class="weight-viewbox" hover-class="weight-viewbox-hover" bindtap="toggleWeightRuler">
+      <view class="weight-num-tip"><text>{{res[0].date==today?'当前':'上次'}}体重</text></view>
+      <view class="weight-num-box">
+        <text class="weight-num">{{initWeightNum}}</text><text class="weight-unit">kg</text>
+      </view>
+      <view class="weight-num-btn" wx:if="{{res[0].date!==today}}">点击添加新记录</view>
+    </button>
+    <view class="weight-review-tip">
+      <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/idea.png"></image>每周固定一天，早晨起床后（空腹）立即称重，定时、定称、及时记录。</view>
+    </view>
+    <view class="weight-history weui-panel">
+      <view class="weui-panel__hd">
+        <view class="weui-panel__hd__hl">我的体重变化</view>
+        <view class="modify-yunqian" bindtap="toggleYunQianEditor" data-mode="modify">修改孕前身高体重</view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weight-list">
+          <view class="weight-list-item weight-list-head border-1px-b">
+            <view>记录日期</view>
+            <view>体重</view>
+            <!--<view>体重/BMI</view>-->
+            <view>体重变化</view>
+            <view class="action"></view>
+          </view>
+          <view class="weight-list-item border-1px-b" wx:for="{{res}}" wx:key="id">
+            <view>
+              <block wx:if="{{index!==res.length-1}}"><text>{{item.day_str}}\n</text><text class="tip">{{item.date==today?'今天':item.date}}</text></block>
+              <block wx:else><text>孕前\n</text><text class="tip">{{item.date==today?'今天':item.date}}</text></block>
+            </view>
+            <view>
+              <block wx:if="{{index!==res.length-1}}"><text>{{item.weight}}kg\n</text></block>
+              <!--<block wx:if="{{index!==res.length-1}}"><text>{{item.weight}}kg\n</text><text class="tip">{{item.bmi}}</text></block>-->
+              <block wx:else><text>{{item.weight}}kg\n</text><text class="tip">体重</text></block>
+            </view>
+            <view>
+              <block wx:if="{{index!==res.length-1}}"><text>{{item.reduce}}kg\n</text><text class="tip">{{item.state_str}}</text></block>
+              <block wx:else><text>{{item.height}}cm\n</text><text class="tip">身高</text></block>
+            </view>
+            <view class="action" data-id="{{item.id}}" data-day="{{item.day}}" data-is-yunqian="{{index==res.length-1}}" bindtap="handleWeightHistoryItem"><text>...</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="add-btn" bindtap="toggleWeightRuler"></view> -->
+    <!-- 体重记录滑尺弹窗 -->
+    <view class="weight-action-box" wx:if="{{showWeightRuler&&!showYunQianEditor}}">
+      <picker mode="date" start="{{pregdateRangeStart}}" end="{{today}}" value="{{recordDate}}" bindchange="changeDate">
+        <view class="date-box">
+          <view class="nature-date border-1px-t border-1px-b"><text class="today" hidden="{{recordDate !== today}}">今天</text>{{recordDate}}</view>
+          <view class="pregweek">{{pregweek}}</view>
+        </view>
+      </picker>
+      <view class="weight-viewbox">
+        <view class="weight-num-box">
+          <text class="weight-num">{{weightNum||initWeightNum}}</text><text class="weight-unit">kg</text>
+        </view>
+      </view>
+      <view class="weight-recorder ">
+        <scroll-view class="weight-ruler-box" scroll-x="true" bindscroll="setWeight" bindtouchend="adjustRuler" scroll-left="{{rulerScrollLeft == 0 ? (initWeightNum-30)*150 : (rulerScrollLeft-30)*150}}">
+          <view class="weight-ruler">
+            <block wx:for="{{weightRange}}" wx:key="*this">
+              <view class="{{index%5 ? 'weight-ruler-step' : 'weight-ruler-step big'}}">
+                <view wx:if="{{index%5 == 0}}" class="weight-ruler-step-label">{{item}}</view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+        <view class="weight-ruler-indicator"></view>
+      </view>
+      <view class="action-bar">
+        <view class="btn" bindtap="toggleWeightRuler">取消</view>
+        <view class="spilt border-1px-r"></view>
+        <button class="btn" bindtap="saveWeight" data-type="yunqi" disabled="{{btnConfirmStatus>0&&btnConfirmStatus<3}}"><icon size="16" type="{{btnConfirmIcon[btnConfirmStatus]}}" wx:if="{{btnConfirmIcon[btnConfirmStatus]}}" color="#fff"></icon>{{btnConfirmText[btnConfirmStatus]}}</button>
+      </view>
+    </view>
+    <!-- 添加或修改孕前身高体重弹窗 -->
+    <view class="weight-action-box yunqian-editor" wx:if="{{showYunQianEditor}}">
+      <view class="yunqian-tip">设置您的孕前体重和身高，方面计算您整个孕期体重增长标准：</view>
+      <view class="yunqian-input-box">
+        <view class="label">您的身高</view><input class="{{yunqianHeightLegal?'':'illegal'}}" type="digit" bindinput="yunqianHValidation" value="{{yunqianHeight}}" auto-focus />
+        <view class="unit border-1px-l">cm</view>
+      </view>
+      <view class="yunqian-input-box">
+        <view class="label">孕前体重</view><input class="{{yunqianWeightLegal?'':'illegal'}}" type="digit" bindinput="yunqianWValidation" value="{{yunqianWeight}}" />
+        <view class="unit border-1px-l">kg</view>
+      </view>
+      <view class="action-bar">
+        <button class="btn" data-type="yunqian" bindtap="saveWeight" disabled="{{(btnConfirmStatus>0&&btnConfirmStatus<3)||!yunqianWeightLegal||!yunqianHeightLegal}}">
+          <icon size="16" type="{{btnConfirmIcon[btnConfirmStatus]}}" wx:if="{{btnConfirmIcon[btnConfirmStatus]}}" color="#fff"></icon>{{btnConfirmText[btnConfirmStatus]}}</button>
+        </view>
+      </view>
+      <view class="mask" wx:if="{{showYunQianEditor||showWeightRuler}}" disabled></view>
+      <!-- <mask hidden="{{!showYunQianEditor}}"></mask> -->
+      <!-- <mask hidden="{{!showWeightRuler}}"></mask> -->
+</view>

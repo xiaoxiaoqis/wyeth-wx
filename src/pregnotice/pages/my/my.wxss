@@ -1,0 +1,60 @@
+.my-hd{
+  position: relative;
+  width: 100%;
+  margin-bottom: 24rpx;
+}
+.my-hd-bg{
+  filter: blur(25px);
+  width: 100%;
+  height: 300rpx;
+}
+.my-hd-bg image{
+  width: 100%;
+}
+.my-hd-bd{
+  position: relative;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  background: #fff;
+  padding: 84rpx 0 24rpx;
+}
+.my-hd-bd .avatar,.my-hd-bd .login-button{
+  position: absolute;
+  left: 50%;
+  top: -80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: -80rpx;
+  border-radius: 50%;
+  border:2px solid #fff;
+}
+.my-hd-bd .login-button{
+  display: inline-block;
+  line-height: 160rpx;
+  text-align: center;
+  background: #CD9E29;
+  box-shadow: 0 0 3px #CD9E29;
+  color: #fff;
+}
+.my-hd-bd .nickname{
+  margin: 30rpx 0 10rpx;
+}
+.my-hd-bd .info{
+  margin-top: 20rpx;
+  color: #666;
+  font-size: 12px;
+  line-height:1.4;
+}
+.panel-bd{
+  position: relative;
+}
+.contact-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 100rpx;
+  overflow: hidden;
+}

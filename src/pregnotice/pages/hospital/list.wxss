@@ -1,0 +1,8 @@
+@import "../../components/addressSearchBar/index.wxss";
+@import "../../components/hospitalItem/list.wxss";
+.scroll-box{
+    background: #fff;
+    position: absolute;
+    top: 118rpx;
+    bottom: 0;
+}

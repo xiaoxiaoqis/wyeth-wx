@@ -1,0 +1,10 @@
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <navigator url="../can-i-eat/search" class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">输入食物名，搜索能不能吃</view>
+      </navigator>
+    </view>
+  </view>
+</view>

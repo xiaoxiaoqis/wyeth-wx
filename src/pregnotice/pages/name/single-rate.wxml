@@ -1,0 +1,18 @@
+<view class="page"> 
+  <import src="../../components/nameRater/index.wxml" />
+  <view class="title">亲，你觉得这个名字怎么样，打个分呗~</view>
+  <view class="content">
+    <view class="intro">
+      <template is="nameRater" data="{{info: detail,key:detail.key,...star}}"/>
+      <view class="info">
+        <view class="detail-info">{{intro}}</view>
+        <text>{{constellation.content}}</text>
+      </view>
+    </view>
+    <view class="detail">
+      <image  src="{{constellation.image}}" />
+    </view>
+  </view>
+  <import mode="aspectFit" src="../../components/nameBottom/index.wxml" />
+  <template is="nameBottom"/>
+</view>

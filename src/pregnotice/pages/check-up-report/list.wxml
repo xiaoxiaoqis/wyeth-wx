@@ -1,0 +1,76 @@
+<picker range="{{pregweekRang}}" value="{{pregweekActive}}" bindchange="toggleReportByWeek">
+  <view class="pregweek">
+    <view class="pregweek-label">产检孕周</view>
+    <view class="pregweek-data with-arrow">孕{{pregweekRang[pregweekActive]}}周</view>
+  </view>
+</picker>
+
+<view class="report-data-box">
+  <view class="report-data-box-hd">常见B超指标正常参考范围</view>
+  <view class="report-data-box-bd">
+    <view class="report-data-list-item border-1px-t" wx:for="{{res.report}}" wx:key="id" bindtap="toggleReportDetail" data-name="report" data-index="{{index}}">
+      <view class="report-data-list-item-hd">{{item.name}}({{item.name_en}})</view>
+      <view class="report-data-list-item-bd with-arrow">{{item.range}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="report-data-box">
+  <view class="report-data-box-hd border-1px-b">更多B超指标解读</view>
+  <view class="report-data-box-bd">
+    <view class="report-data-tag-box">
+      <view class="report-data-tag" wx:for="{{res.more}}" wx:key="id" data-name="more" data-index="{{index}}" bindtap="toggleReportDetail">{{item.name}} <block wx:if="{{item.name_en}}">({{item.name_en}})</block></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!maskHidden}}" class="popup">
+  <view class="popup-bd">
+    <view class="report-detail-name border-1px-b">{{curReportDetail.name}} <block wx:if="{{curReportDetail.name_en}}">({{curReportDetail.name_en}})</block></view>
+    <scroll-view class="report-detail-box" scroll-y="true">
+      <view class="report-img" wx:if="{{curReportDetail.pic}}">
+        <image src="{{curReportDetail.pic}}" mode="aspectFit"></image>
+      </view>
+      <block wx:if="{{curReportDetail.id==202}}">
+        <swiper autoplay class="swiper-box">
+          <swiper-item wx:for="{{curReportDetail.data}}" wx:key="name">
+            <view class="swiper-item-img" style="background-image:url(http://www.ladybirdedu.com/pregnotice/images/preg_report/{{item.pic}})">
+              <view class="swiper-img-indicator">{{}}</view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="report-img" wx:if="{{curReportDetail.pic}}">
+
+          <image src="{{curReportDetail.pic}}" mode="aspectFit"></image>
+        </view>
+      </block>
+      <view class="report-tip" wx:if="{{curReportDetail.tips}}"><text>{{curReportDetail.name}} ({{curReportDetail.name_en}})：{{curReportDetail.tips}}</text></view>
+      <view class="report-content" wx:if="{{curReportDetail.data&&curReportDetail.data.val}}">
+        <view class="report-content-hd">孕{{pregweekRang[pregweekActive]}}周参考值
+          <block wx:if="{{curReportDetail.unit}}">({{curReportDetail.unit}})</block>
+        </view>
+        <view class="report-content-bd">
+          <view class="report-data-range-box">
+            <view class="report-data-range-item border-1px-r" wx:if="{{curReportDetail.data.cn}}" wx:for="{{curReportDetail.data.cn}}">
+              <view class="report-data-range-item-label border-1px-b">{{item}}</view>
+              <view class="report-data-range-item-num">{{curReportDetail.data.val[index]}}</view>
+            </view>
+          </view>
+          <view class="report-data-range-box colum">
+            <view class="report-data-range-item border-1px-b" wx:if="{{curReportDetail.data.note}}" wx:for="{{curReportDetail.data.note}}">
+              <view class="report-data-range-item-num">{{curReportDetail.data.val[index]}}</view>
+              <view class="report-data-range-item-label border-1px-l ">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="report-data-range-ft"></view>
+      </view>
+      <view class="report-content" wx:if="{{curReportDetail.content}}">
+        <view class="report-content-hd">教你解读</view>
+        <view class="report-content-bd"><text>{{curReportDetail.content}}</text></view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <icon bindtap="toggleReportDetail" data-template="mask" class="popup-cancel" type="cancel" size="36" color="white" />
+</view>
+<mask hidden="{{maskHidden}}" bindtap="toggleReportDetail" data-template="mask" style="background-color: rgba(0,0,0,0.6);" hover-style="none" />

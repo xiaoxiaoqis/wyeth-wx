@@ -1,0 +1,535 @@
+/*主题配置*/
+
+/*scroll-view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}*/
+.page{
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*.baby-info::before {
+  content: '';
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 0;
+  width: 260%;
+  bottom: 0;
+  left: -80%;
+  background: linear-gradient(to bottom, #CD9E29, #f99dbc);
+  z-index: 1;
+}*/
+
+.theme-purple .baby-info-foot {
+  background: transparent;
+}
+
+/*宝宝信息*/
+
+.baby-info {
+  padding: 30rpx 30rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+  /*background: linear-gradient(to bottom, #CD9E29, #f99dbc);
+  color: #fff;*/
+}
+.baby-info-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.baby-info .pregweek {
+  position: relative;
+  z-index: 10;
+  display: block;
+  font-size: 40rpx;
+  margin-bottom: 20rpx;
+}
+.baby-info .pregweek .countdown{
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #888;
+}
+.baby-info .bchao-img image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  margin-right: 30rpx;
+}
+.baby-size,.baby-fruit{
+  color: #888;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+.baby-size text{
+  margin-right: 20rpx;
+}
+.baby-fruit image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.bchao-tip {
+  position: relative;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-top: 20rpx;
+}
+.bchao-tip::after{
+  position: absolute;
+  top: -20rpx;
+  left: 90rpx;
+  content: '';
+  border: transparent solid 10rpx;
+  border-bottom-color: #666;
+}
+.weekly-tips{
+  width:100%;
+  display: flex;
+  margin:30rpx 0;
+}
+.weekly-tips .mom-weekly,.weekly-tips .threed-baby{
+  flex:1;
+  text-align: center;
+}
+.weekly-tips image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.weekly-tips .mom-weekly image{
+  width: 28rpx;
+  height: 28rpx;
+  /*margin-left: 40rpx;*/
+}
+.toolbox .new-icon{
+  position: absolute;
+  right: 10rpx;
+  top: -30rpx;
+  font-size: 8px;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 10rpx;
+  padding:4rpx 10rpx;
+}
+.mom-focus {
+  height: 89rpx;
+  line-height: 89rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+}
+
+.mom-focus navigator {
+  flex-grow: 1;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.mom-focus .spilt {
+  width: 1px;
+  height: 63rpx;
+}
+
+
+/*下次产检*/
+
+.check-up-bd {
+  position: relative;
+}
+
+.check-up-info {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 24rpx 0 74rpx;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 24rpx;
+}
+
+.check-up-bd .btn-outline {
+  position: absolute;
+  width: 200rpx;
+  padding: 12rpx 0;
+  bottom: 24rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  text-align: center;
+}
+
+.check-up-date {
+  flex: 1;
+}
+
+.check-up-done {
+  border: 1px solid #CD9E29;
+  height: 36rpx;
+  line-height: 36rpx;
+  padding: 0 18rpx;
+  font-size: 12px;
+  border-radius: 36rpx;
+}
+
+.check-up-point {
+  color: #CD9E29;
+  font-size: 20px;
+  margin: 16rpx 0;
+}
+
+
+/*每日知识*/
+
+.daily-knowledge swiper {
+  height: 380rpx;
+}
+
+.daily-knowledge .slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.article-list {
+  margin-top: 10rpx;
+}
+
+.article-item {
+  display: flex;
+}
+
+.article-item {
+  padding: 20rpx 24rpx;
+}
+
+.article-item .article-content {
+  display: flex;
+  font-size: 34rpx;
+  padding-right: 20rpx;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.article-item .article-info {
+  font-size: 24rpx;
+  color: #999;
+  height: 26rpx;
+  vertical-align: bottom;
+}
+
+.article-item .article-title {
+  flex-grow: 1;
+}
+
+.article-item .article-img,
+.article-list .article-img image {
+  display: block;
+  width: 180rpx;
+  height: 130rpx;
+}
+
+.article-more {
+  text-align: center;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.article-more .badge {
+  position: relative;
+  top: -20rpx;
+  right: 2rpx;
+}
+
+
+/*胎宝宝档案*/
+
+.popup image {
+  width: 100%;
+}
+
+.popup-babysize {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1px solid #ededed;
+}
+
+.popup-babysize .num {
+  font-size: 36rpx;
+  margin: 0 0 6rpx;
+}
+
+.popup-babysize .desc {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.popup-babysize view {
+  flex: 1;
+}
+
+.popup-babysize-tip {
+  line-height: 1.6;
+}
+.popup-sizetext{
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 30rpx;
+  line-height: 1;
+}
+.popup-sizetext .num{
+  font-size: 24px;
+  margin-right: 20rpx;
+}
+.popup-sizetext .desc{
+  font-size: 12px;
+  color: #888;
+}
+.popup-3dvideo {
+  width: 100%;
+  height: 100%;
+}
+.drink-tips image{
+  height: 300rpx!important;
+  margin-bottom: 30rpx;
+}
+.drink-tips .title{
+  text-align: center;
+  font-size: 16px;
+  padding: 0 0 30rpx;
+}
+.drink-tips .popup-babysize{
+  text-align: center;
+}
+.drink-tips .content{
+  line-height: 1.6;
+  padding: 0 24rpx;
+  margin-bottom: 30rpx;
+}
+
+
+
+
+.picker {
+  border: 1px solid #ededed;
+  background: #f3f3f3;
+  text-align: center;
+  padding: 24rpx 0;
+  margin-top: 10rpx;
+}
+
+.picker-value {
+  color: #CD9E29;
+  font-size: 24px;
+}
+
+.picker-tip {
+  font-size: 10px;
+  margin-top: 12rpx;
+  color: #888;
+}
+
+
+/*健康助手*/
+
+.health-box {
+  display: flex;
+  padding: 40rpx 0;
+}
+
+.health-item {
+  width: 33.33333%;
+  flex: 1;
+  text-align: center;
+}
+
+.health-item-pink .health-item-data {
+  color: #FB7289;
+}
+
+.health-item-purple .health-item-data {
+  color: #CD9E29;
+}
+
+.health-item-yellow .health-item-data {
+  color: #FFB800;
+}
+
+.health-item-blue .health-item-data {
+  color: #39A1FF;
+}
+
+.health-item-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.health-item-content {
+  margin: 50rpx 0;
+}
+
+.health-item-data {
+  font-size: 24px;
+}
+
+.health-item-unit {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.health-item-desc {
+  height: 70rpx;
+  padding: 0 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.health-item-btn {
+  width: 180rpx;
+  margin: 0 auto;
+}
+
+.focus-tags {
+  padding: 0 24rpx;
+  overflow: hidden;
+}
+
+.focus-tags-hd {
+  color: #888;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+  margin: 30rpx 0;
+}
+
+.focus-tags-hd .title {
+  flex: 1;
+}
+
+.focus-tags-bd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.focus-tags-bd .btn-outline {
+  width: 180rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+
+/*today-tips 今日小提醒*/
+
+.tip-indicat.or {
+  font-size: 12px;
+  color: #888;
+}
+.tip-box{
+  padding: 24rpx 0;
+}
+.tip-item {
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.tip-title {
+  font-size: 17px;
+  line-height: 70rpx;
+}
+
+.tip-content {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.tip-changer{
+  display: flex;
+  flex:1;
+  justify-content: flex-end;
+  align-items: center;
+}
+.tip-change-next,.tip-change-prev{
+  padding: 0 30rpx;
+}
+
+/*daily-diet 营养配餐*/
+.diet-point{
+  height: 40rpx;
+}
+.diet-list-box{
+  height: 240rpx;
+  overflow: hidden;
+}
+/*.diet-list{
+  width: 400%;
+  display: flex;
+  padding: 24rpx;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}*/
+.diet-item-box{
+  position: relative;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.diet-item-box:last-child{
+  margin-right: 0;
+}
+.diet-item-box-bd{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+}
+.diet-item-info{
+  flex: 4;
+  text-align: center;
+}
+.diet-time{
+  font-size: 12px;
+}
+.diet-time-name{
+  padding-bottom: 24rpx;
+}
+.diet-recipes{
+  flex: 6;
+  text-align: center;
+  line-height: 1.8
+}
+.diet-cur text{
+  margin-left: 16rpx;
+}
+.diet-cur text.active{
+  color: #CD9E29;
+}
+.indicators{
+  display: flex;
+  padding: 20rpx 0;
+  justify-content: center;
+  align-items: center;
+}
+.indicators .indicator{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: 10rpx;
+}
+.indicators .indicator.active{
+  background: #CD9E29;
+}

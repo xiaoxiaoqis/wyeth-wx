@@ -1,0 +1,12 @@
+<template name="recipeItemCard">
+  <navigator class="recipe-item-card" url="../recipe/detail?id={{recipe.id}}">
+    <view class="recipe-cover" style="background-image:url({{recipe.img}})"></view>
+    <view class="recipe-content">
+      <view class="recipe-name">{{recipe.name}}</view>
+      <view class="recipe-info">
+        <view class="recipe-info-l">{{recipe.tagStr}}</view>
+        <view class="recipe-info-r"><image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/zan-grey.png"></image>{{recipe.loves}}</view>
+      </view>
+    </view>
+  </navigator>
+</template>

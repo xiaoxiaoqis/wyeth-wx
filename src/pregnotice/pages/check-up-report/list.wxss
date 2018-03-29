@@ -1,0 +1,161 @@
+/* pages/check-up-review/list.wxss */
+
+.pregweek {
+  display: flex;
+  padding: 30rpx 24rpx;
+  background: #fff;
+}
+
+.pregweek-data {
+  flex: 1;
+  text-align: right;
+}
+
+.report-data-box {
+  background: #fff;
+  margin-top: 24rpx;
+  font-size: 16px;
+}
+
+.report-data-box-hd {
+  text-align: center;
+  font-size: 15px;
+  padding: 24rpx 0;
+}
+
+.report-data-list-item {
+  display: flex;
+  padding: 30rpx 24rpx;
+}
+
+.report-data-list-item-bd {
+  flex: 1;
+  text-align: right;
+}
+
+.report-data-tag-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 24rpx;
+  font-size: 13px;
+}
+
+.report-data-tag {
+  position: relative;
+  width: 48%;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  margin-bottom: 24rpx;
+}
+
+.report-data-tag::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 72rpx;
+}
+
+.report-detail-name {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+scroll-view.report-detail-box {
+  top: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.report-img image {
+  width: 100%;
+  height: 300rpx;
+}
+.swiper-box{
+  margin-bottom: 30rpx;
+}
+.swiper-item-img{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-item-img::after {
+  content: '';
+  display: inline-block;
+  padding-top: 46.875%;
+}
+
+.report-tip {
+  border-left: 10rpx solid #999;
+  padding: 24rpx;
+  background: #f3f3f3;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.report-content {
+  margin: 30rpx 0;
+}
+
+.report-content-hd {
+  text-align: center;
+  padding: 24rpx 0;
+}
+
+.report-detail-box text {
+  line-height: 1.8;
+}
+
+.report-data-range-box {
+  display: flex;
+  position: relative;
+}
+
+.report-data-range-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e5e5e5;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+}
+
+.report-data-range-item {
+  flex: 1;
+  text-align: center;
+}
+
+.report-data-range-item-label,
+.report-data-range-item-num {
+  padding: 24rpx;
+}
+
+.report-data-range-box.colum {
+  flex-direction: column;
+}
+
+.report-data-range-box.colum .report-data-range-item {
+  display: flex;
+}
+
+.report-data-range-box.colum .report-data-range-item-label {
+  flex: 8;
+}
+
+.report-data-range-box.colum .report-data-range-item-num {
+  flex: 2;
+}

@@ -1,0 +1,22 @@
+@import "../rater/rater.wxss";
+.list-item{
+  justify-content: space-around;
+  align-items: center;
+  margin: 20rpx auto;
+}
+.list-item .num{
+  font-size: 22px;
+  font-weight: 500;
+}
+.list-item .name{
+  flex: 1;
+  font-size: 22px;
+}
+.list-item .middle{
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40rpx 20rpx;
+  margin: 0 20rpx;
+}

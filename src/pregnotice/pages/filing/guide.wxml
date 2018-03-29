@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="banner" style="background-image:url({{baseUrl}}{{item.banner}})">
+        <view class="title">{{item.title}}</view>
+      </view>
+      <view class="content">
+        <view class="content-item border-1px-b" wx:for="{{item.content}}" wx:for-item="detail" wx:key="{{item.id}}">
+          <navigator url="/pregnotice/pages/article/article?id={{detail.id}}">
+            <view class="sub-title">{{detail.subtitle}}</view>
+            <view class="sub-content">{{detail.subContent}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

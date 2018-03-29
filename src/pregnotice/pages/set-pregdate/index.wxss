@@ -1,0 +1,54 @@
+page{
+  background: #fff;
+}
+.page{
+  background: #f3f3f3;
+}
+.tab-bd{
+  margin-top: 24rpx;
+  min-height: calc(100%-104rpx);
+  background: #fff;
+  padding: 24rpx;
+}
+.instruction{
+  font-size: 12px;
+  padding:24rpx 0;
+  line-height: 1.6;
+  border-bottom: 1px dashed #eee;
+  color: #888;
+}
+.action-block{
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0 0;
+}
+.action-item{
+  flex: 1;
+}
+.action-item .label{
+  color: #666;
+}
+.action-item .picker{
+  display: flex;
+  padding: 30rpx 24rpx;
+  border: 1px solid #CD9E29;
+  border-radius:10px;
+  margin-top: 30rpx;
+  color: #CD9E29;
+}
+.picker .picker-value,.picker .picker-info{
+  flex: 1;
+}
+.picker .picker-info{
+  text-align: right;
+  color: #888;
+  font-size: 13px;
+}
+.btn-confirm{
+  margin-top: 80rpx;
+  background-color: #CD9E29!important;
+}
+.btn-confirm-hover{
+  background-color: red;
+}
+

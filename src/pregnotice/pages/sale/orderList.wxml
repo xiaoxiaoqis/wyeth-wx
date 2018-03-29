@@ -1,0 +1,33 @@
+<view class="page">
+  <view>
+    <block wx:if="{{!isLogin}}">
+      <import src="../../components/notLoggedIn/index.wxml" />
+      <template is="notLoggedIn"/>
+    </block>
+    <view class="order-info" wx:if="{{isLogin&hasOrder}}" wx:for="{{list}}" wx:key="{{item.goodsId}}">
+      <view class="product">
+        <view class="goods-img" style="background-image: url({{item.image}});"></view>
+        <view class="sale-info">
+          <view class="title">{{item.title}}</view>
+          <view class="extra">
+            <view class="num">实付款：</view>
+            <view class="price">￥{{item.price}}</view>
+            <view class="num">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="order-status border-1px-t">
+        <view class="status" wx:if="{{item.status==1&&item.type==2&&item.appointment.place}}">已预约</view>
+        <view class="status" wx:else>{{status[item.type-1][item.status]}}</view>
+        <view class="action">
+          <navigator class="btn" wx:if="{{item.status==1&&item.type==2&&!item.appointment.place}}" url="/pregnotice/pages/sale/appointment?orderId={{item.orderId}}">预约采血</navigator>
+        </view>
+      </view>
+      <view class="appointment" wx:if="{{item.status==1&&item.appointment.place}}">预约信息：<text>{{item.appointment.date}}</text>，至<text>{{item.appointment.place}}</text>采血</view>
+    </view>
+    <block  wx:if="{{isLogin&!hasOrder}}">
+      <import src="../../components/noData/index.wxml" />
+      <template is="noData" data="{{...noData}}"/>
+    </block>
+  </view>
+</view>

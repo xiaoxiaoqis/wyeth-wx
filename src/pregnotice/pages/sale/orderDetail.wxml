@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="flow-box">
+  <view class="flow-item {{classArray[0]}}">
+    <view class="state-icon">
+      <image src="{{doneIcon}}" wx:if="{{classArray[0]==='done'}}" />
+      <view wx:else class="dot"></view>
+    </view>
+    <view class="hd">
+      <view class="title">支付成功</view>
+      <view class="action"></view>
+    </view>
+    <view class="bd">
+      <view>您已购买产前无创检查项目，支付￥1399。</view>
+    </view>
+  </view>
+  <view class="flow-item {{classArray[1]}}">
+    <view class="state-icon">
+      <image src="{{doneIcon}}" wx:if="{{classArray[1]==='done'}}" />
+      <view wx:else class="dot"></view>
+    </view>
+    <view class="hd">
+      <view class="title">预约采血</view>
+      <view class="action"><text class="btn" bindtap="phoneCall">电话预约</text></view>
+    </view>
+    <view class="bd">
+      <view>
+        <view>你可以选择我们诊所或医院采血，也可以选择上面采血，诊所和医院包括：</view>
+        <view style="color:#666;margin-top:5px;">
+          <view>交大东路36号昌盛门诊部</view>
+          <view>交大东路36号昌盛门诊部</view>
+          <view>交大东路36号昌盛门诊部</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flow-item {{classArray[2]}}">
+    <view class="state-icon">
+      <image src="{{doneIcon}}" wx:if="{{classArray[2]==='done'}}" />
+      <view wx:else class="dot"></view>      
+    </view>
+    <view class="hd">
+      <view class="title">检测分析</view>
+      <view class="action"></view>
+    </view>
+    <view class="bd">
+      <view>检测分析大概需要 4-6 个工作日，请耐心等待。</view>
+    </view>
+  </view>
+  <view class="flow-item {{classArray[3]}}">
+    <view class="state-icon">
+      <image src="{{doneIcon}}" wx:if="{{classArray[3]==='done'}}" />
+      <view wx:else class="dot"></view>      
+    </view>
+    <view class="hd">
+      <view class="title">出具报告</view>
+      <view class="action"></view>
+    </view>
+    <view class="bd">
+      <view>恭喜您无创通过。</view>
+    </view>
+  </view>
+  <view class="flow-item {{classArray[4]}}">
+    <view class="state-icon">
+      <image src="{{doneIcon}}" wx:if="{{classArray[4]==='done'}}" />
+      <view class="dot" wx:else></view>
+    </view>
+    <view class="hd">
+      <view class="title">服务完成</view>
+      <view class="action"></view>
+    </view>
+  </view>
+</view>
+</view>

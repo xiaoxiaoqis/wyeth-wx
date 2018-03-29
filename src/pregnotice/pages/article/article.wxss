@@ -1,0 +1,46 @@
+@import "../../components/wxParse/wxParse.wxss";
+@import "../../components/likeAndShare/index.wxss";
+.wrap-content{
+  background:#fff;
+}
+.article-hd{
+  overflow: hidden;
+}
+.article-hd .title{
+    font-size: 24px; 
+    padding: 0 24rpx;
+    margin: 60rpx 0 0;
+}
+.article-info {
+    font-size:12px;
+    color: #888;
+    padding: 0 24rpx;
+    margin: 40rpx 0;
+}
+
+.article-info text {
+    margin-right: 40rpx;
+}
+.article{
+  padding: 0 24rpx;
+  margin-bottom: 40rpx;
+}
+.article view{
+  line-height: 1.7!important;
+  font-size: 18px!important;   
+  margin-bottom:20rpx;
+}
+.article img,.article p img {
+  width: 100%!important;
+  height: auto!important;
+}
+.article-tags {
+    padding: 30rpx 24rpx;
+    border-bottom: 2rpx solid #eee; 
+}
+.article-tags text {
+    margin-right: 16rpx;
+    line-height: 60rpx;
+    height: 60rpx;
+    border-radius: 60rpx;
+}

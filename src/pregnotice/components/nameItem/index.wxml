@@ -1,0 +1,11 @@
+<template name="nameItem">
+  <view class="list-item flex-box"  wx:for="{{list}}" wx:key="index">
+    <view class="num">{{index+1}}</view>
+    <view class="middle border-1px-b">
+      <view class="name" data-id="{{item.id}}" bindtap="nameNav" >{{item.name}}</view>
+      <view class="{{item.score==='暂无打分' ? 'score unactive' : 'score'}}">{{item.score}}</view>
+      <button class="share-btn" data-id="{{item.id}}"  data-template="share" bindtap="handelMask">找参谋</button>
+    </view>
+    <view class="remove" data-id="{{item.id}}" bindtap="removeName">移除</view>
+  </view>
+</template>

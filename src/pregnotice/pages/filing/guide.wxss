@@ -1,0 +1,33 @@
+.list{
+  padding: 20rpx 24rpx;
+  color: #404040;
+}
+.item{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.banner{
+  background-size: cover;
+  background-position: 30%;
+  height: 140rpx;
+  text-align: center;
+  line-height: 140rpx;
+  font-size: 18px;
+  color: #fff;
+}
+.banner .title{
+  background: rgba(0, 0, 0, 0.5);
+}
+.content .content-item{
+  line-height: 1;
+  padding: 30rpx 20rpx;
+}
+.content .sub-title{
+  font-size: 17px;
+  padding-bottom: 20rpx;
+}
+.content .sub-content{
+  font-size: 12px;
+  line-height: 32rpx;
+  color: #666;
+}

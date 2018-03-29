@@ -1,0 +1,77 @@
+page{
+  background-color:#fff;
+}
+.tab-bd{
+  padding:40rpx 20rpx;
+}
+.page-tab {
+  font-size: 15px;
+}
+.page-tab .active{
+  font-size: 16px;
+}
+.alternative-btn{
+  position: absolute;
+  right: 0;
+  margin-top: 30rpx;
+  width: 120rpx;
+  height: 70rpx;
+  background: #CD9E29;
+  border-radius:  70rpx 0 0 70rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 70rpx;
+}
+.input-box{
+  width: 650rpx;
+  margin: 20rpx auto;
+  font-size: 16px;
+}
+.title{
+  display: inline-block;
+  margin: 16rpx 8rpx;
+}
+input{
+  border:1px solid #efefef;
+}
+.input-hd{
+  width:600rpx;
+  padding: 14rpx 14px;
+  border-radius: 20px;
+}
+.required-box {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+.required-box icon{
+  margin-left:10rpx;
+}
+.radio-group{
+  height:60rpx;
+  line-height:60rpx;
+}
+.radio-group .radio{
+  margin-right: 16rpx;
+}
+.radio-group radio{
+  transform:scale(0.8);
+}
+.picker-date{
+  border: 1px solid #efefef;
+  line-height:1.4rem;
+  color:#888;
+}
+.picker-date .picker-content{
+  width: 500rpx;
+}
+.btn{
+  width:160rpx;
+  height:70rpx;
+  text-align:center;
+  line-height:70rpx;
+  margin:30rpx auto;
+  border-radius:70rpx;
+  background: #CD9E29;
+  color: #fff;
+}

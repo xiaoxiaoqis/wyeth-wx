@@ -1,0 +1,57 @@
+<view class="page">
+    <view class="page-tab">
+      <view class="{{isCalculate? 'page-tab-item':'active page-tab-item'}}" bindtap="changeTab" data-cal="false">
+        <text>设置预产期</text>
+      </view>
+      <view class="{{isCalculate? 'active page-tab-item':'page-tab-item'}}" bindtap="changeTab" data-cal="true">
+        <text>计算预产期</text>
+      </view>
+    </view>
+    <view class="tab-bd">
+      <block wx:if="{{!isCalculate}}">
+        <view class="instruction">输入宝宝生日或产检时医生告知的预产期日期。若还未产检，请使用「计算预产期」</view>
+        <view class="action-block">
+          <view class="action-item">
+            <text class="label">输入预产期/宝宝生日</text>
+            <picker mode="date" value="{{pregdate}}" end="{{pregdateRangeEnd}}" bindchange="bindpregdateChange">              <view class="picker">
+                <view class="picker-value">{{pregdate}}</view>
+                <view class="picker-info">{{pregweek}}</view>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isCalculate}}">
+        <view class="instruction">填写下面信息，孕期提醒自动计算出您的预产期</view>
+        <view class="action-block">
+          <view class="action-item" style="flex:2">
+            <text class="label">末次月经开始时间</text>
+            <picker mode="date" bindchange="bindLastPeriodChange" value="{{lastPeriod}}" start="{{lastPeriodStart}}" end="{{lastPeriodEnd}}">
+              <view class="picker">
+                <view class="picker-value">{{lastPeriod}}</view>
+              </view>
+            </picker>
+          </view>
+          <view style="width:24rpx"></view>
+          <view class="action-item">
+            <text class="label">月经周期天数</text>
+            <picker bindchange="bindPeriodCycleChange" value="{{periodCycle}}" range="{{periodCycleOptions}}">
+              <view class="picker">
+                <view class="picker-value">{{periodCycleOptions[periodCycle]}}</view>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="action-block">
+          <view class="action-item">
+            <text class="label">您的预产期</text>
+            <view class="picker">
+              <view class="picker-value">{{pregdate}}</view>
+              <view class="picker-info">{{pregweek}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <button type="primary" bindtap="setpregdate" loading="{{loading}}" class="btn-confirm" hover-class="btn-confirm-hover">确定</button>
+    </view>
+</view>

@@ -1,0 +1,134 @@
+<!--pages/recipe/home.wxml-->
+<view class="recipe-entries border-1px-b-alpha">
+  <navigator url="/pregnotice/pages/recipe/categroy?type=1" class="border-1px-r">
+    <image class="tip-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/chushi.png"></image>对症食疗</navigator>
+  <navigator url="/pregnotice/pages/recipe/categroy?type=2">
+    <image class="tip-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/xican.png"></image>补充营养</navigator>
+</view>
+<scroll-view scroll-y="true" scroll-into-view="{{toView}}">
+  <view class="diet-tip-box" bindtap="toggleTipFold">
+    <view class="diet-tip-box-hd">
+      <image class="tip-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/idea.png"></image>
+    </view>
+    <view class="diet-tip-box-bd">
+      <view>{{res.point.content.nutrition}}</view>
+      <view>{{res.point.content.work}}</view>
+      <view hidden="{{foldTip}}">{{res.point.content.description}}</view>
+    </view>
+    <view class="diet-tip-box-ft">
+      <view class="{{foldTip ? 'arrow-down' : 'arrow-up'}}"></view>
+    </view>
+  </view>
+  <view class="timeline-box">
+    <view class="timeline-box-bd">
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>7:30</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第1杯水 200ml</view>
+        <view class="timeline-item-bd">起床一杯温水，有助身体健康</view>
+      </view> -->
+      <view class="time-label-purple" id="breakfast">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time-white.png"></image>
+        <text>7:30~9:00</text>
+      </view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">
+          <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/morning.png"></image>早餐</view>
+      </view>
+      <block wx:for="{{res.food[0].data}}" wx:key="id">
+        <navigator url="/pregnotice/pages/recipe/detail?id={{item.id}}" class="timeline-item">
+          <view class="timeline-item-hd">{{item.name}}</view>
+          <view class="timeline-item-bd">
+            <view class="recipe-desc ellipsis2 ellipsis2">{{item.description}}</view>
+            <view class="recipe-img">
+              <image src="{{item.img}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>8:30</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第2杯水 200ml</view>
+        <view class="timeline-item-bd"></view>
+      </view> -->
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>10:00</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第3杯水 200ml</view>
+        <view class="timeline-item-bd"></view>
+      </view> -->
+      <view class="time-label-pink" id="lunch">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time-white.png"></image>
+        <text>10:30~12:30</text>
+      </view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">
+          <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/atnoon.png"></image>午餐</view>
+      </view>
+      <block wx:for="{{res.food[1].data}}" wx:key="id">
+        <navigator url="/pregnotice/pages/recipe/detail?id={{item.id}}" class="timeline-item">
+          <view class="timeline-item-hd">{{item.name}}</view>
+          <view class="timeline-item-bd">
+            <view class="recipe-desc ellipsis2 ellipsis2">{{item.description}}</view>
+            <view class="recipe-img">
+             <image src="{{item.img}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>12:00</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第4杯水 200ml</view>
+        <view class="timeline-item-bd"></view>
+      </view> -->
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>14:00</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第5杯水 200ml</view>
+        <view class="timeline-item-bd">餐后两小时喝一杯水</view>
+      </view> -->
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>16:00</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第6杯水 200ml</view>
+        <view class="timeline-item-bd"></view>
+      </view> -->
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>18:00</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第7杯水 200ml</view>
+        <view class="timeline-item-bd">餐前半小时饮用更佳</view>
+      </view> -->
+      <view class="time-label-blue" id="supper">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time-white.png"></image>
+        <text>18:00~17:30</text>
+      </view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">
+          <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/evening.png"></image>晚餐</view>
+      </view>
+      <block wx:for="{{res.food[2].data}}" wx:key="id">
+        <navigator url="/pregnotice/pages/recipe/detail?id={{item.id}}" class="timeline-item">
+          <view class="timeline-item-hd">{{item.name}}</view>
+          <view class="timeline-item-bd">
+            <view class="recipe-desc ellipsis2 ellipsis2">{{item.description}}</view>
+            <view class="recipe-img">
+              <image src="{{item.img}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <!-- <view class="time-label">
+        <image class="time-icon" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/time.png"></image><text>20:30</text></view>
+      <view class="timeline-item">
+        <view class="timeline-item-hd">第8杯水 200ml</view>
+        <view class="timeline-item-bd">餐后两小时饮用更佳</view>
+      </view> -->
+      <!--<view class="timeline-item">
+        <view class="timeline-item-hd">晚安, 好梦~</view>
+      </view>-->
+    </view>
+  </view>
+</scroll-view>

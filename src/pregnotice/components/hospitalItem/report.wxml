@@ -1,0 +1,25 @@
+<template name="reportItem">
+  <view class="box-item flex-item-bb box">
+    <view class="top">
+      <text class="label">#建档笔记</text>
+      <image src="{{report.avatar}}"></image>
+      <text class="nick">{{report.nickname}}</text>
+      <view class="date">{{report.view_date}}</view>
+    </view>
+    <view class="content">
+      <view class="content-detail">{{report.contentText}}<text class="toggle" wx:if="{{report.long}}" data-index="{{index}}" bindtap="toggleFull">{{report.hint?'...': ''}} {{report.hint? '全文':'收起'}}</text></view>
+      <view class="img-list">
+        <view class="img-item" wx:for="{{report.images}}" wx:key="item">
+          <image data-src="{{report.images}}" bindtap="preview" src="{{item}}"></image>
+        </view>
+      </view>
+      <view class="footer">
+        <view class="right">
+          <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/zan.png"></image>
+          <text class="zan">{{report.star}}</text>
+        </view>
+        <text class="left">{{report.time}}</text>
+      </view>
+    </view>
+  </view>
+</template>

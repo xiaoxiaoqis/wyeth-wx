@@ -1,0 +1,9 @@
+@import "../../components/canIEatItem/index.wxss";
+@import "../../components/searchBar/searchbar.wxss";
+
+.scroll-box{
+  position:absolute;
+  top: 106rpx;
+  bottom: 0;
+  background: #fff;
+}

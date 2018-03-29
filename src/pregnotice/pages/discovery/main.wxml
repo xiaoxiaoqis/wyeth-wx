@@ -1,0 +1,48 @@
+<view class="page">
+  <!-- <view class="tip" wx:if="{{unsupported}}"><text>目前「建档指南」和「周边医院」仅支持北京，\r\n其他城市敬请期待！</text></view> -->
+  <view class="section section-gap" wx:if="{{!unsupported}}">
+    <view class="weui-panel__hd section {{unsupported}} border-1px-b" style="margin-top:4rpx;">
+      <view class="weui-panel__hd__hl">城市服务</view>
+      <view>
+        <image style="width:20rpx;height:20rpx;" src="http://www.ladybirdedu.com//pregnotice/images/wx-static/location.png"/>
+        {{city}}
+      </view>
+    </view>
+    <view class="flex-box weui-grids">
+      <navigator class="flex-item weui-grid" wx:for="{{res}}" wx:key="name"  url="/pregnotice/pages/{{item.url}}">
+          <view class="describe">
+            <view class="title {{item.status}}">{{item.name}}</view>
+            <text class="content">{{item.content}}</text>
+          </view>
+          <image src="{{item.image}}"/>
+      </navigator>
+    </view>
+  </view>
+  <!--<view class="section section-gap">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">孕妈微信群</view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-x style="width: 100%;height:200rpx;">
+      <view class="scroll-view-item_H scroll-item" wx:for="{{group}}" wx:key="{{index}}" style="background-image:url({{item.image}})">
+        <view class="title">{{item.name}}</view>
+        <view class="content">{{item.content}}</view>
+      </view>
+    </scroll-view>
+  </view>-->
+  <view class="section">
+    <view class="weui-panel__hd">
+      <view class="weui-panel__hd__hl">热门推荐</view>
+    </view>
+    <scroll-view scroll-y="true" class="scroll-box">
+      <import src="../../components/saleItem/index.wxml" />
+        <block wx:for="{{list}}" wx:key="index">
+          <template is="saleItem" data="{{item}}"/>
+        </block>
+    </scroll-view>
+    <import src="../../components/img-loader/img-loader.wxml"/>
+    <template is="img-loader" data="{{ imgLoadList }}"></template>
+    <view class="loading" hidden="{{list[0].image}}">
+      <image src="http://www.ladybirdedu.com//pregnotice/images/wx-static/load.gif"/>
+    </view>
+  </view>
+</view>

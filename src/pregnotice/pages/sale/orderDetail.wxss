@@ -1,0 +1,93 @@
+page{
+  background:#fff;
+}
+.flow-box{
+  position: relative;
+  margin: 40rpx 0 0 100rpx;
+}
+.flow-box::after{
+    position: absolute;
+    content: '';
+    width: 12rpx;
+    top:28rpx;
+    left: -40rpx;
+    bottom: 20rpx;
+    background: #eee;
+  }
+.flow-item{
+  position: relative;
+  padding-left:20rpx;
+  color: #999;
+}
+.state-icon{
+  position: absolute;
+  left: -64rpx;
+  width: 58rpx;
+  height: 58rpx;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.state-icon image{
+  width:56rpx;
+  height:56rpx;
+}
+.dot{
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #fff;
+  border: 2rpx solid #ddd;
+}
+.hd{
+  display: flex;
+  height: 56rpx;
+  align-items: center;
+  padding-right: 30rpx;
+}
+.hd .title{
+  flex:1;
+  font-size: 18px;
+}
+.bd{
+  box-sizing:border-box;
+  position: relative;
+  padding: 20rpx 30rpx 40rpx 0;
+  min-height: 160rpx;
+}
+.bd view{
+  line-height: 1.6;
+}
+.done{
+  color: #666;
+}
+.done .bd::after{
+position: absolute;
+content: '';
+left: -60rpx;
+top: -10rpx;
+bottom: -16rpx;
+width: 12rpx;
+background: #09BB07;
+z-index: 98;
+}
+.doing{
+color: #333;
+}
+.doing .bd{
+color: #666;
+}
+.doing .dot{
+border-color: #09BB07;
+background: #09BB07;
+}
+.btn{
+display: block;
+border: 2rpx solid #FF0036;
+height: 60rpx;
+line-height: 60rpx;
+padding: 0 30rpx;
+border-radius: 52rpx;
+color: #FF0036;
+}

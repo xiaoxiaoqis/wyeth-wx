@@ -1,0 +1,16 @@
+<template name="addressSearchBar">
+<view class="search-bar">
+  <view class="search-bar-left">
+    <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/arrowright.png" />
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{distArray}}">
+      <view class="picker">{{distArray[index]}}</view>
+    </picker>
+  </view>
+  <view class="input-box">
+    <view class="search-bar-right">
+      <icon class="icon-search" type="search" size="14"></icon>
+      <input type="text"  placeholder="输入医院名称查找" value="{{inputVal}}" bindfocus="showInput" bindblur="hideInput" confirm-type="search" bindconfirm="doSearch" />  
+    </view>
+  </view>
+</view>
+</template>

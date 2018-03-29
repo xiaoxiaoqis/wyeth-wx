@@ -1,0 +1,7 @@
+.star-image{
+  top: 50rpx;
+  margin-left: 16rpx;
+  width: 40rpx;
+  height: 40rpx;
+  src: "../../images/no-star.png";
+}

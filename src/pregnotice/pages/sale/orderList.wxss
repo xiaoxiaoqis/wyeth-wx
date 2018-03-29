@@ -1,0 +1,95 @@
+@import "../../components/noData/index.wxss";
+@import "../../components/notLoggedIn/index.wxss";
+
+.tip{
+  font-size: 12px;
+  margin: 30rpx;
+}
+.order-info{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+  overflow: hidden;
+}
+.product{
+  display: flex;
+}
+.product .goods-img{
+  width: 220rpx;
+  height: 220rpx;
+  background-position: center;
+  background-size: cover;
+  margin-right: 20rpx;
+}
+.product .sale-info{
+  flex: 1;
+}
+.sale-info .title{
+  font-size: 16px;
+}
+.sale-info .extra{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.extra .price{
+  flex:1;
+  font-size: 16px;
+}
+.extra .num{
+  font-size: 12px;
+  color: #666;
+}
+.order-status{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #666;
+  padding: 20rpx 0;
+}
+.order-status .status{
+  flex: 1;
+}
+.appointment{
+  position: relative;
+  background: #f1f1f1;
+  font-size: 12px;
+  padding: 10rpx 20rpx;
+  margin-bottom: 30rpx;
+  color: #666;
+}
+.appointment text{
+  font-weight: bold;
+  color: #333;
+}
+.appointment text::after{
+  content: '';
+  position: absolute;
+  left: 20rpx;
+  top: -24rpx;
+  border: 12rpx solid transparent;
+  border-bottom-color: #f1f1f1;
+}
+
+.btn{
+  display: block;
+  position: relative;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  color: #FF0036;
+  margin-right: 0;
+}
+.btn::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1rpx solid #FF0036;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 120rpx;
+}

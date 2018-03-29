@@ -1,0 +1,85 @@
+page{
+  background:#fff;
+}
+input,picker{
+  color: #777;
+}
+input{
+  flex:1;
+  height:80rpx;
+  text-align:right;
+  margin-left:10rpx;
+  word-wrap:break-word;
+}
+picker{
+  flex:1;
+  text-align:right;
+}
+.picker{
+  padding:16rpx 0;
+  line-height:50rpx;
+}
+.input-hd text:nth-child(2){
+  flex:1;
+  font-size:12px;
+  text-align:right;
+}
+.input-hd .title{
+  display:inline-block;
+  width:90rpx;
+}
+.success-image{
+  display:block;
+  margin:0 auto 80rpx;
+  position:relative;
+  top:40rpx;
+  width:240rpx;
+  height:240rpx;
+}
+.success-text{
+  text-align: center;
+  font-size: 24px;
+  color: #09BB07;
+}
+.tip-box{
+  border: 2rpx dashed #ddd;
+  margin: 30rpx;
+}
+.tip{
+  display: flex;
+  padding: 30rpx;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+  border-bottom: 2rpx dashed #ddd;
+}
+.tip-hd{
+  text-align: center;
+  flex: 1;
+}
+.label{
+  width:160rpx;
+}
+.content{
+  flex:1;
+  text-align: right;
+}
+.place-name{
+  margin-bottom: 20rpx;
+}
+.place-address{
+  color: #999;
+  font-size: 12px;
+}
+.btn{
+  position:fixed;
+  bottom:0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background:#FF0036;
+  color: #fff;
+  border:1px solid #FF0036;
+  font-size: 16px;
+}

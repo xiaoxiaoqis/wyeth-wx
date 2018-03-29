@@ -1,0 +1,57 @@
+/*recipeItemCell 食谱Cell列表自定义*/
+
+.recipe-item-cell .weui-media-box__thumb {
+  width: 200rpx;
+  height: 150rpx;
+}
+
+.recipe-item-cell .tag {
+  background: #f7f7f7;
+  line-height: 52rpx;
+  border-radius: 52rpx;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 0 12px;
+  color: #666;
+}
+
+.recipe-item-card {
+  overflow: hidden;
+}
+
+.recipe-item-card .recipe-cover {
+  width: 100vw;
+  height: 53.33333vw;
+  background-position: center;
+  background-size: cover;
+}
+
+.recipe-content {
+  padding: 40rpx 24rpx 60rpx;
+  background: #fff;
+}
+
+.recipe-item-card .recipe-name {
+  font-size: 19px;
+  margin-bottom: 30rpx;
+}
+
+.recipe-item-card .recipe-info {
+  display: flex;
+  color: #888;
+  line-height: 20px;
+}
+
+.recipe-item-card .recipe-info-l {
+  flex: 1;
+  padding-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recipe-item-card .recipe-info-r image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: text-bottom;
+  margin-right: 10rpx;
+}

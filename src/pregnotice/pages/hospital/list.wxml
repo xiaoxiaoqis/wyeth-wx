@@ -1,0 +1,16 @@
+<view class="page">
+  <block>
+    <import src="../../components/addressSearchBar/index.wxml" />
+    <template is="addressSearchBar" data="{{...search}}"/>
+  </block>
+  <scroll-view scroll-y="true" data-type="{{loadType}}" bindscrolltolower="updateData" class="scroll-box">
+    <import src="../../components/hospitalItem/list.wxml"/>
+    <block wx:for="{{list}}" wx:key="index">
+        <template is="hospitalItem" data="{{hosp:item}}"/>
+    </block>
+    <view class="loadingmore" hidden="{{allLoaded}}">
+        <view>正在加载...</view>
+    </view>
+    <view class="loadingmore" hidden="{{!allLoaded}}">{{list.length<1?'暂无相关结果':'已加载全部'}}</view>
+  </scroll-view>
+</view>

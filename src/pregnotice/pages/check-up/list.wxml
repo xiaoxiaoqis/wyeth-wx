@@ -1,0 +1,20 @@
+<scroll-view scroll-y="true" class="check-up-list" scroll-into-view="check-up-{{curCheckUpIndex - 1}}">
+  <block wx:for="{{checkUpList}}" wx:key="id">
+    <navigator url="/pregnotice/pages/check-up/detail?id={{item.id}}&processing={{processingChekUpId}}" class="{{item.is_selected?'check-up-item active':'check-up-item'}}" id="{{'check-up-'+index}}">
+      <view class="check-up-item-bd">
+        <view class="{{item.is_selected?'date active':'date'}}">
+          <view class="next-label" wx:if="{{item.is_selected}}">下次产检</view> {{item.dateF[0]}}<text class="year"> / {{item.dateF[1]}}</text></view>
+        <view class="{{item.is_selected?'point active':'point'}}">{{item.name}}</view>
+      </view>
+      <view class="check-up-item-ft">
+        <view class="week">孕{{item.week}}周</view>
+        <view class="done" wx:if="{{item.day}}">
+          <block wx:if="{{item.day>1}}">{{item.day}}天后</block>
+          <block wx:elif="{{item.day==1}}">明天</block>
+          <block wx:elif="{{item.day==0}}">今天</block>
+        </view>
+        <view class="done" wx:if="{{item.is_finish&&!item.day}}">已完成</view>
+      </view>
+    </navigator>
+  </block>
+</scroll-view>

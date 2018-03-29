@@ -1,0 +1,10 @@
+<template name="nameBottom">
+  <view class="action-bar">
+    <navigator url="/pregnotice/pages/name/index"><view class="name-btn">给宝宝起名</view></navigator>
+    <navigator url="/pregnotice/pages/name/index?testName=1"><view class="test-btn">测测名字</view></navigator>
+  </view>
+  <view class="add-input-box">
+    <input placeholder="我有一个好名字给你参考" value="{{extraName}}" bindinput="bindInputChange" />
+    <view class="label" bindtap="addExtraName">提交</view>
+  </view>
+</template>

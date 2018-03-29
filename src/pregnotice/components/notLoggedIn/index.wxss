@@ -1,0 +1,4 @@
+@import "../noData/index.wxss";
+.loggin-icon{
+  margin-left: 50rpx;
+}

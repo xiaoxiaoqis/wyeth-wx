@@ -1,0 +1,20 @@
+<!-- <template is="searchBar" data="{{inputVal:inputVal,inputShowed:inputShowed}}" /> -->
+  <form bindsubmit="updateData">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <view>
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        </view>
+        <view class="weui-search-bar__input-box">
+
+          <input type="text" class="weui-search-bar__input" autofocus placeholder="{{placeholder||'搜索'}}" value="{{inputVal}}" bindfocus="showInput" bindblur="hideInput" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 1}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn" wx:if="{{inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+  </form>

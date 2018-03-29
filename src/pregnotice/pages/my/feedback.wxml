@@ -1,0 +1,7 @@
+<!--pages/my/feedback.wxml-->
+<view class="feedback">
+  <view class="tip">搜索微信公众号「 <text>yunqitixingapp</text> 」</view>
+  <view class="tip">或扫描下面二维码</view>
+  <view><image class="qrcode" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/qrcode_for_gh_0f0cfc57e519_258.jpg"></image></view>
+  <view class="tip">添加关注后提交反馈</view>
+</view>

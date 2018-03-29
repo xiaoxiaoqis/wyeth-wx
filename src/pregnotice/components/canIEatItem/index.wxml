@@ -1,0 +1,17 @@
+<template name="canIEatItem">
+  <navigator url="../can-i-eat/food?id={{food.id}}" class="weui-media-box nbnc-item" hover-class="weui-cell_active">
+    <view class="weui-media-box__hd">
+      <image class="weui-media-box__thumb" src="{{food.thumb}}"></image>
+    </view>
+    <view class="weui-media-box__bd">
+      <view class="weui-media-box__title">{{food.name}}</view>
+      <view class="weui-media-box__desc">
+        <view class="weui-media-box__desc__text">{{food.description}}</view>
+      </view>
+      <view class="weui-media-box__info">
+        <view class="eatable-item" wx:for="{{food.know}}" wx:key="name">
+          <image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/eatable-{{item.type}}.png"></image>{{item.period}}</view>
+      </view>
+    </view>
+  </navigator>
+</template>

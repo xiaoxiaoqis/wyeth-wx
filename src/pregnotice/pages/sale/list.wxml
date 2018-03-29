@@ -1,0 +1,10 @@
+<view class="page">
+  <scroll-view scroll-y="true" class="scroll-box">
+    <import src="../../components/saleItem/index.wxml" />
+      <block wx:for="{{list}}" wx:key="index">
+        <template is="saleItem" data="{{item}}"/>
+      </block>
+  </scroll-view>
+  <import src="../../components/img-loader/img-loader.wxml"/>
+  <template is="img-loader" data="{{ imgLoadList }}"></template>
+</view>

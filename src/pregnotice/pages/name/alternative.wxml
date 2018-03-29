@@ -1,0 +1,42 @@
+<view class="page">
+  <import src="../../components/nameItem/index.wxml" />
+  <view class="boy-list list" wx:if="{{man.length}}">
+    <view class="boy-title title">男宝宝名儿<image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/boy.png" /></view>
+    <template is="nameItem" data="{{list:man}}"/>
+  </view>
+  <view class="girl-list list" wx:if="{{woman.length}}">
+    <view class="girl-title title">女宝宝名儿<image src="http://www.ladybirdedu.com/pregnotice/images/wx-static/girl.png" /> </view>
+    <template is="nameItem" data="{{list:woman}}"/>    
+  </view>
+  <view class="empty-tip" wx:if="{{man.length<1&&woman.length<1}}">还没有备选名字哦~</view>
+  <view class="fixed-bar"  data-template="add" bindtap="handelMask">
+     <text class="add-icon">+</text> 添加名字
+  </view>
+  <view class="add-name-editor popup" wx:if="{{!maskHidden&&template==='add'}}">
+    <view class="tip">添加名字到备选库</view>
+    <radio-group class="radio-group" bindchange="bindSexChange">
+      <label class="radio" wx:for="{{sexList}}" wx:key="{{item.value}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" color="#919091"/>{{item.value}}
+      </label>
+    </radio-group>
+    <view class="add-input-box">
+      <view class="label">备选名字</view><input value="{{newName}}" bindinput="bindNewname" />
+    </view>
+    <view class="action-bar" bindtap="addName">
+      <view class="btn">
+        <icon size="16" type="{{btnConfirmIcon[btnConfirmStatus]}}" wx:if="{{btnConfirmIcon[btnConfirmStatus]}}" color="#fff"></icon>添加
+      </view>
+    </view>
+  </view>
+  <view class="share-popup popup" wx:if="{{!maskHidden&&template==='share'}}">
+    <view class="popup-img">
+      <image src="{{shareImg}}"/>
+    </view>
+    <view class="popup-name">{{shareName}}</view>
+    <view class="flex-box">
+      <button plain="true" class="popup-btn cancel" data-template="mask" bindtap="handelMask"></button>    
+      <button plain="true" class="popup-btn share" open-type="share"></button>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{!maskHidden}}"  data-template="mask" bindtap="handelMask"></view>
+</view>

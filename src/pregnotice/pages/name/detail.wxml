@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="section section-gap">
+    <view class="section-hd border-1px-b">
+      <view class="section-hd-title">基本信息</view>
+    </view>
+    <navigator url="/pregnotice/pages/name/alternative" class="alternative-btn">备选库</navigator>
+    <view class="content title-content">
+      生日（预产期） {{pregdate}}
+      <view>
+      {{basicInfo}}  
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-hd border-1px-b">
+      <view class="section-hd-title">起名结果</view>
+    </view>
+    <view class="content">
+      <import src="../../components/wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+  </view>
+  <view class="section btn">
+    <view class="add-btn" bindtap="addName">{{operateTip}}</view>
+  </view>
+</view>

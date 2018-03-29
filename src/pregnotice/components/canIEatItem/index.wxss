@@ -1,0 +1,16 @@
+.nbnc-item .eatable-item image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: text-bottom;
+  margin-right: 10rpx;
+}
+
+.nbnc-item .weui-media-box__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nbnc-item .eatable-item {
+  flex: 1;
+  color: #666;
+}

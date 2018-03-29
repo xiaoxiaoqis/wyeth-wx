@@ -1,0 +1,8 @@
+<!--pages/recipe/categroy.wxml-->
+<view>
+  <view class="weui-grids food-catagory food-catagory-big-img flex-box">
+    <navigator class="flex-item weui-grid" wx:for="{{res}}" wx:key="name" style="background-image:url({{item.img}})" url="/pregnotice/pages/recipe/list?id={{item.id}}&type={{type}}&typeName={{item.name}}">
+      <view class="food-catagory-name"><view>{{item.name}}</view></view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="page">
+  <image src="http://www.ladybirdedu.com//pregnotice/images/wx-static/bigCorrect.png" />
+  <view class="success-text">支付成功</view>
+  <view class="tip" wx:if="{{orderInfo.type==1}}">您已购买「{{orderInfo.title}}」，我们会在
+    <text style="color:#333"> 1-2 个工作日内</text>将 DNA 样本采集工具邮寄给您，发出后会有短信通知。请您在收到按照操作说明取样, 1-2 天内寄回到检测实验室。
+  </view>
+  <view class="tip" wx:elif="{{orderInfo.type==2}}">您可以随时预约采血，您的检测报告会在采血后7-10个工作日内寄送给您，你也可以在
+    <text style="color:#333">「我的」</text>-<navigator style="display:inline-block;color:#FF0036" class="high-light" url="/pregnotice/pages/sale/orderList">「我的订单」</navigator>预约采血或查看检测实时进度。
+   </view>
+  <view class="next-action">
+    <navigator class="btn" url="/pregnotice/pages/sale/appointment?orderId={{orderId}}" wx:if="{{orderInfo.type==2}}">预约采血</navigator>
+    <text class="btn" bindtap="backToHome">回到首页</text>
+  </view>
+</view>

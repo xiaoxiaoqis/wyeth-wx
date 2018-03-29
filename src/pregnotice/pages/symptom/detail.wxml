@@ -1,0 +1,41 @@
+<view class="view symptom-intro">
+  <view class="symptom-name">{{caseinfo.name}}</view>
+  <view class="symptom-desc">{{caseinfo.description}}</view>
+</view>
+<view class="view symptom-content" wx:if="{{examples.length>0}}">
+  <view class="title">专家解读</view>
+  <view class="sample-tabs">
+    <view wx:for="{{examples}}" wx:key="id" bindtap="changeExample" data-index="{{index}}" class="{{curTab==index ? 'sample-tab active' : 'sample-tab'}}">{{item.name}}</view>
+  </view>
+  <view class="view-bd" wx:for="{{examples}}" wx:key="id" wx:for-item="example" hidden="{{index!=curTab}}">
+    <view class="user">
+      <view class="user-avatar">
+        <image src="{{example['user_avatar']}}"></image>
+      </view>
+      <view class="user-info">
+        <view class="nickname">提问孕妈</view>
+        <view class="desc">{{example['user_date']}}</view>
+      </view>
+    </view>
+    <view class="msg-box"><text>{{example['user_question']}}</text></view>
+    <view class="user right">
+      <view class="user-avatar">
+        <image src="{{example.doctor.avatar}}"></image>
+      </view>
+      <view class="user-info">
+        <view class="nickname">{{example.doctor.name}}</view>
+        <view class="desc">{{example.doctor.dep +' · '+example.doctor.title}}</view>
+      </view>
+    </view>
+    <view class="msg-box right">
+      <view wx:for="{{example.answer}}" wx:key="title">
+        <view class="title" wx:if="{{item.title}}">{{item.title}}</view>
+        <view class="content" wx:if="{{item.content}}">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{caseinfo.name}}">
+<import src="../../components/likeAndShare/index.wxml"/>
+<template is="likeAndShare" data="{{...likeShare}}"/>
+</block>

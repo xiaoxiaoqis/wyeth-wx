@@ -1,0 +1,40 @@
+page{
+  background: #fff;
+}
+.page{
+  padding-top:40rpx;
+}
+image{
+  width:120px;
+  height:120px;
+  margin: 0 auto 40rpx;
+  display:block;
+}
+.success-text{
+  text-align: center;
+  font-size: 24px;
+  color: #09BB07;
+}
+.tip{
+  padding: 0 30rpx;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+  margin: 60rpx 0 100rpx;
+}
+.next-action{
+  text-align: center;
+}
+.btn{
+  display: inline-block;
+  border: 2rpx solid #333;
+  width: 260rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.btn:first-child{
+  display:inline-block;
+  margin-right: 40rpx;
+  color: #FF0036;
+  border-color: #FF0036;
+}

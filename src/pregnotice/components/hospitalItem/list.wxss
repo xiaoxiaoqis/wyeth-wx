@@ -1,0 +1,25 @@
+.list-item{
+    padding: 30rpx 20rpx;
+    font-size: 13px;
+    position: relative;
+    overflow: auto;
+    line-height: 1;
+}
+.list-item .name{
+    font-size: 17px;
+}
+.list-item .intro{
+    color: #cccccc;
+    margin-top: 15rpx;
+    line-height: 40rpx;
+}
+.list-item .status{
+    display: block;
+    padding-top: 15rpx;
+    color: #CD9E29;
+}
+.list-item .dist{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}

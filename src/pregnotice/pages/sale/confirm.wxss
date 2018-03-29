@@ -1,0 +1,110 @@
+@import "../../components/noData/index.wxss";
+
+.order-info {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+.product {
+  display: flex;
+}
+.product .goods-img {
+  width: 220rpx;
+  height: 220rpx;
+  background-position: center;
+  background-size: cover;
+  margin-right: 20rpx;
+}
+.product .sale-info {
+  flex: 1;
+}
+.product .title {
+  font-size: 16px;
+}
+.extra {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.extra .price {
+  flex: 1;
+  color: #FF0036;
+  font-size: 40rpx;
+}
+.extra .num {
+  color: #666;
+}
+.gift {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 14rpx;
+}
+.gift .gift-item {
+  margin-top: 16rpx;
+  display: flex;
+}
+.gift .title {
+  flex: 1;
+  padding-right: 20rpx;
+}
+.pay-method {
+  display: flex;
+  background: #fff;
+  padding: 20rpx;
+}
+.icon{
+  width:32rpx;
+  height:32rpx;
+  vertical-align:middle;
+}
+.pay-method .method-name {
+  flex: 1;
+}
+.client-info {
+  background: #fff;
+  margin-top: 10px;
+}
+
+.client-info text:last-child {
+  flex: 1;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+}
+input{
+  flex:1;
+  height:80rpx;
+  display:inline-block;
+  text-align:right;
+  margin-left:10rpx;
+  word-wrap:break-word;
+}
+.order-tip {
+  color: #999;
+  text-align: center;
+  padding: 20rpx;
+}
+.action-bar {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+}
+.action-bar .total-price {
+  padding: 0 20rpx;
+  flex: 1;
+}
+.action-bar text {
+  color: #FF0036;
+}
+.action-bar .sub-btn {
+  font-size: 36rpx;
+  width: 40%;
+  background: #FF0036;
+  color: #fff;
+  text-align: center;
+  vertical-align: text-bottom;
+}

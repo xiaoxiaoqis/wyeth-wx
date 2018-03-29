@@ -1,0 +1,73 @@
+<view class="page" wx:if="{{detail.banner}}">
+<scroll-view scroll-y="true" bindscrolltolower="getListData" enable-back-to-top class="scroll-box" bindscroll="scroll" scroll-top="{{scrollTop}}">     
+    <view class="section section-gap">
+        <view class="info">
+            <image src="{{detail.banner}}" class="light-box"></image>
+            <view class="name">{{detail.name}}</view>
+            <text class="label" wx:for="{{detail.labels}}" wx:key="{{index}}">{{item}}</text>
+        </view>
+        <view class="cover" style="background-image: url({{detail.banner}});"></view>
+        <view class="capability weui-flex">
+            <view class="cap-item" wx:for="{{detail.capability}}" wx:key="name">
+                <image src="{{baseUrl}}{{item.status ? 'enable.png' : 'disable.png' }}"></image>
+                <text class="{{item.status ? '': 'disable'}}">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="expense" wx:if="{{detail.const}}">{{detail.const}}</view>
+    </view>
+    <view class="section section-gap" wx:if="{{detail.filing.req||detail.filing.state}}">
+        <view class="filing-status" >
+            <view class="weui-panel__hd">
+                <view class="weui-panel__hd__hl">
+                    建档动态
+                </view>
+            </view>
+            <view class="content">
+                <view class="req">{{detail.filing.req}}</view>
+                <view class="state">{{detail.filing.state}}</view>
+                <view class="hint"><image src="{{baseUrl}}info.png"></image> <text class="hint-text">信息有误？联系客服，提交正确信息，审核通过有礼</text></view>
+            </view>
+        </view>
+    </view>
+    <view class="section section-gap" wx:if="{{detail.filing.process.length>=1}}">
+        <view class="filing-process">
+            <view class="weui-panel__hd">
+                <view class="weui-panel__hd__hl">
+                    建档流程
+                </view>
+            </view>
+            <view class="content weui-flex">
+                <view class="content-item weui-flex" wx:for="{{detail.filing.process}}" wx:key="index">
+                    <text class="num">{{index+1}}</text>
+                    <text class="text">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block>
+    <import src="../../components/likeAndShare/index.wxml"/>
+    <template is="likeAndShare"/>
+    </block>
+    <view class="weui-panel__hd">
+        <view class="weui-panel__hd__hl">
+            孕妈心得
+        </view>
+    </view>   
+    <view class="delivery"  wx:if="{{reportList.length}}">
+        <import src="../../components/hospitalItem/report.wxml"/>
+        <block wx:for="{{reportList}}" wx:key="index">
+            <template is="reportItem" data="{{report:item,index:index}}"/>
+        </block>
+        <view class="loadingmore" hidden="{{allLoaded}}">
+            <view>正在加载...</view>
+        </view>
+        <view class="loadingmore" hidden="{{!allLoaded}}">已加载全部</view>
+    </view>
+    <view wx:else class='empoty'>
+        暂时还没有孕妈分享心得哦~
+    </view>
+    <view class="{{btnClass}} scroll-btn"  bindtap="top">
+        <image src="{{img}}"/>
+    </view>
+</scroll-view>
+</view>

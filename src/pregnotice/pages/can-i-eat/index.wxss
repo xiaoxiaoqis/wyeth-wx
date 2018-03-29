@@ -1,0 +1,10 @@
+@import "../../components/searchBar/searchbar.wxss";
+@import "../../style/widgets/weui-grid/weui-grid.wxss";
+
+.nbnc .weui-grid{
+  /*height: 100%;*/
+}
+.nbnc{
+  background: #fff;
+  overflow: hidden;
+}

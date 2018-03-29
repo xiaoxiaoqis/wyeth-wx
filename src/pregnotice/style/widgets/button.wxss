@@ -1,0 +1,70 @@
+.btn-outline,
+.btn-outline-purple,
+.btn-outline-pink,
+.btn-outline-yellow,
+.btn-outline-blue {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #888;
+  box-sizing:border-box;
+  padding: 0 24rpx;
+  overflow: hidden;
+}
+
+.btn-outline:after,
+.btn-outline-purple:after,
+.btn-outline-pink:after,
+.btn-outline-yellow:after,
+.btn-outline-blue:after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #888;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 60rpx;
+}
+
+.btn-outline-pink {
+  color: #FB7289;
+}
+
+.btn-outline-purple {
+  color: #CD9E29;
+}
+
+.btn-outline-yellow {
+  color: #FFB800;
+}
+
+.btn-outline-blue {
+  color: #39A1FF;
+}
+
+.btn-outline-pink:after {
+  border-color: #FB7289;
+}
+
+.btn-outline-purple:after {
+  border-color: #CD9E29;
+}
+
+.btn-outline-yellow:after {
+  border-color: #FFB800;
+}
+
+.btn-outline-blue:after {
+  border-color: #39A1FF;
+}
+
+.btn-fill {
+  background: #f7f7f7;
+}

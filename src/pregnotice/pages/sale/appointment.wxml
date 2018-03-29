@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="form-group" wx:if="{{!isDone}}">
+    <view class="input-hd border-1px-b" ><text>请完善确认以下信息</text><text>采血后5-7个工作日出报告</text></view>
+    <view class="input-hd border-1px-b">姓名<input placeholder="真实姓名" value="{{name}}" bindinput="bindName" ></input></view>
+    <view class="input-hd border-1px-b">手机<input placeholder="手机号码" type="number" value="{{phone}}" bindinput="bindPhone"></input></view>
+    <view class="input-hd border-1px-b">日期
+      <picker mode="date" value="{{dateValue}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+        <view class="picker">{{dateValue}}</view>
+      </picker>
+      <view class="with-arrow"></view>
+    </view>
+    <view class="input-hd border-1px-b">时间
+      <picker value="{{timeValue}}" range="{{timeList}}" bindchange="bindTimeChange">
+        <view class="picker">{{timeValue}}</view>
+      </picker>
+      <view class="with-arrow"></view>
+    </view>
+    <view class="input-hd border-1px-b"><text class="title">采血点</text>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <import src="../../components/wxParse/wxParse.wxml"/>
+        <view>{{multiArray[1][multiIndex[1]]}}</view>
+        <text style="font-size:12px">{{placeList[multiIndex[0]][multiIndex[1]]}}</text>
+      </picker>
+      <view class="with-arrow"></view>
+    </view> 
+  </view>
+  <view wx:else>
+    <image class="success-image" src="http://www.ladybirdedu.com//pregnotice/images/wx-static/bigCorrect.png" />
+    <view class="success-text">已提交预约</view>
+    <view class="tip-box">
+      <view class="tip"><view class="tip-hd">预约详情</view></view>
+      <view class="tip" wx:for="{{appointmentDetail}}"><view class="label">{{item.label}}</view><view class="content">{{item.value}}</view></view> 
+    </view>
+  </view>
+  <view class="action-bar" wx:if="{{!isDone}}"><view class="btn" bindtap="makeAppointment">立即预约</view></view>
+</view>

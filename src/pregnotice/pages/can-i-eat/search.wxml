@@ -1,0 +1,28 @@
+<view class="page">
+  <!--<include src=
+  "../../../components/searchBar/searchbar.wxml" />-->
+  <form bindsubmit="doSearch">
+    <view class="search-bar">
+      <view class="input-box">
+        <icon class="icon-search" type="search" size="14"></icon>
+        <input name="inputVal" auto-focus placeholder="{{placeholder||'搜索'}}" value="{{initInputVal}}" bindfocus="inputFocus" bindblur="inputBlur" />
+        <!-- <button formType="reset" class="btn-clearInput"><icon type="clear" size="14"></icon></button> -->
+      </view>
+      <button formType="submit" class="btn-doSearch" hidden="{{inputTyping}}">搜索</button>
+    </view>
+  </form>
+  <scroll-view scroll-y="true" class="scroll-box">
+    <import src="../../components/canIEatItem/index.wxml" />
+    <block wx:for="{{feeds}}" wx:key="id">
+      <template is="canIEatItem" data="{{food:item}}" />
+    </block>
+    <view class="loadingmore border-1px-t" hidden="{{!searching}}">
+      <view>正在搜索...</view>
+    </view>
+    <view class="loadingmore border-1px-t" wx:if="{{searchTimes < 1 && feeds.length < 1}}">
+      <view>请在上面搜索框，输入食物名搜索</view>
+    </view>
+    <view class="loadingmore border-1px-t" wx:if="{{feeds.length < 1 && searchTimes > 0}}">暂无相关结果</view>
+    <view class="loadingmore border-1px-t" wx:if="{{feeds.length > 0}}">以上为全部搜索结果</view>
+  </scroll-view>
+</view>

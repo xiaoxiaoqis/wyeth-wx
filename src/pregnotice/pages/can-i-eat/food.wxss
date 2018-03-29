@@ -1,0 +1,45 @@
+@import "../../components/likeAndShare/index.wxss";
+.food-hd{
+  width: 750rpx;
+  height: 400rpx;
+  display: flex;
+  align-content: center;
+  overflow: hidden
+}
+.food-hd image{
+  width:750rpx;
+  height:400rpx;
+}
+.food-desc{
+  background: #fff;
+  padding: 24rpx;
+  line-height: 1.6;
+}
+.food-eatable{
+  border-bottom: 1px solid #ededed;
+  padding: 30rpx 24rpx;
+}
+.food-eatable .title{
+  display: flex;
+}
+.food-eatable .title image,.food-eatable .result image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: text-bottom;
+  margin-right: 10rpx;
+}
+.food-eatable .result{
+  margin: 24rpx 0;
+}
+.food-eatable .desc{
+  line-height: 1.6;
+}
+.nutrients{
+  margin: 0 24rpx 24rpx;
+  border:1px solid #ededed;
+}
+.nutrients-item{
+  padding: 24rpx 0 24rpx 24rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ededed;
+}

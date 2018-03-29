@@ -1,0 +1,9 @@
+<template name="noData">
+  <view class="no-data-tip">
+    <image mode="aspectFit" src="{{img}}" />
+    <view class="desc">{{desc}}</view>
+    <view>
+      <navigator class="btn" url="{{navTo}}">{{navToText}}</navigator>
+    </view>
+  </view>
+</template>
