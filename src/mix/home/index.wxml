@@ -1,0 +1,186 @@
+<!-- <scroll-view class="index page theme-purple" scroll-y="true" bindscroll="scrollHandler"> -->
+<view class="{{maskHidden?'':'page'}}">
+  <!--宝宝信息-->
+  <view class="section">
+
+    <!--孕期-->
+    <view class="baby-info" wx:if="{{preg}}">
+      <view class="bchao-img" bindtap="handlePopup" data-template="bchao">
+        <image src="{{feeds.baby.pic}}"></image>
+      </view>
+      <view class="baby-info-content">
+        <view class="pregweek">{{pregtoday}}
+          <text class="countdown">倒计时 {{lastDays}}天</text>
+        </view>
+        <view class="baby-size" bindtap="handlePopup" data-template="babySize">
+          <text class="baby-weight">宝宝体重 {{feeds.baby.weight}}</text>
+          <text class="baby-height">身长 {{feeds.baby.height}}</text>
+        </view>
+        <view class="baby-fruit with-arrow" bindtap="handlePopup" data-template="babySize">
+          <image src="{{feeds.baby.fruit}}"></image>像{{feeds.fruit.fruit+feeds.fruit.describe}}</view>
+      </view>
+      <view class="bchao-tip">{{feeds.baby.description}}</view>
+      <view class="weekly-tips">
+        <view class="threed-baby" bindtap="handlePopup" data-template="3dVideo">
+          <image src="{{icons.fetal}}"></image>3D胎宝宝发育</view>
+        <view class="mom-weekly border-1px-l" bindtap="handlePopup" data-template="momChange">
+          <image src="{{icons.momWeekly}}"></image>本周妈妈变化</view>
+      </view>
+    </view>
+
+    <!--非孕期-->
+    <view class="baby-info" wx:if="{{!preg}}">
+      <view class="bchao-img" bindtap="handlePopup" data-template="bchao">
+        <image src="{{feeds.baby.pic}}"></image>
+      </view>
+      <view class="baby-info-content">
+        <view class="pregweek">{{pregtoday}}
+          <text class="countdown">宝宝出生 {{lastDays}}天</text>
+        </view>
+        <view class="baby-size-l" data-template="babySize">
+          <text class="baby-weight">宝宝体重\n{{feeds.baby.weight}}</text>
+          <text class="baby-height">身长\n{{feeds.baby.height}}</text>
+        </view>
+      </view>
+      <view class="bchao-tip">{{feeds.baby.description}}</view>
+    </view>
+
+    <view class="toolbox border-1px-t" wx:if="{{false}}">
+      <view class="toolbox-bd">
+        <navigator class="toolbox-bd-item" wx:for="{{toolbox}}" wx:key="name" url="{{item.page}}" hover-class="tool-box-hover">
+          <view>
+            <text class="new-icon" wx:if="{{item.label}}">New</text>
+            <image class="tool-icon" src="{{item.icon}}"></image>
+          </view>
+          <view>
+            <text class="tool-name">{{item.name}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 原weex首页模块 -->
+
+
+  <view class="weex-home">
+
+    <!-- 轮播图 -->
+    <swiper style="width: 750rpx;height: 272rpx;display: flex;border-top: 1rpx solid #F3F3F3;border-bottom: 1rpx solid #F3F3F3;" class="weex-home-slider" indicator-dots="true" indicator-color="rgba(237,237,237,1)"
+      indicator-active-color="rgba(208,164,65,1)" autoplay="true" interval="3000" duration="500" circular="true">
+      <block wx:for="{{flash_pics1}}" wx:key="id">
+        <swiper-item>
+          <image src="{{item.img}}" style="width: 750rpx;height: 272rpx;display: flex;" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 热门标签 -->
+    <view class="topics">
+      <view class="focus-tags border-1px-t">
+        <view class="focus-tags-hd">
+          <view class="title">热门标签</view>
+        </view>
+        <view class="topics-tags">
+          <view class="topics-tag" wx:for="{{topic_tags}}" wx:key="id" bindtap="onTagClick" data-item="{{item}}">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    <scroll-view class="activity" scroll-x wx:if="{{true}}">
+      <view class="activity-cell" wx:for="{{cat_activity}}" wx:key="id" bindtap="onActivityClick" data-item="{{item}}">
+        <image class="activity-cell-image" mode="scaleToFill" src="{{item.img}}"></image>
+      </view>
+      <view class="activity-cell-block"></view>
+    </scroll-view>
+
+    <!-- 推荐课程 -->
+    <view class="recommand">
+      <view class="weui-panel__hd">
+        <view class="weui-panel__hd__hl">推荐课程</view>
+      </view>
+
+      <view class="recommand-content">
+        <block class="recommand-content-cell" wx:for="{{recommend_course}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+          <view class="recommand-content-item recommand-content-cell" bindtap="onClassClick" data-item="{{item}}">
+            <view class="recommand-content-cell">
+              <view class="cell-cover recommand-content-cell">
+                <image class="cell-cover-img recommand-content-cell" src="{{item.img}}" />
+                <view class="cell-cover-mask recommand-content-cell" style="display:flex;background-image:linear-gradient(to top,RGBA(48,48,48,0.5),RGBA(255,255,255,0));"
+                />
+                <image class="cell-cover-num-icon recommand-content-cell" src="/assets/love.png" />
+                <text class="cell-cover-num recommand-content-cell">{{item.hot}}</text>
+              </view>
+              <text class="cell-title recommand-content-cell">{{item.title}}</text>
+            </view>
+            <view class="recommand-content-cell">
+              <view class="cell-name-desc recommand-content-cell">
+                <text class="cell-name recommand-content-cell">{{item.teacher_name}}</text>
+                <text class="cell-desc recommand-content-cell">{{item.teacher_position}}</text>
+              </view>
+              <view class="cell-class-tag recommand-content-cell">
+                <image class="cell-tag-img recommand-content-cell" src="/assets/tag.png" />
+                <text class="cell-tag-txt recommand-content-cell" wx:if="{{item.tag}}">{{item.tag}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="recommand-bottom" bindtap="clickMore">查看更多</view>
+    </view>
+
+    <view class="statement">
+      <view class="statement-content">“魔栗妈咪学院”版权归属育儿网所有，相关课程内容由育儿网提供。平台相关内容不作为医学诊断参考，如情况严重，建议及时就医。</view>
+    </view>
+  </view>
+
+
+  <view animation="{{anim}}" class="audioButton" style="background-image:url('http://wyeth-course.nibaguai.com/wyeth/image/audioHome_bg_long.png')"
+    bindtap="showAudioCenter">
+    <image class="audioButton-poster {{isPlay? 'Rotation' : ''}}" src="{{poster || '/assets/default_tabcenter.png'}}"></image>
+    <image class="audioButton-poster" wx-if="{{!isPlay}}" src="/assets/audioHome_play.png"></image>
+    <image class="audioButton-shadow" src='/assets/audioHome_shadow.png'></image>
+  </view>
+
+  <view class="audioHome" wx:if="{{ifAudioHome}}" bindtap="closeAudioCenter" catchtouchmove="stopEvent">
+    <view class="audioHome-sheet" catchtap="stopEvent">
+      <view class="audioHome-header">
+        <view class="control" bindtap="audioStart">
+          <image class="icon" src="{{isPlay?'/assets/list_stop.png':'/assets/list_play.png'}}"></image>
+          <text class="title">{{isPlay?'暂停播放':'播放全部'}}</text>
+        </view>
+
+        <view class="refresh" bindtap="audioRefresh">
+          <image class="icon" src='/assets/list_refresh.png'></image>
+          <text class="title">智能推荐</text>
+        </view>
+      </view>
+      <scroll-view class="audioHome-playlist" scroll-y="true">
+        <view class="audioHome-cell" wx:for="{{playlist}}" wx:key="id" data-item="{{item}}" data-index="{{index}}" bindtap="clickSong">
+          <image class="songcell_icon" wx:if="{{index === songIndex}}" src="{{isPlay? '/assets/songcell_play.gif': '/assets/songcell_pause.png'}}"></image>
+          <text class="songcell_title">{{item.title}}</text>
+          <view class="songcell_time">
+            <image wx:if="{{index === songIndex}}" class="songcell_time_icon" src="/assets/songcell_duration.png"></image>
+            <text class="songcell_time_text">{{item.audio_time}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="audioHome-footer" bindtap="closeAudioCenter">关闭</view>
+    </view>
+  </view>
+
+
+
+
+  <import src="template.wxml" />
+  <view wx:if="{{!maskHidden}}" class="popup">
+    <scroll-view class="popup-bd" scroll-y="true">
+      <template is="{{curTemplate}}" data="{{data:curTempData}}"></template>
+    </scroll-view>
+    <icon bindtap="handlePopup" data-template="mask" class="popup-cancel" type="cancel" size="36" color="white" />
+  </view>
+  <mask hidden="{{maskHidden}}" bindtap="handlePopup" data-template="mask" style="background-color: rgba(0,0,0,0.6);" hover-style="none"
+  />
+</view>
+<!-- </scroll-view> -->

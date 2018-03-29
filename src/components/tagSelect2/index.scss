@@ -1,0 +1,32 @@
+.o-tagSelect-container{
+  flex-direction: row;
+  height: 92px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.o-button {
+  justify-content: center;
+  align-items: stretch;
+  width: 100px;
+  height: 40px;
+  //margin-left: 6px;
+  //margin-right: 6px;
+  //margin-top: 15px;
+  //margin-bottom: 15px;
+  //background-color: #000000;
+}
+.o-button-inner{
+  flex: 1;
+  //background-color: red;
+  align-items: center;
+  justify-content: center;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+
+.c{
+  overflow: scroll;
+  flex-direction: row;display: inline-flex;
+}

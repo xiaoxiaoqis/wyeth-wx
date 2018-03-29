@@ -1,0 +1,112 @@
+$w:340px;
+$h:340px;
+
+.courseCardCell{
+  position: relative;  
+  width: $w;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.courseCardCell-img{
+  background-color: #e6e6e6;
+  width: $w;
+  height: $h;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #f7f4f2;
+}
+.courseCardCell-mask{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 70px;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+.courseCardCell-num-icon{
+  align-self: center;
+  margin-left: 17px;
+  width: 26px;
+  height: 26px;
+}
+.courseCardCell-num{
+  align-self: center;  
+  margin-left: 13px;
+  font-size: 24px;
+  color: white;
+  text-shadow: #464646 2px 2px 2px;
+}
+
+.courseCardCell .courseCardCell-content{
+  padding: 18px 18px 20px 13px;
+}
+
+.courseCardCell-content-title{
+  position: relative;  
+  line-height: 30px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 25px;
+  color: #333333;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+$usercell_h:85px;
+
+$text_w: 200px;
+
+.courseCardCell-content-userInfo {
+  position: relative;
+  width: $w;
+  height: $usercell_h;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 26px;
+}
+
+.userInfo-avatar {
+  position: relative;
+  width: $usercell_h;
+  height: $usercell_h;
+  border-radius: $usercell_h / 2;
+}
+
+.userInfo-text {
+  position: relative;
+  width: $w;
+  height: $usercell_h;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 14px;
+}
+
+.userInfo-name {
+  width: $text_w;
+  font-size: 21px;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
+.userInfo-hospital {
+  width: $text_w;
+  font-size: 17px;
+  color: #999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
+.userInfo-position {
+  width: $text_w;  
+  font-size: 17px;
+  color: #999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}

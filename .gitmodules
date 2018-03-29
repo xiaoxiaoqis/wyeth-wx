@@ -1,0 +1,3 @@
+[submodule "src/pregnotice"]
+	path = src/pregnotice
+	url = git@gitlab.oneitfarm.com:wyeth/pregnotice-wx.git

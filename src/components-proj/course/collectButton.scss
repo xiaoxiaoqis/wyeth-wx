@@ -1,0 +1,30 @@
+$collectButton_w:150px;
+$collectButton_h:40px;
+$icon_w:42px;
+$icon_h:40px;
+$padding:15px;
+
+#collectButton {
+    position: relative;
+    width: $collectButton_w;
+    height: $collectButton_h;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+
+#collectButton .collectButton-icon {
+    width: $icon_w;
+    height: $icon_h;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#collectButton .collectButton-num {
+    line-height: $icon_w;
+    width: $collectButton_w - $icon_w - $padding;
+    text-align: left;
+    font-size: 24px;
+    color: #666666;
+    align-self: center;
+}

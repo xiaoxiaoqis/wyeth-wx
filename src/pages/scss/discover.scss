@@ -1,0 +1,138 @@
+.discover-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #F5F5F5;
+
+  .bg{
+    position: absolute;
+    width: 750px;
+    height:207px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  .pageheader{
+    position: relative;
+    width: 750px;
+    height:207px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+
+    .userInfo{
+      position: relative;
+      height:207px;
+      padding: 0 0 0 50px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .avatar{
+        width:132px;
+        height:132px; 
+        border-radius: 50%;
+        border: 4px solid #fdf5f3;
+      }
+
+      .content{
+        flex-direction: column;
+        height:207px;
+        justify-content: space-between;
+        align-items: left;
+        padding: 71rpx 0 65rpx 27rpx;
+
+        .name{
+          text-align: left;
+          font-size:30px;
+          color:#ffffff;
+        }
+
+        .date{
+          text-align: left;
+          font-size:24px;
+          color:#ffffff;
+        }
+      }
+    }
+
+    .button{
+      margin: -8px 30px 0 0;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+
+
+  .reward {
+    position: relative;
+    width:750px;
+    height:140px; 
+    background:rgba(255,255,255,1);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 24px 0 15px;
+    align-items: center;
+    margin: 0 0 20px 0;
+
+    .header{
+      position: relative;
+      height:140px; 
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon {
+        position: relative;
+        width:120px;
+        height:140px;
+      }
+    
+      .text {
+        position: relative;
+        height:140px; 
+        justify-content: space-between;
+        align-items: left;
+        flex-direction: column;
+        padding: 32px 0 32px 5px;
+    
+        .title {
+          font-size:30px;
+          color:rgba(0,0,0,1);
+        }
+    
+        .subtitle {
+          font-size:26px;
+          color:rgba(153,153,153,1);
+        }
+      }
+    }
+    
+  
+    .button{
+      width:155px;
+      height:62px; 
+      background-image: linear-gradient(to right, #E7C25F, #C69735);
+      border-radius: 10px;
+      box-shadow:7px 0px 9px rgba(3,9,16,0.07);
+      align-items: center;
+      justify-content: space-around;
+
+      .title{
+        font-size:26px;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+
+  .tabs{
+    background-color: #ffffff;
+  }  
+}

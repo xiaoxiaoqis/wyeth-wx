@@ -1,0 +1,30 @@
+$likeButton_w:150px;
+$likeButton_h:40px;
+$icon_w:40px;
+$padding:15px;
+
+#likeButton {
+    position: relative;
+    width: $likeButton_w;
+    height: $likeButton_h;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+
+#likeButton .likeButton-icon {
+    width: $icon_w;
+    height: $icon_w;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+#likeButton .likeButton-num {
+    line-height: $icon_w;
+    width: $likeButton_w - $icon_w - $padding;
+    text-align: left;
+    font-size: 24px;
+    color: #666666;
+    align-self: center;
+}

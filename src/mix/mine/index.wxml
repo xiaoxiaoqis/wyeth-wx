@@ -1,0 +1,97 @@
+<view>
+
+    <view class="head head-bg" style="background:url('{{userInfo ?userInfo.avatarUrl:'../../assets/mine_bg.png'}}') center;background-size:cover"></view>
+    <view class="head">
+        <image class="avatar" src="{{userInfo.avatar}}" model="aspectFill"/>
+        <view class="userInfo">
+            <text class="name">{{userInfo.nickname}}</text>
+            <text class="pregdate">{{userInfo.pregdate}}</text>
+        </view>
+    </view>
+
+    <view class="calendar pink-color">
+            <view class="header">
+                <view class="pre" bindtap="handleCalendar" data-handle="prev">
+                    <image class="prev-handle" src="../../assets/calendar_pre.png"/>
+                </view>
+                <view bindtap="chooseYearAndMonth" class="date-area">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+                <view class="next" bindtap="handleCalendar" data-handle="next">
+                    <image class="next-handle" src="../../assets/calendar_next.png"/>
+                </view>
+            </view>
+            <view class="weeks">
+                <view class="weeks-item fs28" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+            </view>
+            <view class="days">
+                <view wx:if="{{hasEmptyGrid}}" class="emptyday white-color" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+                </view>
+                <view class="emptyday white-color" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+                    <view class="day {{item.choosed ? 'day-selected' : ''}}">{{item.day}}</view>
+                    <image class="sign" wx:if="{{item.sign}}" src="../../assets/calendar_selected.png"/>
+                </view>
+            </view>
+        </view>
+
+    <view class="tabs">
+        <view class="tab {{item.choosed ? 'tab-selected' : ''}}" wx:for="{{tabs}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="tapTab">{{item.name}}</view>
+    </view>
+
+
+    <view wx:if="{{tabs[0].choosed}}">
+
+
+    </view>
+
+    <!-- <view wx:if="{{tabs[1].choosed}}">
+        <view class="MQInfo">
+            <div class="MQCount">
+                <text class="title">当前可用MQ积分:</text>
+                <text class="num">{{exchangeInfo.mq}}</text>
+            </div>
+
+            <div class="MQRecharge">
+                <view class="icon" style="background-image:url('../../assets/mine_mq.png');"></view>
+                <text class="title">MQ积分充值</text>
+            </div>
+        </view>
+
+        <view class="reward">
+            <view class="detail">
+                <view class="title">惠氏启赋3段 婴儿配方奶粉正品20元优惠券</view>
+                <image class="image" src="http://wyeth-uploadsites.nibaguai.com/wyethcourse/default/5e35be47098fba15f399a36961368976.jpg" model="aspectFit"/>
+                <view class="footer">
+                    <view class="icon" style="background-image:url('../../assets/mine_gift.png');"></view>
+                    <text class="title">我的奖品</text>
+                </view>
+            </view>
+
+            <view class="list">
+
+            </view>
+
+            <button class="button" bindtap="jumpToWebview">抽奖(-50MQ)</button>
+
+            <view class="exchange">
+
+            </view>
+        </view>
+
+    </view> -->
+
+</view>
+
+
+<view wx:if="{{showPicker}}" class="picker">
+    <view class="picker-btns">
+        <view class="picker-btn picker-cancel" data-type="cancel" bindtap="tapPickerBtn">取消</view>
+        <view class="picker-btn picker-confirm" data-type="confirm" bindtap="tapPickerBtn">确定</view>
+    </view>
+    <picker-view class="flex" indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{picker_value}}" bindchange="pickerChange">
+        <picker-view-column>
+            <view class="picker-view" wx:for="{{picker_year}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="picker-view" wx:for="{{picker_month}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+    </picker-view>
+</view>

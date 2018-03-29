@@ -1,0 +1,30 @@
+.inviteButton {
+    position: absolute;
+    top: 7px;
+    right: 0px;
+    width: 190px;
+    height: 50px;
+    border-bottom-left-radius: 22.5px;
+    border-top-left-radius: 22.5px;
+    background-image: linear-gradient(to right, RGBA(230, 190, 90, 1), RGBA(203, 152, 68, 1));
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+.inviteButton-img {
+  width: 28px;
+  height: 25px;
+  // top: 12.5px;
+  left: 22.5px;
+  align-self: center;
+}
+  
+  
+.inviteButton-text {
+    font-size: 24px;
+    color: #ffffff;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    right: 5px;
+  }

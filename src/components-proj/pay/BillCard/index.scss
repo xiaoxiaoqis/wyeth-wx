@@ -1,0 +1,34 @@
+.tip-container{
+  height: 70px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+.tip-img{
+  width: 30px;
+  height: 30px;
+}
+.tip-text{
+  color: #999999;
+  font-size: 26px;
+  margin-left: 11px;
+  overflow: hidden;  text-overflow: ellipsis;  -webkit-line-clamp: 1;
+  display:-webkit-box; word-break: break-all; -webkit-box-orient: vertical;// 小程序中没有这个属性，限制行数失败
+}
+.total-container{
+  height: 113px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.total-extra{
+  color: #333333;
+  font-size: 26px;
+}
+.total-num{
+  color: #FF5001;
+  font-size: 36px;
+  margin-left: 28px;
+  margin-right: 40px;
+}

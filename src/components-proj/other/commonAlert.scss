@@ -1,0 +1,33 @@
+.commonAlert-container{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .commonAlert-container-body {
+    position: relative;
+    top: -100px;
+    margin:auto;
+  }
+  
+  .commonAlert-content{
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .commonAlert-text{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #999999;
+    font-size: 30px;
+    height: 50px;
+    lines:1;
+  
+  }
+
+  

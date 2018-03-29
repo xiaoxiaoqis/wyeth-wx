@@ -1,0 +1,70 @@
+$songcell_h: 100px;
+
+.songcell {
+  position: relative;
+  width: inherit;
+  height: $songcell_h + 1;
+  background-color: white;
+  flex-direction: column;
+}
+
+.songcell-content {
+  position: relative;
+  width: inherit;
+  height: $songcell_h;
+  direction: ltr;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 35px;  
+}
+
+.songcell_icon {
+  position: relative;
+  margin: 0 19px 0 0;
+  width: 38px;
+  height: 34px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.songcell_title {
+  position: relative;
+  width: 480px;
+  line-height: $songcell_h;
+  lines: 1;
+  text-align: left;
+  color:#444444;
+  font-size: 30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.songcell_time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  margin: 0 35px;
+  height: $songcell_h;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.songcell_time_icon {
+  position: relative;
+  width: 16px;
+  height: 19px;
+  margin-right: 15px;
+}
+
+.songcell_time_text {
+  position: relative;
+  height:$songcell_h; 
+  line-height:$songcell_h;
+  text-align: right;  
+  font-size:24px;
+  color:rgba(179,179,179,1);
+}

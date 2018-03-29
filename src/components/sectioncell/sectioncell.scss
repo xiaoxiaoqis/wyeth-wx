@@ -1,0 +1,55 @@
+$sectioncell_h:100px;
+
+#sectioncell {
+    position: relative;
+    flex-direction:row;
+    background: white;
+    width: inherit;
+    height: $sectioncell_h;
+    border-top-width: 1px;
+    border-top-color: #eeeeee;
+    border-top-style:solid;
+}
+
+#sectioncell .audition {
+    position: relative;
+    left: 40px;
+    width: 65px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #1ccda6;
+    align-self: center;
+    text-align:center;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+#sectioncell  .name {
+    position: relative;
+    width:590px;
+    font-size: 30px;
+    color: #666666;
+    align-self: center;
+    padding-left: 80px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+#sectioncell  .icon {
+    position: absolute;
+    top:($sectioncell_h - 35) / 2;
+    width: 35px;
+    height: 35px;
+    right: 115px;
+}
+
+#sectioncell .duration {
+    position: absolute;
+    top: 0px;
+    line-height: $sectioncell_h;
+    text-align: center;
+    font-size: 22px;
+    color: #999999;
+    right: 44px;
+}

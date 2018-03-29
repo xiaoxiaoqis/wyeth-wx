@@ -1,0 +1,11 @@
+.o-indicator-container{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+.o-indicator-pot{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}

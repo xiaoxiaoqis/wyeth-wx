@@ -1,0 +1,40 @@
+
+.ohs-teacher-container{
+  width: 750px;
+  height: 138px;
+  flex-direction: row;
+  align-items: center;
+}
+.ohs-teacher-icon{
+  margin-left: 32px;
+  width: 95px;
+  height: 95px;
+  border-radius: 47.5px;
+}
+.ohs-teacher-layout{
+  margin-left: 31px;
+  flex-direction: row;
+  align-items: center;
+}
+.ohs-teacher-text-name{
+  font-size: 31px;
+  color: #333333;
+}
+.ohs-teacher-text-hospital{
+  font-size: 28px;
+  color: #999999;
+}
+.ohs-teacher-text-position{
+  font-size: 28px;
+  margin-left: 10px;
+  color: #999999;
+}
+.ohs-teacher-text-answer{
+  font-size: 26px;
+  color: #999999;
+}
+.ohs-teacher-text-follow{
+  font-size: 26px;
+  margin-left: 10px;
+  color: #999999;
+}

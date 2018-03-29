@@ -1,0 +1,69 @@
+<template name="bchao">
+  <!-- <view class="popup-title">{{data.pregweek}}</view> -->
+  <view class="bchao-img-preview">
+    <image src="{{data.img}}" mode="widthFix"></image>
+  </view>
+  <view class="popup-content">
+    <view class="article-section">{{data.text}}</view>
+  </view>
+</template>
+<template name="babySize">
+  <!-- <view class="popup-title">{{data.pregweek}}</view> -->
+  <view>
+    <image src="{{data.fruitImg}}" mode="widthFix"></image>
+  </view>
+  <view class="popup-content">
+    <view class="popup-sizetext">
+      <view class="num">{{data.fruit}}</view>
+      <view class="desc">{{data.sizeText}}</view>
+    </view>
+    <view class="popup-babysize">
+      <view>
+        <view class="desc">重量约</view>
+        <view class="num">{{data.weight}}g</view>
+      </view>
+      <view>
+        <view class="desc">身长约</view>
+        <view class="num">{{data.height}}mm</view>
+      </view>
+    </view>
+    <view class="popup-babysize-tip">
+      <text>{{data.tip}}</text>
+    </view>
+  </view>
+</template>
+<template name="3dVideo">
+  <video class="popup-3dvideo" src="{{data.videoUrl}}" autoplay binderror="videoErrorCallback"></video>
+</template>
+<template name="todayTips">
+  <block wx:for="{{data.todayTips}}">
+    <view class="article-title">{{item.title}}</view>
+    <view class="article-section">{{item.content}}</view>
+  </block>
+</template>
+<template name="drinkTips">
+  <view class="drink-tips">
+    <image mode="widthFix" src="http://www.ladybirdedu.com/pregnotice/images/wx-static/drink-water.jpg"></image>
+    <view class="title">{{data.drinkTips.content}}</view>
+    <view class="popup-babysize">
+      <view>
+        <view class="num">第{{data.drinkTips.id}}杯水</view>
+        <view class="desc">本次喝水</view>
+      </view>
+      <view>
+        <view class="num">{{data.drinkTips.hour}}</view>
+        <view class="desc">喝水时间</view>
+      </view>
+      <view>
+        <view class="num">{{data.drinkTips.value}}ml</view>
+        <view class="desc">推荐喝水量</view>
+      </view>
+    </view>
+    <view class="title">本阶段喝水建议</view>
+    <view wx:for="{{data.drinkTips.notice}}" wx:key="*this" class="content">{{item}}</view>
+  </view>
+</template>
+<view wx:if="{{!maskHidden}}" class="popup">
+  <template is="{{curTemplate}}" data="{{data:curTempData}}"></template>
+  <icon bindtap="handleBabyInfo" data-template="mask" class="popup-cancel" type="cancel" size="36" color="white" />
+</view>

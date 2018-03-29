@@ -1,0 +1,46 @@
+.ohs-article-container{
+  width: 750px;
+  height: 245px;
+  flex-direction: row;
+  align-items: center;
+}
+.ohs-article-cover{
+  margin-left: 32px;
+  width: 268px;
+  height: 202px;
+}
+.ohs-article-layout{
+  width: 370px;
+  margin-left: 35px;
+}
+.ohs-article-title{
+  font-size: 34px;
+  color: #333333;
+}
+.ohs-article-extra{
+  flex-direction: row;
+
+  align-items: center;
+}
+.ohs-article-source-layout{
+  flex: 1;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+}
+.ohs-article-source-tag{
+  width: 28px;
+  height: 27px;
+}
+.ohs-article-source{
+  font-size: 22px;
+  color: #999999;
+}
+.ohs-article-num{
+  flex: 1;
+  margin-left: 30px;
+  width: 150px;
+  font-size: 22px;
+  color: #999999;
+  lines:1;
+}

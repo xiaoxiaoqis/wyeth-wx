@@ -1,0 +1,77 @@
+.o-searchview{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+  flex-direction: column;
+  align-items: stretch;
+}
+.o-searchbar-wrap{
+  flex-direction: row;
+  height: 78px;
+  left: 0px;
+  right: 0px;
+  padding-left: 16px;
+  //padding-bottom: 11px;
+  //padding-top: 11px;
+  padding-right: 16px;
+  background-color: #efeff4;
+  align-items: center;
+
+}
+.o-searchbar-inner{
+  flex:1;
+  height: 56px;
+  flex-direction: row;
+  padding-left: 35px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 28px;
+  align-items: center;
+  border-color: #ffca25;
+}
+.o-search-icon{
+  width: 30px;
+  height: 30px;
+}
+.o-search-input{
+  flex: 1;
+  padding-left: 5px;
+  margin-right: 20px;
+  border: none;
+  margin-left: 11px;
+  font-size: 28px;
+}
+.o-searchbar-cancel{
+  width: 57px;
+  font-size: 28px;
+  margin-right: 4px;
+  margin-left: 27px;
+  align-self: center;
+}
+.o-history{
+  top:77px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0px;
+  background-color: white;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.slide-fade-enter-active,.slide-fade-leave-active{
+  transition: all .3s ease
+}
+.slide-fade-enter, .slide-fade-leave-to{
+  transform: translateX(100px);
+  opacity: 0;
+}
+.alpha-fade-enter-active,.alpha-fade-leave-active{
+  transition: all .3s ease
+}
+.alpha-fade-enter,.alpha-fade-leave-to{
+  opacity: 0;
+}

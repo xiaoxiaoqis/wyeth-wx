@@ -1,0 +1,65 @@
+$progress_h: 80px;
+$bar_h: 6px;
+$dot_w:142px;
+$dot_h:30px;
+
+
+
+.progress {
+    position: relative;
+    width: 581px;
+    height: $progress_h;
+    justify-content: space-around;
+    overflow: visible;  
+}
+
+.progress .progress-total-bg {
+  position: absolute; 
+  top: ($progress_h - $bar_h) / 2;
+  left: -50px;
+  width: inherit;
+  height: $bar_h;
+  background-color: #e3a91c; 
+  overflow: visible;  
+}
+
+.progress .progress-total {
+    position: absolute; 
+    top: ($progress_h - $bar_h) / 2;
+    left: 0px;
+    width: inherit;
+    height: $bar_h;
+    background-color: #d0d2d0;    
+    overflow: visible;  
+}
+
+.progress-total .progress-current {
+    height: $bar_h;
+    width: 0;
+    background-color: #e3a91c;
+}
+
+.progress-total .progress-dot {
+    position: absolute;
+    top:($bar_h - $dot_h) / 2;
+    left: 0px;
+    margin-left: -($dot_w / 2);
+    width: $dot_w;
+    height: $dot_h;
+    background-color: #ffffff;
+    border-radius: $dot_h / 2;
+    border-style: solid;
+    border-width: 1rpx;
+    border-color: #d0d2d0;
+    box-shadow: 1px 1px 1px #d0d2d0;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: visible;
+}
+
+.progress-dot .progress-time {
+  height:$dot_h; 
+  font-size:18px;
+  color:rgba(102,102,102,1);
+  line-height:$dot_h;
+}

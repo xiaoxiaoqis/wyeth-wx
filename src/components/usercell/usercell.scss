@@ -1,0 +1,61 @@
+$usercell_h:140px;
+$avatar_h:116px;
+
+#usercell {
+    position: relative;
+    background: white;
+    width: inherit;
+    height: $usercell_h;
+}
+
+#usercell .avatar {
+    position: absolute;
+    top:($usercell_h - $avatar_h) / 2;
+    left: 40px;
+    width: $avatar_h;
+    height: $avatar_h;
+    border-radius: $avatar_h / 2;
+}
+
+#usercell .name {
+    position: absolute;
+    top: ($usercell_h - $avatar_h) * 0.5;
+    left: 191px;
+    font-size: 34px;
+    color: #333333;
+}
+
+#usercell .hospital {
+    position: absolute;
+    top: $usercell_h * 0.44;
+    left: 191px;
+    right: 170px;
+    font-size: 24px;
+    color: #999999;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+#usercell .position {
+    position: absolute;
+    bottom: ($usercell_h - $avatar_h) * 0.5 - 2;
+    left: 191px;
+    font-size: 24px;
+    color: #999999;
+}
+
+#usercell .concern {
+    position: absolute;
+    top:($usercell_h - 58px) / 2 - 4;
+    right: 38px;
+    width: 140px;
+    height: 58px;
+    font-size: 24px;
+    color: #ce8803;
+    border-width: 2px;
+    border-color: #ce8803;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: center;
+}

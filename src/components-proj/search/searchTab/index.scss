@@ -1,0 +1,44 @@
+.ohs-searchbar-tab{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right:0px;
+  flex-direction: column;
+  align-items: stretch;
+}
+.ohs-searchbar-tab-wrap{
+  flex-direction: row;
+  height: 78px;
+  left: 0px;
+  right: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #efeff4;
+  align-items: center;
+}
+.ohs-searchbar-tab-inner{
+  flex:1;
+  height: 56px;
+  background-color: white;
+  flex-direction: row;
+  padding-left: 35px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 28px;
+  align-items: center;
+  border-color: #ffca25;
+}
+.ohs-searchbar-tab-icon{
+  width: 30px;
+  height: 30px;
+}
+.ohs-searchbar-tab-input{
+  flex: 1;
+  margin-right: 20px;
+  padding-left: 5px;
+  color: #999999;
+  border: none;
+  margin-left: 11px;
+  font-size: 28px;
+}

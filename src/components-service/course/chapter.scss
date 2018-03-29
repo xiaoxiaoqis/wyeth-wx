@@ -1,0 +1,15 @@
+#chapter {
+    position: relative;
+    background-color: #ffffff;
+}
+
+#chapter .title {
+    position: relative;
+    width: 650px;
+    font-size: 32px;
+    color: #333333;
+    padding: 18px 50px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,73 @@
+.classHeader {
+  flex-direction: column;
+  padding: 31px 34px 27px;
+}
+
+.classHeader .classHeader-title {
+  font-size: 36px;
+  color: #333333;
+  text-align: left;
+  background-color: #ffffff;
+  font-weight: 400;
+}
+
+.classHeader .classHeader-content {
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 31px;
+}
+
+.classHeader-content .classHeader-content-line {
+  align-self: center;
+}
+
+.classHeader-content .classHeader-content-desc {
+  position: relative;
+  font-size: 26px;
+  color: #777777;
+  
+}
+
+.classHeader-content .classHeader-content-num {
+  position: relative;
+  font-size: 26px;
+  color: #777777;
+}
+
+.classHeader .classHeader-bottom {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.classHeader-bottom .classHeader-bottom-price {
+  font-size: 36px;
+  color: #E85308;
+}
+
+.classHeader-bottom .classHeader-bottom-buttons {
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.classHeader .classHeader-desc {
+  margin: 35px 0 44px;
+}
+
+.classHeader-desc .classHeader-desc-title {
+  position: relative;
+  font-size: 32px;
+  color: #2f2f2f;
+  text-align: left;
+  margin-bottom: 19px;
+  font-weight: 500;
+}
+
+.classHeader-desc .classHeader-desc-content {
+  position: relative;
+  font-size: 30px;
+  color: #565656;
+  text-align: left;
+}

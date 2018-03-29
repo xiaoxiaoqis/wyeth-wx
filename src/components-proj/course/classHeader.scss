@@ -1,0 +1,77 @@
+#classHeader {
+  flex-direction: column;
+}
+
+#classHeader .classHeader-title {
+    font-size: 36px;
+    color: #333333;
+    text-align: left;
+    padding: 36px 33px 0px 33px;
+    background-color: #ffffff;
+    font-weight:400;
+}
+
+#classHeader .classHeader-content {
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.classHeader-content .classHeader-tags,
+.classHeader-content .classHeader-num {
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  margin: 15px 20px 0px 33px;
+
+}
+
+.classHeader-content .classHeader-num{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.classHeader-content .classHeader-tags {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.classHeader-tags .classHeader-tag-img{
+  width: 29px;
+  height: 31px;
+  align-self: center;
+  // margin-left: 23px;
+}
+
+.classHeader-tags .classHeader-tag-txt{
+padding-top: 9px;
+padding-bottom: 9px;
+padding-left: 14px;
+padding-right: 14px;
+margin-left: 16px;
+margin-right: 20px;
+background-color: #fafafd;
+border-width: 1px;
+border-radius: 6px;
+border-color: #fafafd;
+border-style: solid;
+font-size: 22px;
+lines:1;
+color: #666666;
+}
+
+.classHeader-content .classHeader-text{
+    position: relative;
+    font-size: 24px;
+    color: #666666;
+    padding: 22px 0px;
+}
+
+.classHeader-content .classHeader-buttons{
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 340px;
+}
+
+

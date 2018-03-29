@@ -1,0 +1,6 @@
+<view>
+    <!-- <web-view class="webview"  src="https://oneitfarm.com/hd/main.php?action=hs_login.html&aid=434&token=vRamMjZ5roLHVU9Q.qsAG8lThZz1RyoIE.a71a5e5e1b300fe1baec25eb62bdc2f9&_hw_c="></web-view> -->
+
+    <web-view class="webview" src="{{hd_url}}"></web-view>
+
+</view>

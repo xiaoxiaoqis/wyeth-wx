@@ -1,0 +1,393 @@
+
+
+
+page {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.pink-color {
+  color: #666666;
+}
+
+.fs28 {
+  font-size: 28rpx;
+}
+
+.flex {
+    flex-grow: 1;
+}
+
+/* 用户信息 */
+.head {
+  display: flex;
+  background-size: cover;
+  width: 100%;
+  height: 205rpx;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head-bg {
+  position: absolute;
+  width:100%;
+  height:205rpx;
+  filter: blur(25px);
+  z-index: -1;
+}
+
+.head .avatar {
+  display: flex;
+  margin:0 50rpx 0 24rpx;
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  }
+  
+.head .userInfo{
+    display: flex;
+    padding: 70rpx 0 62rpx 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+
+.userInfo .name {
+  color: #ffffff;
+  font-size: 30rpx;
+}
+
+.userInfo .pregdate{
+  color: #ffffff;
+  font-size: 24rpx;
+}
+
+/* 选择栏 */
+.tabs{
+  display: flex;    
+  width:695rpx;
+  height:82rpx; 
+  background:rgba(243,244,245,1);
+  border-radius: 44rpx;
+  border-top-width: 1rpx;
+  border-top-color: #E9E6E7;
+  border-top-style: solid;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+.tabs .tab{
+  display: flex;  
+  width:347rpx;
+  height:82rpx; 
+  font-size:32rpx;
+  color:rgba(153,153,153,1);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs .tab-selected{
+  border-radius: 44rpx;
+  background-image: linear-gradient(to right, #E8C35F, #DAB04E,#C79736);
+  color: white;
+}
+
+
+/* 提醒开关 */
+.tip {
+  display: flex;  
+  background-color: #fff;
+  flex-direction: row;
+  height: 104rpx;
+  margin-top: 30rpx;
+  padding: 0 61rpx 0 66rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-top-width: 1rpx;
+  border-top-color: #E0E0E0;
+  border-top-style: solid;
+}
+
+.tip .title {
+  font-size:30rpx;
+  color:rgba(102,102,102,1);
+}
+
+/* 日历 */
+.calendar {
+  display: flex;
+  padding: 0 25rpx;
+  flex-direction: column;
+}
+
+.calendar .header{
+    display: flex;
+    height: 80rpx;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header .pre{
+  display: flex;
+  height: 80rpx;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.pre .prev-handle{
+    display: flex;
+    width: 20rpx;
+    height: 32rpx;
+    margin: 0 40rpx;
+}
+
+.date-area{
+    display: flex;
+    width: 50%;
+    height: 80rpx;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size:30rpx;
+}
+
+.header .next{
+  display: flex;
+  height: 80rpx;
+  flex-direction: row;
+  align-items: center;
+}
+
+.next .next-handle{
+    display: flex;
+    width: 20rpx;
+    height: 32rpx;
+    margin: 0 40rpx;
+}
+
+.weeks{
+    display: flex;
+    height: 50rpx;
+    line-height: 50rpx;
+    opacity: 0.5;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom-width: 1rpx;
+    border-bottom-color: #E0E0E0;
+    border-bottom-style: solid;
+}
+
+.weeks-item {
+    text-align: center;
+}
+
+.days{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.days .emptyday{
+    display: flex;
+    width: 100rpx;
+    height:100rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76rpx;
+    height: 76rpx;
+    color: #333333;
+    font-size: 28rpx;
+    font-weight: 200;
+}
+
+.day-selected{
+    border-radius: 50%;
+    color: #fff;
+    background-color: #E5BF5C;
+}
+
+.sign{
+  position: absolute;
+  width: 30rpx;
+  height: 22rpx;
+  margin-top: 25rpx;
+}
+
+.picker{
+    display: flex;
+    flex-direction: column;
+}
+
+.picker-btns{
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+	line-height: 120rpx;
+	border-bottom: 1rpx solid #E5BF5C;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker-confirm {
+	margin-right: 50rpx;
+}
+
+.picker-cancel {
+	margin-left: 50rpx;
+}
+
+.picker-view {
+	color:#666666;
+	text-align: center;
+}
+
+
+/* mq信息 */
+.MQInfo {
+  display: flex;
+  height: 50rpx;
+  flex-direction: row;
+  align-items: center;
+  color:#ffffff;
+  margin: 10rpx 0 0 0;
+  justify-content: space-between;
+}
+
+.MQCount {
+  display: flex;
+  margin: 21rpx 33rpx;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.MQCount .title{
+  font-size:24rpx;
+  color:rgba(102,102,102,1);
+  line-height:26rpx;
+  margin: 0; 
+}
+
+.MQCount .num{
+  font-size:28rpx;
+  color:rgba(180,133,0,1);
+  line-height:26rpx;
+  margin: 0 10rpx 0 0; 
+}
+
+
+.MQRecharge {
+  display: flex;
+  margin: 21rpx 25rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.MQRecharge .icon{
+  width:23rpx;
+  height:24rpx;
+  margin: 0 10rpx 0 0; 
+}
+
+
+.MQRecharge .title{
+  font-size:24rpx;
+  color:rgba(192,141,37,1);
+  line-height:26rpx;
+  margin: 0; 
+}
+
+
+.reward {
+  display: flex;
+  background:rgba(247,245,246,1);
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward .detail{
+  display: flex;
+  width:668rpx;
+  background:rgba(255,255,255,1);
+  border-radius: 6rpx;
+  margin: 13rpx 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail .title{
+  font-size:27rpx;
+  color:rgba(0,0,0,1);
+  text-align:center;
+  margin: 22rpx 0 0 0;
+}
+
+.detail .image{
+  max-width: 668rpx;
+  margin: 14rpx 0 0 0;
+}
+
+.detail .footer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 12rpx  0 12rpx 0;
+}
+
+.footer .icon{
+  width:24rpx;
+  height:26rpx; 
+  margin: 0 9rpx 0 0;
+}
+
+.footer .title{
+  font-size:24rpx;
+  color:rgba(192,141,37,1);
+  margin: 0 12rpx 0 0;
+}
+
+.reward .list{
+  width:668rpx;
+  height:0rpx; 
+  background:rgba(247,245,246,1);
+}
+
+.reward .button {
+  width:670rpx;
+  height:87rpx; 
+  background: linear-gradient(to right, #E6C166, #C5963F);
+  border-radius: 10rpx; 
+  box-shadow:6rpx 0rpx 10rpx rgba(3,10,16,0.1);
+  margin: 21rpx 0 56rpx 0;
+  color: #ffffff;
+}
+
+
+.webview{
+  display: flex;
+  width: 750rpx;
+  height: 900rpx;
+}

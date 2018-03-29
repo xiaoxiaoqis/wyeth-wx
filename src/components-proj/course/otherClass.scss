@@ -1,0 +1,120 @@
+.o-cells-container{
+  align-items: stretch;
+  background-color: white;
+}
+.o-cells-container-main{
+  padding: 35px 3px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-x: scroll;
+}
+.o-cells-container-item{
+  padding: 0 6px 0 6px;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content:space-between;
+}
+.o-cells-cover{
+  width: 220px;
+  height: 220px;
+  position: relative;
+}
+.o-cells-cover-img{
+  background-color: #e6e6e6;
+  width: 220px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #f7f4f2;
+  height: 220px;
+}
+.o-cells-cover-mask{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 70px;
+}
+.o-cells-cover-num-icon{
+  left: 11px;
+  bottom: 8px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+}
+.o-cells-cover-num{
+  lines:1;
+  bottom: 8px;
+  left: 48px;
+  position: absolute;
+  font-size: 24px;
+  color: white;
+}
+.o-cells-title{
+  margin-top: 17px;
+  lines:2;
+  width: 220px;
+  font-size: 26px;
+  color: #333333;
+}
+.o-cells-name-desc{
+  width: 200px;
+  margin-top: 18px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.o-cells-name-div{
+
+}
+.o-cells-name{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  max-width: 85px;
+  color: #666666;
+  lines:1;
+}
+.o-cells-desc-div{
+
+}
+.o-cells-desc{
+  width: 120px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  color: #999999;
+  lines:1;
+  margin-left: 17px;
+}
+.o-cells-class-tag{
+  width: 200px;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.o-cells-tag-img{
+  width: 26px;
+  height: 28px;
+}
+.o-cells-tag-txt{
+  lines:1;
+  height: 48px;
+  border-width: 1px;
+  border-color: #eeeeee;
+  border-style: solid;
+  border-radius: 4px;
+  background-color: #fafafd;
+  padding-left: 15px;
+  align-items: center;
+  justify-content: center;
+  padding-right: 15px;
+  margin-left: 16px;
+  font-size: 20px;
+  color: #999999;
+}

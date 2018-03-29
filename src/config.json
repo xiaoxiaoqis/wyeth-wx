@@ -1,0 +1,141 @@
+{
+  "appId": "wxda7a079b9d1971cd",
+  "host":"https://mama-weiketang-wyeth.woaap.com",
+  "version": "v1.0.0",
+  "dev": "",
+  "cidata_appkey":"jtcj5komwfxrv2qzbts4rlgu7ownzesy",
+  "timeout": 10000,
+  "api": {
+    "login": "/wx_auth/mini",
+    "getLoginInfo": "/wyeth/user/getLoginInfo",
+    "getMiniHomePageData": "/wyeth/page/getMiniHomePageData",
+    "createMiniOrder": "/wyeth/order/createMiniOrder",
+    "setPregdate": "/wyeth/user/setPregdate",
+    "getCourse": "/wyeth/page/getAllPageData",
+    "getCourseDetail": "/wyeth/course/getDetail",
+    "getCourseSeries": "/wyeth/course/cat",
+    "getSignature": "/api/wechat/package",
+    "getSearchResult": "/wyeth/search/getSearchResult",
+    "getCourseSearch": "/wyeth/search/getCourseSearch",
+    "getQuestionSearch": "/wyeth/search/getQuestionSearch",
+    "getTagQuestion": "/wyeth/question/getTagQuestion",
+    "getTeacherCourse": "/wyeth/pro/getTeacherCourse",
+    "getMine": "/wyeth/page/getMyPageData",
+    "getMq": "/wyeth/task/getMq",
+    "getMQDetail": "/wyeth/MQ/getConsumeList",
+    "getTraceCourse": "/wyeth/user/getTraceCourse",
+    "getMyFollow": "/wyeth/tag/getConcernTag",
+    "setMyFollow": "/wyeth/tag/chooseTag",
+    "observePro": "/wyeth/pro/observePro",
+    "getSearchTag": "/wyeth/search/getSearchTag",
+    "chooseTag": "/wyeth/tag/chooseTag",
+    "courseListenAdd": "/wyeth/course/courseListenAdd",
+    "getAllHotTag": "/wyeth/tag/getAllHotTag",
+    "courseLike": "/wyeth/course/like",
+    "courseCollect": "/wyeth/course/save",
+    "orderCourse": "/wyeth/course/signCourse",
+    "shareCourse": "/wyeth/course/shareCourse",
+    "getUserDynamic": "/wyeth/user/getUserDynamic",
+    "signCat": "/wyeth/course/signCat",
+    "getNewestArticle": "/wyeth/article/getNewestArticle",
+    "getCMSLike": "/wyeth/article/like",
+    "getCMSCollect": "/wyeth/article/save",
+    "getArticleDetail": "/wyeth/article/getArticleDetail",
+    "getSaveArticles": "/wyeth/article/getSaveArticles",
+    "getArticleShare": "/wyeth/article/share",
+    "createOrderMQ": "/wyeth/userBuy/course",
+    "payMQ": "/wyeth/userBuy/paySuccess",
+    "createOrder":"/wyeth/order/createOrder",
+    "queryOrder":"/wyeth/order/queryOrder",
+    "getBoughtCat":"/wyeth/userBuy/getBoughtCat",
+    "saveOrcollect":"/wyeth/course/likeOrSaveCourse",
+    "getOrderDetail": "/wyeth/userBuy/getTradeInfo",
+    "getPlayList":"/wyeth/play/getPlayList",
+    "getChance": "/wyeth/hd/getChance",
+    "getDiscover":"/wyeth/moli/getMoLiData",
+    "getDynamicAndArticles":"/wyeth/article/getDynamicAndArticles",
+    "getTraceCourseByDate":"/wyeth/user/getTraceCourseByDate",
+    "getVipCard":"/wyeth/weixin/getVipCard",
+    "codeDecrypt":"/wyeth/weixin/codeDecrypt",
+    "getWxCardMemberInfoByTicket":"/wyeth/weixin/getWxCardMemberInfoByTicket",
+    "registerCrm":"/wyeth/weixin/registerCrm",
+    "getWxCardMemberInfo":"/wyeth/weixin/getWxCardMemberInfo"
+  },
+  "depends": {
+    "getCourse.type.time.tag.page.page_size": [
+      "GET",
+      "/wyeth/page/getAllPageData",
+      false
+    ],
+    "getChooseTag": [
+      "GET",
+      "/wyeth/tag/getChooseTag",
+      true
+    ],
+    "homepage": [
+      "GET",
+      "/wyeth/page/getHomePageData",
+      true
+    ],
+    "course.course_id": [
+      "GET",
+      "/wyeth/course/getDetail",
+      true
+    ],
+    "getLoginInfo": [
+      "GET",
+      "/wyeth/user/getLoginInfo",
+      false
+    ],
+    "getSearchTag": [
+      "GET",
+      "/wyeth/search/getSearchTag",
+      false
+    ],
+    "getUserDynamic.page.page_size": [
+      "GET",
+      "/wyeth/user/getUserDynamic",
+      true
+    ],
+    "getTraceCourse.page.page_size": [
+      "GET",
+      "/wyeth/user/getTraceCourse",
+      true
+    ],
+    "getCourseSeries.cid": [
+      "GET",
+      "/wyeth/course/cat",
+      true
+    ],
+    "getCourseSearch.keyword": [
+      "GET",
+      "/wyeth/search/getCourseSearch",
+      false
+    ],
+    "getTeacherCourse.tid": [
+      "GET",
+      "/wyeth/pro/getTeacherCourse",
+      false
+    ],
+    "getQuestionSearch.keyword": [
+      "GET",
+      "/wyeth/search/getQuestionSearch",
+      false
+    ],
+    "getNewestArticle.page.articleNum.substrcount": [
+      "GET",
+      "/wyeth/article/getNewestArticle",
+      false
+    ],
+    "getArticleDetail.article_id": [
+      "GET",
+      "/wyeth/article/getArticleDetail",
+      true
+    ],
+    "getOrderDetail.trade_id": [
+      "GET",
+      "/wyeth/userBuy/getTradeInfo",
+      false
+    ]
+  }
+}
